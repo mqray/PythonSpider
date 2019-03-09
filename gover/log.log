@@ -1,0 +1,2394 @@
+2019-03-08 22:47:50 [scrapy.utils.log] INFO: Scrapy 1.6.0 started (bot: gover)
+2019-03-08 22:47:50 [scrapy.utils.log] INFO: Versions: lxml 4.3.2.0, libxml2 2.9.7, cssselect 1.0.3, parsel 1.5.1, w3lib 1.20.0, Twisted 18.9.0, Python 3.7.2 (default, Feb 21 2019, 17:35:59) [MSC v.1915 64 bit (AMD64)], pyOpenSSL 17.2.0 (OpenSSL 1.1.1b  26 Feb 2019), cryptography 2.6.1, Platform Windows-10-10.0.17134-SP0
+2019-03-08 22:47:50 [scrapy.crawler] INFO: Overridden settings: {'BOT_NAME': 'gover', 'LOG_FILE': './log.log', 'LOG_LEVEL': 'INFO', 'NEWSPIDER_MODULE': 'gover.spiders', 'ROBOTSTXT_OBEY': True, 'SPIDER_MODULES': ['gover.spiders'], 'USER_AGENT': 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/72.0.3626.119 Safari/537.36'}
+2019-03-08 22:47:50 [scrapy.extensions.telnet] INFO: Telnet Password: f0ef6aa2dbaf8ed4
+2019-03-08 22:47:50 [scrapy.middleware] INFO: Enabled extensions:
+['scrapy.extensions.corestats.CoreStats',
+ 'scrapy.extensions.telnet.TelnetConsole',
+ 'scrapy.extensions.logstats.LogStats']
+2019-03-08 22:47:50 [scrapy.middleware] INFO: Enabled downloader middlewares:
+['scrapy.downloadermiddlewares.robotstxt.RobotsTxtMiddleware',
+ 'scrapy.downloadermiddlewares.httpauth.HttpAuthMiddleware',
+ 'scrapy.downloadermiddlewares.downloadtimeout.DownloadTimeoutMiddleware',
+ 'scrapy.downloadermiddlewares.defaultheaders.DefaultHeadersMiddleware',
+ 'scrapy.downloadermiddlewares.useragent.UserAgentMiddleware',
+ 'scrapy.downloadermiddlewares.retry.RetryMiddleware',
+ 'scrapy.downloadermiddlewares.redirect.MetaRefreshMiddleware',
+ 'scrapy.downloadermiddlewares.httpcompression.HttpCompressionMiddleware',
+ 'scrapy.downloadermiddlewares.redirect.RedirectMiddleware',
+ 'scrapy.downloadermiddlewares.cookies.CookiesMiddleware',
+ 'scrapy.downloadermiddlewares.httpproxy.HttpProxyMiddleware',
+ 'scrapy.downloadermiddlewares.stats.DownloaderStats']
+2019-03-08 22:47:50 [scrapy.middleware] INFO: Enabled spider middlewares:
+['scrapy.spidermiddlewares.httperror.HttpErrorMiddleware',
+ 'scrapy.spidermiddlewares.offsite.OffsiteMiddleware',
+ 'scrapy.spidermiddlewares.referer.RefererMiddleware',
+ 'scrapy.spidermiddlewares.urllength.UrlLengthMiddleware',
+ 'scrapy.spidermiddlewares.depth.DepthMiddleware']
+2019-03-08 22:47:50 [scrapy.middleware] INFO: Enabled item pipelines:
+['gover.pipelines.GoverPipeline']
+2019-03-08 22:47:50 [scrapy.core.engine] INFO: Spider opened
+2019-03-08 22:47:50 [scrapy.extensions.logstats] INFO: Crawled 0 pages (at 0 pages/min), scraped 0 items (at 0 items/min)
+2019-03-08 22:47:50 [scrapy.extensions.telnet] INFO: Telnet console listening on 127.0.0.1:6023
+2019-03-08 22:47:51 [scrapy.core.scraper] ERROR: Spider error processing <GET http://wz.sun0769.com/html/top/ruse.shtml> (referer: None)
+Traceback (most recent call last):
+  File "d:\anaconda3\lib\site-packages\parsel\selector.py", line 238, in xpath
+    **kwargs)
+  File "src\lxml\etree.pyx", line 1586, in lxml.etree._Element.xpath
+  File "src\lxml\xpath.pxi", line 307, in lxml.etree.XPathElementEvaluator.__call__
+  File "src\lxml\xpath.pxi", line 227, in lxml.etree._XPathEvaluatorBase._handle_result
+lxml.etree.XPathEvalError: Invalid type
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "d:\anaconda3\lib\site-packages\scrapy\utils\defer.py", line 102, in iter_errback
+    yield next(it)
+  File "d:\anaconda3\lib\site-packages\scrapy\spidermiddlewares\offsite.py", line 29, in process_spider_output
+    for x in result:
+  File "d:\anaconda3\lib\site-packages\scrapy\spidermiddlewares\referer.py", line 339, in <genexpr>
+    return (_set_referer(r) for r in result or ())
+  File "d:\anaconda3\lib\site-packages\scrapy\spidermiddlewares\urllength.py", line 37, in <genexpr>
+    return (r for r in result or () if _filter(r))
+  File "d:\anaconda3\lib\site-packages\scrapy\spidermiddlewares\depth.py", line 58, in <genexpr>
+    return (r for r in result or () if _filter(r))
+  File "E:\ScrapyProject\gover\gover\spiders\ygzw.py", line 36, in parse
+    next_url = response.xpath('//a/text()=">"/@href').extract_first()
+  File "d:\anaconda3\lib\site-packages\scrapy\http\response\text.py", line 119, in xpath
+    return self.selector.xpath(query, **kwargs)
+  File "d:\anaconda3\lib\site-packages\parsel\selector.py", line 242, in xpath
+    six.reraise(ValueError, ValueError(msg), sys.exc_info()[2])
+  File "d:\anaconda3\lib\site-packages\six.py", line 692, in reraise
+    raise value.with_traceback(tb)
+  File "d:\anaconda3\lib\site-packages\parsel\selector.py", line 238, in xpath
+    **kwargs)
+  File "src\lxml\etree.pyx", line 1586, in lxml.etree._Element.xpath
+  File "src\lxml\xpath.pxi", line 307, in lxml.etree.XPathElementEvaluator.__call__
+  File "src\lxml\xpath.pxi", line 227, in lxml.etree._XPathEvaluatorBase._handle_result
+ValueError: XPath error: Invalid type in //a/text()=">"/@href
+2019-03-08 22:47:52 [scrapy.core.engine] INFO: Closing spider (finished)
+2019-03-08 22:47:52 [scrapy.statscollectors] INFO: Dumping Scrapy stats:
+{'downloader/request_bytes': 14486,
+ 'downloader/request_count': 33,
+ 'downloader/request_method_count/GET': 33,
+ 'downloader/response_bytes': 340930,
+ 'downloader/response_count': 33,
+ 'downloader/response_status_count/200': 32,
+ 'downloader/response_status_count/302': 1,
+ 'finish_reason': 'finished',
+ 'finish_time': datetime.datetime(2019, 3, 8, 14, 47, 52, 801936),
+ 'item_scraped_count': 30,
+ 'log_count/ERROR': 1,
+ 'log_count/INFO': 9,
+ 'request_depth_max': 1,
+ 'response_received_count': 32,
+ 'robotstxt/request_count': 1,
+ 'robotstxt/response_count': 1,
+ 'robotstxt/response_status_count/200': 1,
+ 'scheduler/dequeued': 31,
+ 'scheduler/dequeued/memory': 31,
+ 'scheduler/enqueued': 31,
+ 'scheduler/enqueued/memory': 31,
+ 'spider_exceptions/ValueError': 1,
+ 'start_time': datetime.datetime(2019, 3, 8, 14, 47, 50, 828592)}
+2019-03-08 22:47:52 [scrapy.core.engine] INFO: Spider closed (finished)
+2019-03-08 22:49:54 [scrapy.utils.log] INFO: Scrapy 1.6.0 started (bot: gover)
+2019-03-08 22:49:54 [scrapy.utils.log] INFO: Versions: lxml 4.3.2.0, libxml2 2.9.7, cssselect 1.0.3, parsel 1.5.1, w3lib 1.20.0, Twisted 18.9.0, Python 3.7.2 (default, Feb 21 2019, 17:35:59) [MSC v.1915 64 bit (AMD64)], pyOpenSSL 17.2.0 (OpenSSL 1.1.1b  26 Feb 2019), cryptography 2.6.1, Platform Windows-10-10.0.17134-SP0
+2019-03-08 22:49:54 [scrapy.crawler] INFO: Overridden settings: {'BOT_NAME': 'gover', 'LOG_FILE': './log.log', 'LOG_LEVEL': 'INFO', 'NEWSPIDER_MODULE': 'gover.spiders', 'ROBOTSTXT_OBEY': True, 'SPIDER_MODULES': ['gover.spiders'], 'USER_AGENT': 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/72.0.3626.119 Safari/537.36'}
+2019-03-08 22:49:54 [scrapy.extensions.telnet] INFO: Telnet Password: e097bb3ba0d06efc
+2019-03-08 22:49:54 [scrapy.middleware] INFO: Enabled extensions:
+['scrapy.extensions.corestats.CoreStats',
+ 'scrapy.extensions.telnet.TelnetConsole',
+ 'scrapy.extensions.logstats.LogStats']
+2019-03-08 22:49:55 [scrapy.middleware] INFO: Enabled downloader middlewares:
+['scrapy.downloadermiddlewares.robotstxt.RobotsTxtMiddleware',
+ 'scrapy.downloadermiddlewares.httpauth.HttpAuthMiddleware',
+ 'scrapy.downloadermiddlewares.downloadtimeout.DownloadTimeoutMiddleware',
+ 'scrapy.downloadermiddlewares.defaultheaders.DefaultHeadersMiddleware',
+ 'scrapy.downloadermiddlewares.useragent.UserAgentMiddleware',
+ 'scrapy.downloadermiddlewares.retry.RetryMiddleware',
+ 'scrapy.downloadermiddlewares.redirect.MetaRefreshMiddleware',
+ 'scrapy.downloadermiddlewares.httpcompression.HttpCompressionMiddleware',
+ 'scrapy.downloadermiddlewares.redirect.RedirectMiddleware',
+ 'scrapy.downloadermiddlewares.cookies.CookiesMiddleware',
+ 'scrapy.downloadermiddlewares.httpproxy.HttpProxyMiddleware',
+ 'scrapy.downloadermiddlewares.stats.DownloaderStats']
+2019-03-08 22:49:55 [scrapy.middleware] INFO: Enabled spider middlewares:
+['scrapy.spidermiddlewares.httperror.HttpErrorMiddleware',
+ 'scrapy.spidermiddlewares.offsite.OffsiteMiddleware',
+ 'scrapy.spidermiddlewares.referer.RefererMiddleware',
+ 'scrapy.spidermiddlewares.urllength.UrlLengthMiddleware',
+ 'scrapy.spidermiddlewares.depth.DepthMiddleware']
+2019-03-08 22:49:55 [scrapy.middleware] INFO: Enabled item pipelines:
+['gover.pipelines.GoverPipeline']
+2019-03-08 22:49:55 [scrapy.core.engine] INFO: Spider opened
+2019-03-08 22:49:55 [scrapy.extensions.logstats] INFO: Crawled 0 pages (at 0 pages/min), scraped 0 items (at 0 items/min)
+2019-03-08 22:49:55 [scrapy.extensions.telnet] INFO: Telnet console listening on 127.0.0.1:6023
+2019-03-08 22:50:55 [scrapy.extensions.logstats] INFO: Crawled 77 pages (at 77 pages/min), scraped 30 items (at 30 items/min)
+2019-03-08 22:51:55 [scrapy.extensions.logstats] INFO: Crawled 120 pages (at 43 pages/min), scraped 30 items (at 0 items/min)
+2019-03-08 22:52:55 [scrapy.extensions.logstats] INFO: Crawled 163 pages (at 43 pages/min), scraped 30 items (at 0 items/min)
+2019-03-08 22:53:55 [scrapy.extensions.logstats] INFO: Crawled 207 pages (at 44 pages/min), scraped 30 items (at 0 items/min)
+2019-03-08 22:54:55 [scrapy.extensions.logstats] INFO: Crawled 252 pages (at 45 pages/min), scraped 30 items (at 0 items/min)
+2019-03-08 22:55:55 [scrapy.extensions.logstats] INFO: Crawled 294 pages (at 42 pages/min), scraped 30 items (at 0 items/min)
+2019-03-08 22:56:55 [scrapy.extensions.logstats] INFO: Crawled 335 pages (at 41 pages/min), scraped 30 items (at 0 items/min)
+2019-03-08 22:57:55 [scrapy.extensions.logstats] INFO: Crawled 376 pages (at 41 pages/min), scraped 30 items (at 0 items/min)
+2019-03-08 22:58:54 [scrapy.utils.log] INFO: Scrapy 1.6.0 started (bot: gover)
+2019-03-08 22:58:54 [scrapy.utils.log] INFO: Versions: lxml 4.3.2.0, libxml2 2.9.7, cssselect 1.0.3, parsel 1.5.1, w3lib 1.20.0, Twisted 18.9.0, Python 3.7.2 (default, Feb 21 2019, 17:35:59) [MSC v.1915 64 bit (AMD64)], pyOpenSSL 17.2.0 (OpenSSL 1.1.1b  26 Feb 2019), cryptography 2.6.1, Platform Windows-10-10.0.17134-SP0
+2019-03-08 22:58:54 [scrapy.crawler] INFO: Overridden settings: {'BOT_NAME': 'gover', 'LOG_FILE': './log.log', 'LOG_LEVEL': 'INFO', 'NEWSPIDER_MODULE': 'gover.spiders', 'ROBOTSTXT_OBEY': True, 'SPIDER_MODULES': ['gover.spiders'], 'USER_AGENT': 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/72.0.3626.119 Safari/537.36'}
+2019-03-08 22:58:54 [scrapy.extensions.telnet] INFO: Telnet Password: 5de295e1ae320651
+2019-03-08 22:58:54 [scrapy.middleware] INFO: Enabled extensions:
+['scrapy.extensions.corestats.CoreStats',
+ 'scrapy.extensions.telnet.TelnetConsole',
+ 'scrapy.extensions.logstats.LogStats']
+2019-03-08 22:58:55 [scrapy.middleware] INFO: Enabled downloader middlewares:
+['scrapy.downloadermiddlewares.robotstxt.RobotsTxtMiddleware',
+ 'scrapy.downloadermiddlewares.httpauth.HttpAuthMiddleware',
+ 'scrapy.downloadermiddlewares.downloadtimeout.DownloadTimeoutMiddleware',
+ 'scrapy.downloadermiddlewares.defaultheaders.DefaultHeadersMiddleware',
+ 'scrapy.downloadermiddlewares.useragent.UserAgentMiddleware',
+ 'scrapy.downloadermiddlewares.retry.RetryMiddleware',
+ 'scrapy.downloadermiddlewares.redirect.MetaRefreshMiddleware',
+ 'scrapy.downloadermiddlewares.httpcompression.HttpCompressionMiddleware',
+ 'scrapy.downloadermiddlewares.redirect.RedirectMiddleware',
+ 'scrapy.downloadermiddlewares.cookies.CookiesMiddleware',
+ 'scrapy.downloadermiddlewares.httpproxy.HttpProxyMiddleware',
+ 'scrapy.downloadermiddlewares.stats.DownloaderStats']
+2019-03-08 22:58:55 [scrapy.middleware] INFO: Enabled spider middlewares:
+['scrapy.spidermiddlewares.httperror.HttpErrorMiddleware',
+ 'scrapy.spidermiddlewares.offsite.OffsiteMiddleware',
+ 'scrapy.spidermiddlewares.referer.RefererMiddleware',
+ 'scrapy.spidermiddlewares.urllength.UrlLengthMiddleware',
+ 'scrapy.spidermiddlewares.depth.DepthMiddleware']
+2019-03-08 22:58:55 [scrapy.middleware] INFO: Enabled item pipelines:
+['gover.pipelines.GoverPipeline']
+2019-03-08 22:58:55 [scrapy.core.engine] INFO: Spider opened
+2019-03-08 22:58:55 [scrapy.extensions.logstats] INFO: Crawled 0 pages (at 0 pages/min), scraped 0 items (at 0 items/min)
+2019-03-08 22:58:55 [scrapy.extensions.telnet] INFO: Telnet console listening on 127.0.0.1:6023
+2019-03-08 22:59:55 [scrapy.extensions.logstats] INFO: Crawled 174 pages (at 174 pages/min), scraped 30 items (at 30 items/min)
+2019-03-08 23:00:40 [scrapy.utils.log] INFO: Scrapy 1.6.0 started (bot: gover)
+2019-03-08 23:00:40 [scrapy.utils.log] INFO: Versions: lxml 4.3.2.0, libxml2 2.9.7, cssselect 1.0.3, parsel 1.5.1, w3lib 1.20.0, Twisted 18.9.0, Python 3.7.2 (default, Feb 21 2019, 17:35:59) [MSC v.1915 64 bit (AMD64)], pyOpenSSL 17.2.0 (OpenSSL 1.1.1b  26 Feb 2019), cryptography 2.6.1, Platform Windows-10-10.0.17134-SP0
+2019-03-08 23:00:40 [scrapy.crawler] INFO: Overridden settings: {'BOT_NAME': 'gover', 'LOG_FILE': './log.log', 'LOG_LEVEL': 'INFO', 'NEWSPIDER_MODULE': 'gover.spiders', 'ROBOTSTXT_OBEY': True, 'SPIDER_MODULES': ['gover.spiders'], 'USER_AGENT': 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/72.0.3626.119 Safari/537.36'}
+2019-03-08 23:00:40 [scrapy.extensions.telnet] INFO: Telnet Password: b0103cbee9d8a45e
+2019-03-08 23:00:40 [scrapy.middleware] INFO: Enabled extensions:
+['scrapy.extensions.corestats.CoreStats',
+ 'scrapy.extensions.telnet.TelnetConsole',
+ 'scrapy.extensions.logstats.LogStats']
+2019-03-08 23:00:40 [scrapy.middleware] INFO: Enabled downloader middlewares:
+['scrapy.downloadermiddlewares.robotstxt.RobotsTxtMiddleware',
+ 'scrapy.downloadermiddlewares.httpauth.HttpAuthMiddleware',
+ 'scrapy.downloadermiddlewares.downloadtimeout.DownloadTimeoutMiddleware',
+ 'scrapy.downloadermiddlewares.defaultheaders.DefaultHeadersMiddleware',
+ 'scrapy.downloadermiddlewares.useragent.UserAgentMiddleware',
+ 'scrapy.downloadermiddlewares.retry.RetryMiddleware',
+ 'scrapy.downloadermiddlewares.redirect.MetaRefreshMiddleware',
+ 'scrapy.downloadermiddlewares.httpcompression.HttpCompressionMiddleware',
+ 'scrapy.downloadermiddlewares.redirect.RedirectMiddleware',
+ 'scrapy.downloadermiddlewares.cookies.CookiesMiddleware',
+ 'scrapy.downloadermiddlewares.httpproxy.HttpProxyMiddleware',
+ 'scrapy.downloadermiddlewares.stats.DownloaderStats']
+2019-03-08 23:00:40 [scrapy.middleware] INFO: Enabled spider middlewares:
+['scrapy.spidermiddlewares.httperror.HttpErrorMiddleware',
+ 'scrapy.spidermiddlewares.offsite.OffsiteMiddleware',
+ 'scrapy.spidermiddlewares.referer.RefererMiddleware',
+ 'scrapy.spidermiddlewares.urllength.UrlLengthMiddleware',
+ 'scrapy.spidermiddlewares.depth.DepthMiddleware']
+2019-03-08 23:00:40 [scrapy.middleware] INFO: Enabled item pipelines:
+['gover.pipelines.GoverPipeline']
+2019-03-08 23:00:40 [scrapy.core.engine] INFO: Spider opened
+2019-03-08 23:00:40 [scrapy.extensions.logstats] INFO: Crawled 0 pages (at 0 pages/min), scraped 0 items (at 0 items/min)
+2019-03-08 23:00:40 [scrapy.extensions.telnet] INFO: Telnet console listening on 127.0.0.1:6023
+2019-03-08 23:01:40 [scrapy.extensions.logstats] INFO: Crawled 213 pages (at 213 pages/min), scraped 30 items (at 30 items/min)
+2019-03-08 23:02:40 [scrapy.extensions.logstats] INFO: Crawled 407 pages (at 194 pages/min), scraped 30 items (at 0 items/min)
+2019-03-08 23:03:23 [scrapy.core.engine] INFO: Closing spider (finished)
+2019-03-08 23:03:23 [scrapy.statscollectors] INFO: Dumping Scrapy stats:
+{'downloader/request_bytes': 234111,
+ 'downloader/request_count': 442,
+ 'downloader/request_method_count/GET': 442,
+ 'downloader/response_bytes': 12337555,
+ 'downloader/response_count': 442,
+ 'downloader/response_status_count/200': 441,
+ 'downloader/response_status_count/302': 1,
+ 'finish_reason': 'finished',
+ 'finish_time': datetime.datetime(2019, 3, 8, 15, 3, 23, 580188),
+ 'item_scraped_count': 30,
+ 'log_count/INFO': 11,
+ 'request_depth_max': 409,
+ 'response_received_count': 441,
+ 'robotstxt/request_count': 1,
+ 'robotstxt/response_count': 1,
+ 'robotstxt/response_status_count/200': 1,
+ 'scheduler/dequeued': 440,
+ 'scheduler/dequeued/memory': 440,
+ 'scheduler/enqueued': 440,
+ 'scheduler/enqueued/memory': 440,
+ 'start_time': datetime.datetime(2019, 3, 8, 15, 0, 40, 569023)}
+2019-03-08 23:03:23 [scrapy.core.engine] INFO: Spider closed (finished)
+2019-03-08 23:28:25 [scrapy.utils.log] INFO: Scrapy 1.6.0 started (bot: gover)
+2019-03-08 23:28:25 [scrapy.utils.log] INFO: Versions: lxml 4.3.2.0, libxml2 2.9.7, cssselect 1.0.3, parsel 1.5.1, w3lib 1.20.0, Twisted 18.9.0, Python 3.7.2 (default, Feb 21 2019, 17:35:59) [MSC v.1915 64 bit (AMD64)], pyOpenSSL 17.2.0 (OpenSSL 1.1.1b  26 Feb 2019), cryptography 2.6.1, Platform Windows-10-10.0.17134-SP0
+2019-03-08 23:28:25 [scrapy.crawler] INFO: Overridden settings: {'BOT_NAME': 'gover', 'LOG_FILE': './log.log', 'LOG_LEVEL': 'INFO', 'NEWSPIDER_MODULE': 'gover.spiders', 'ROBOTSTXT_OBEY': True, 'SPIDER_MODULES': ['gover.spiders'], 'USER_AGENT': 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/72.0.3626.119 Safari/537.36'}
+2019-03-08 23:28:25 [scrapy.extensions.telnet] INFO: Telnet Password: 3bc5002b801ae4a9
+2019-03-08 23:28:25 [scrapy.middleware] INFO: Enabled extensions:
+['scrapy.extensions.corestats.CoreStats',
+ 'scrapy.extensions.telnet.TelnetConsole',
+ 'scrapy.extensions.logstats.LogStats']
+2019-03-08 23:28:25 [scrapy.middleware] INFO: Enabled downloader middlewares:
+['scrapy.downloadermiddlewares.robotstxt.RobotsTxtMiddleware',
+ 'scrapy.downloadermiddlewares.httpauth.HttpAuthMiddleware',
+ 'scrapy.downloadermiddlewares.downloadtimeout.DownloadTimeoutMiddleware',
+ 'scrapy.downloadermiddlewares.defaultheaders.DefaultHeadersMiddleware',
+ 'scrapy.downloadermiddlewares.useragent.UserAgentMiddleware',
+ 'scrapy.downloadermiddlewares.retry.RetryMiddleware',
+ 'scrapy.downloadermiddlewares.redirect.MetaRefreshMiddleware',
+ 'scrapy.downloadermiddlewares.httpcompression.HttpCompressionMiddleware',
+ 'scrapy.downloadermiddlewares.redirect.RedirectMiddleware',
+ 'scrapy.downloadermiddlewares.cookies.CookiesMiddleware',
+ 'scrapy.downloadermiddlewares.httpproxy.HttpProxyMiddleware',
+ 'scrapy.downloadermiddlewares.stats.DownloaderStats']
+2019-03-08 23:28:25 [scrapy.middleware] INFO: Enabled spider middlewares:
+['scrapy.spidermiddlewares.httperror.HttpErrorMiddleware',
+ 'scrapy.spidermiddlewares.offsite.OffsiteMiddleware',
+ 'scrapy.spidermiddlewares.referer.RefererMiddleware',
+ 'scrapy.spidermiddlewares.urllength.UrlLengthMiddleware',
+ 'scrapy.spidermiddlewares.depth.DepthMiddleware']
+2019-03-08 23:28:25 [scrapy.middleware] INFO: Enabled item pipelines:
+['gover.pipelines.GoverPipeline']
+2019-03-08 23:28:25 [scrapy.core.engine] INFO: Spider opened
+2019-03-08 23:28:25 [scrapy.extensions.logstats] INFO: Crawled 0 pages (at 0 pages/min), scraped 0 items (at 0 items/min)
+2019-03-08 23:28:25 [scrapy.extensions.telnet] INFO: Telnet console listening on 127.0.0.1:6023
+2019-03-08 23:28:27 [scrapy.core.scraper] ERROR: Spider error processing <GET http://wz.sun0769.com/html/question/201903/403848.shtml> (referer: http://wz.sun0769.com/html/top/ruse.shtml)
+Traceback (most recent call last):
+  File "d:\anaconda3\lib\site-packages\parsel\selector.py", line 238, in xpath
+    **kwargs)
+  File "src\lxml\etree.pyx", line 1586, in lxml.etree._Element.xpath
+  File "src\lxml\xpath.pxi", line 307, in lxml.etree.XPathElementEvaluator.__call__
+  File "src\lxml\xpath.pxi", line 227, in lxml.etree._XPathEvaluatorBase._handle_result
+lxml.etree.XPathEvalError: Invalid predicate
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "d:\anaconda3\lib\site-packages\scrapy\utils\defer.py", line 102, in iter_errback
+    yield next(it)
+  File "d:\anaconda3\lib\site-packages\scrapy\spidermiddlewares\offsite.py", line 29, in process_spider_output
+    for x in result:
+  File "d:\anaconda3\lib\site-packages\scrapy\spidermiddlewares\referer.py", line 339, in <genexpr>
+    return (_set_referer(r) for r in result or ())
+  File "d:\anaconda3\lib\site-packages\scrapy\spidermiddlewares\urllength.py", line 37, in <genexpr>
+    return (r for r in result or () if _filter(r))
+  File "d:\anaconda3\lib\site-packages\scrapy\spidermiddlewares\depth.py", line 58, in <genexpr>
+    return (r for r in result or () if _filter(r))
+  File "E:\ScrapyProject\gover\gover\spiders\ygzw.py", line 47, in parse_detail
+    items['detail_content'] = jud.xpath('../div[@class=""contentext]/text()').extract()
+  File "d:\anaconda3\lib\site-packages\parsel\selector.py", line 84, in xpath
+    return self.__class__(flatten([x.xpath(xpath, namespaces=namespaces, **kwargs) for x in self]))
+  File "d:\anaconda3\lib\site-packages\parsel\selector.py", line 84, in <listcomp>
+    return self.__class__(flatten([x.xpath(xpath, namespaces=namespaces, **kwargs) for x in self]))
+  File "d:\anaconda3\lib\site-packages\parsel\selector.py", line 242, in xpath
+    six.reraise(ValueError, ValueError(msg), sys.exc_info()[2])
+  File "d:\anaconda3\lib\site-packages\six.py", line 692, in reraise
+    raise value.with_traceback(tb)
+  File "d:\anaconda3\lib\site-packages\parsel\selector.py", line 238, in xpath
+    **kwargs)
+  File "src\lxml\etree.pyx", line 1586, in lxml.etree._Element.xpath
+  File "src\lxml\xpath.pxi", line 307, in lxml.etree.XPathElementEvaluator.__call__
+  File "src\lxml\xpath.pxi", line 227, in lxml.etree._XPathEvaluatorBase._handle_result
+ValueError: XPath error: Invalid predicate in ../div[@class=""contentext]/text()
+2019-03-08 23:28:27 [scrapy.core.scraper] ERROR: Spider error processing <GET http://wz.sun0769.com/html/question/201903/403628.shtml> (referer: http://wz.sun0769.com/html/top/ruse.shtml)
+Traceback (most recent call last):
+  File "d:\anaconda3\lib\site-packages\parsel\selector.py", line 238, in xpath
+    **kwargs)
+  File "src\lxml\etree.pyx", line 1586, in lxml.etree._Element.xpath
+  File "src\lxml\xpath.pxi", line 307, in lxml.etree.XPathElementEvaluator.__call__
+  File "src\lxml\xpath.pxi", line 227, in lxml.etree._XPathEvaluatorBase._handle_result
+lxml.etree.XPathEvalError: Invalid predicate
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "d:\anaconda3\lib\site-packages\scrapy\utils\defer.py", line 102, in iter_errback
+    yield next(it)
+  File "d:\anaconda3\lib\site-packages\scrapy\spidermiddlewares\offsite.py", line 29, in process_spider_output
+    for x in result:
+  File "d:\anaconda3\lib\site-packages\scrapy\spidermiddlewares\referer.py", line 339, in <genexpr>
+    return (_set_referer(r) for r in result or ())
+  File "d:\anaconda3\lib\site-packages\scrapy\spidermiddlewares\urllength.py", line 37, in <genexpr>
+    return (r for r in result or () if _filter(r))
+  File "d:\anaconda3\lib\site-packages\scrapy\spidermiddlewares\depth.py", line 58, in <genexpr>
+    return (r for r in result or () if _filter(r))
+  File "E:\ScrapyProject\gover\gover\spiders\ygzw.py", line 47, in parse_detail
+    items['detail_content'] = jud.xpath('../div[@class=""contentext]/text()').extract()
+  File "d:\anaconda3\lib\site-packages\parsel\selector.py", line 84, in xpath
+    return self.__class__(flatten([x.xpath(xpath, namespaces=namespaces, **kwargs) for x in self]))
+  File "d:\anaconda3\lib\site-packages\parsel\selector.py", line 84, in <listcomp>
+    return self.__class__(flatten([x.xpath(xpath, namespaces=namespaces, **kwargs) for x in self]))
+  File "d:\anaconda3\lib\site-packages\parsel\selector.py", line 242, in xpath
+    six.reraise(ValueError, ValueError(msg), sys.exc_info()[2])
+  File "d:\anaconda3\lib\site-packages\six.py", line 692, in reraise
+    raise value.with_traceback(tb)
+  File "d:\anaconda3\lib\site-packages\parsel\selector.py", line 238, in xpath
+    **kwargs)
+  File "src\lxml\etree.pyx", line 1586, in lxml.etree._Element.xpath
+  File "src\lxml\xpath.pxi", line 307, in lxml.etree.XPathElementEvaluator.__call__
+  File "src\lxml\xpath.pxi", line 227, in lxml.etree._XPathEvaluatorBase._handle_result
+ValueError: XPath error: Invalid predicate in ../div[@class=""contentext]/text()
+2019-03-08 23:28:27 [scrapy.core.scraper] ERROR: Spider error processing <GET http://wz.sun0769.com/html/question/201903/403236.shtml> (referer: http://wz.sun0769.com/html/top/ruse.shtml)
+Traceback (most recent call last):
+  File "d:\anaconda3\lib\site-packages\parsel\selector.py", line 238, in xpath
+    **kwargs)
+  File "src\lxml\etree.pyx", line 1586, in lxml.etree._Element.xpath
+  File "src\lxml\xpath.pxi", line 307, in lxml.etree.XPathElementEvaluator.__call__
+  File "src\lxml\xpath.pxi", line 227, in lxml.etree._XPathEvaluatorBase._handle_result
+lxml.etree.XPathEvalError: Invalid predicate
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "d:\anaconda3\lib\site-packages\scrapy\utils\defer.py", line 102, in iter_errback
+    yield next(it)
+  File "d:\anaconda3\lib\site-packages\scrapy\spidermiddlewares\offsite.py", line 29, in process_spider_output
+    for x in result:
+  File "d:\anaconda3\lib\site-packages\scrapy\spidermiddlewares\referer.py", line 339, in <genexpr>
+    return (_set_referer(r) for r in result or ())
+  File "d:\anaconda3\lib\site-packages\scrapy\spidermiddlewares\urllength.py", line 37, in <genexpr>
+    return (r for r in result or () if _filter(r))
+  File "d:\anaconda3\lib\site-packages\scrapy\spidermiddlewares\depth.py", line 58, in <genexpr>
+    return (r for r in result or () if _filter(r))
+  File "E:\ScrapyProject\gover\gover\spiders\ygzw.py", line 47, in parse_detail
+    items['detail_content'] = jud.xpath('../div[@class=""contentext]/text()').extract()
+  File "d:\anaconda3\lib\site-packages\parsel\selector.py", line 84, in xpath
+    return self.__class__(flatten([x.xpath(xpath, namespaces=namespaces, **kwargs) for x in self]))
+  File "d:\anaconda3\lib\site-packages\parsel\selector.py", line 84, in <listcomp>
+    return self.__class__(flatten([x.xpath(xpath, namespaces=namespaces, **kwargs) for x in self]))
+  File "d:\anaconda3\lib\site-packages\parsel\selector.py", line 242, in xpath
+    six.reraise(ValueError, ValueError(msg), sys.exc_info()[2])
+  File "d:\anaconda3\lib\site-packages\six.py", line 692, in reraise
+    raise value.with_traceback(tb)
+  File "d:\anaconda3\lib\site-packages\parsel\selector.py", line 238, in xpath
+    **kwargs)
+  File "src\lxml\etree.pyx", line 1586, in lxml.etree._Element.xpath
+  File "src\lxml\xpath.pxi", line 307, in lxml.etree.XPathElementEvaluator.__call__
+  File "src\lxml\xpath.pxi", line 227, in lxml.etree._XPathEvaluatorBase._handle_result
+ValueError: XPath error: Invalid predicate in ../div[@class=""contentext]/text()
+2019-03-08 23:28:27 [scrapy.core.scraper] ERROR: Spider error processing <GET http://wz.sun0769.com/html/question/201903/403292.shtml> (referer: http://wz.sun0769.com/html/top/ruse.shtml)
+Traceback (most recent call last):
+  File "d:\anaconda3\lib\site-packages\parsel\selector.py", line 238, in xpath
+    **kwargs)
+  File "src\lxml\etree.pyx", line 1586, in lxml.etree._Element.xpath
+  File "src\lxml\xpath.pxi", line 307, in lxml.etree.XPathElementEvaluator.__call__
+  File "src\lxml\xpath.pxi", line 227, in lxml.etree._XPathEvaluatorBase._handle_result
+lxml.etree.XPathEvalError: Invalid predicate
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "d:\anaconda3\lib\site-packages\scrapy\utils\defer.py", line 102, in iter_errback
+    yield next(it)
+  File "d:\anaconda3\lib\site-packages\scrapy\spidermiddlewares\offsite.py", line 29, in process_spider_output
+    for x in result:
+  File "d:\anaconda3\lib\site-packages\scrapy\spidermiddlewares\referer.py", line 339, in <genexpr>
+    return (_set_referer(r) for r in result or ())
+  File "d:\anaconda3\lib\site-packages\scrapy\spidermiddlewares\urllength.py", line 37, in <genexpr>
+    return (r for r in result or () if _filter(r))
+  File "d:\anaconda3\lib\site-packages\scrapy\spidermiddlewares\depth.py", line 58, in <genexpr>
+    return (r for r in result or () if _filter(r))
+  File "E:\ScrapyProject\gover\gover\spiders\ygzw.py", line 47, in parse_detail
+    items['detail_content'] = jud.xpath('../div[@class=""contentext]/text()').extract()
+  File "d:\anaconda3\lib\site-packages\parsel\selector.py", line 84, in xpath
+    return self.__class__(flatten([x.xpath(xpath, namespaces=namespaces, **kwargs) for x in self]))
+  File "d:\anaconda3\lib\site-packages\parsel\selector.py", line 84, in <listcomp>
+    return self.__class__(flatten([x.xpath(xpath, namespaces=namespaces, **kwargs) for x in self]))
+  File "d:\anaconda3\lib\site-packages\parsel\selector.py", line 242, in xpath
+    six.reraise(ValueError, ValueError(msg), sys.exc_info()[2])
+  File "d:\anaconda3\lib\site-packages\six.py", line 692, in reraise
+    raise value.with_traceback(tb)
+  File "d:\anaconda3\lib\site-packages\parsel\selector.py", line 238, in xpath
+    **kwargs)
+  File "src\lxml\etree.pyx", line 1586, in lxml.etree._Element.xpath
+  File "src\lxml\xpath.pxi", line 307, in lxml.etree.XPathElementEvaluator.__call__
+  File "src\lxml\xpath.pxi", line 227, in lxml.etree._XPathEvaluatorBase._handle_result
+ValueError: XPath error: Invalid predicate in ../div[@class=""contentext]/text()
+2019-03-08 23:28:27 [scrapy.core.scraper] ERROR: Spider error processing <GET http://wz.sun0769.com/html/question/201903/403732.shtml> (referer: http://wz.sun0769.com/html/top/ruse.shtml)
+Traceback (most recent call last):
+  File "d:\anaconda3\lib\site-packages\parsel\selector.py", line 238, in xpath
+    **kwargs)
+  File "src\lxml\etree.pyx", line 1586, in lxml.etree._Element.xpath
+  File "src\lxml\xpath.pxi", line 307, in lxml.etree.XPathElementEvaluator.__call__
+  File "src\lxml\xpath.pxi", line 227, in lxml.etree._XPathEvaluatorBase._handle_result
+lxml.etree.XPathEvalError: Invalid predicate
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "d:\anaconda3\lib\site-packages\scrapy\utils\defer.py", line 102, in iter_errback
+    yield next(it)
+  File "d:\anaconda3\lib\site-packages\scrapy\spidermiddlewares\offsite.py", line 29, in process_spider_output
+    for x in result:
+  File "d:\anaconda3\lib\site-packages\scrapy\spidermiddlewares\referer.py", line 339, in <genexpr>
+    return (_set_referer(r) for r in result or ())
+  File "d:\anaconda3\lib\site-packages\scrapy\spidermiddlewares\urllength.py", line 37, in <genexpr>
+    return (r for r in result or () if _filter(r))
+  File "d:\anaconda3\lib\site-packages\scrapy\spidermiddlewares\depth.py", line 58, in <genexpr>
+    return (r for r in result or () if _filter(r))
+  File "E:\ScrapyProject\gover\gover\spiders\ygzw.py", line 47, in parse_detail
+    items['detail_content'] = jud.xpath('../div[@class=""contentext]/text()').extract()
+  File "d:\anaconda3\lib\site-packages\parsel\selector.py", line 84, in xpath
+    return self.__class__(flatten([x.xpath(xpath, namespaces=namespaces, **kwargs) for x in self]))
+  File "d:\anaconda3\lib\site-packages\parsel\selector.py", line 84, in <listcomp>
+    return self.__class__(flatten([x.xpath(xpath, namespaces=namespaces, **kwargs) for x in self]))
+  File "d:\anaconda3\lib\site-packages\parsel\selector.py", line 242, in xpath
+    six.reraise(ValueError, ValueError(msg), sys.exc_info()[2])
+  File "d:\anaconda3\lib\site-packages\six.py", line 692, in reraise
+    raise value.with_traceback(tb)
+  File "d:\anaconda3\lib\site-packages\parsel\selector.py", line 238, in xpath
+    **kwargs)
+  File "src\lxml\etree.pyx", line 1586, in lxml.etree._Element.xpath
+  File "src\lxml\xpath.pxi", line 307, in lxml.etree.XPathElementEvaluator.__call__
+  File "src\lxml\xpath.pxi", line 227, in lxml.etree._XPathEvaluatorBase._handle_result
+ValueError: XPath error: Invalid predicate in ../div[@class=""contentext]/text()
+2019-03-08 23:28:27 [scrapy.core.scraper] ERROR: Spider error processing <GET http://wz.sun0769.com/html/question/201903/403202.shtml> (referer: http://wz.sun0769.com/html/top/ruse.shtml)
+Traceback (most recent call last):
+  File "d:\anaconda3\lib\site-packages\parsel\selector.py", line 238, in xpath
+    **kwargs)
+  File "src\lxml\etree.pyx", line 1586, in lxml.etree._Element.xpath
+  File "src\lxml\xpath.pxi", line 307, in lxml.etree.XPathElementEvaluator.__call__
+  File "src\lxml\xpath.pxi", line 227, in lxml.etree._XPathEvaluatorBase._handle_result
+lxml.etree.XPathEvalError: Invalid predicate
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "d:\anaconda3\lib\site-packages\scrapy\utils\defer.py", line 102, in iter_errback
+    yield next(it)
+  File "d:\anaconda3\lib\site-packages\scrapy\spidermiddlewares\offsite.py", line 29, in process_spider_output
+    for x in result:
+  File "d:\anaconda3\lib\site-packages\scrapy\spidermiddlewares\referer.py", line 339, in <genexpr>
+    return (_set_referer(r) for r in result or ())
+  File "d:\anaconda3\lib\site-packages\scrapy\spidermiddlewares\urllength.py", line 37, in <genexpr>
+    return (r for r in result or () if _filter(r))
+  File "d:\anaconda3\lib\site-packages\scrapy\spidermiddlewares\depth.py", line 58, in <genexpr>
+    return (r for r in result or () if _filter(r))
+  File "E:\ScrapyProject\gover\gover\spiders\ygzw.py", line 47, in parse_detail
+    items['detail_content'] = jud.xpath('../div[@class=""contentext]/text()').extract()
+  File "d:\anaconda3\lib\site-packages\parsel\selector.py", line 84, in xpath
+    return self.__class__(flatten([x.xpath(xpath, namespaces=namespaces, **kwargs) for x in self]))
+  File "d:\anaconda3\lib\site-packages\parsel\selector.py", line 84, in <listcomp>
+    return self.__class__(flatten([x.xpath(xpath, namespaces=namespaces, **kwargs) for x in self]))
+  File "d:\anaconda3\lib\site-packages\parsel\selector.py", line 242, in xpath
+    six.reraise(ValueError, ValueError(msg), sys.exc_info()[2])
+  File "d:\anaconda3\lib\site-packages\six.py", line 692, in reraise
+    raise value.with_traceback(tb)
+  File "d:\anaconda3\lib\site-packages\parsel\selector.py", line 238, in xpath
+    **kwargs)
+  File "src\lxml\etree.pyx", line 1586, in lxml.etree._Element.xpath
+  File "src\lxml\xpath.pxi", line 307, in lxml.etree.XPathElementEvaluator.__call__
+  File "src\lxml\xpath.pxi", line 227, in lxml.etree._XPathEvaluatorBase._handle_result
+ValueError: XPath error: Invalid predicate in ../div[@class=""contentext]/text()
+2019-03-08 23:29:42 [scrapy.utils.log] INFO: Scrapy 1.6.0 started (bot: gover)
+2019-03-08 23:29:42 [scrapy.utils.log] INFO: Versions: lxml 4.3.2.0, libxml2 2.9.7, cssselect 1.0.3, parsel 1.5.1, w3lib 1.20.0, Twisted 18.9.0, Python 3.7.2 (default, Feb 21 2019, 17:35:59) [MSC v.1915 64 bit (AMD64)], pyOpenSSL 17.2.0 (OpenSSL 1.1.1b  26 Feb 2019), cryptography 2.6.1, Platform Windows-10-10.0.17134-SP0
+2019-03-08 23:29:42 [scrapy.crawler] INFO: Overridden settings: {'BOT_NAME': 'gover', 'LOG_FILE': './log.log', 'LOG_LEVEL': 'INFO', 'NEWSPIDER_MODULE': 'gover.spiders', 'ROBOTSTXT_OBEY': True, 'SPIDER_MODULES': ['gover.spiders'], 'USER_AGENT': 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/72.0.3626.119 Safari/537.36'}
+2019-03-08 23:29:42 [scrapy.extensions.telnet] INFO: Telnet Password: 606d7708c71fb12d
+2019-03-08 23:29:42 [scrapy.middleware] INFO: Enabled extensions:
+['scrapy.extensions.corestats.CoreStats',
+ 'scrapy.extensions.telnet.TelnetConsole',
+ 'scrapy.extensions.logstats.LogStats']
+2019-03-08 23:29:42 [scrapy.middleware] INFO: Enabled downloader middlewares:
+['scrapy.downloadermiddlewares.robotstxt.RobotsTxtMiddleware',
+ 'scrapy.downloadermiddlewares.httpauth.HttpAuthMiddleware',
+ 'scrapy.downloadermiddlewares.downloadtimeout.DownloadTimeoutMiddleware',
+ 'scrapy.downloadermiddlewares.defaultheaders.DefaultHeadersMiddleware',
+ 'scrapy.downloadermiddlewares.useragent.UserAgentMiddleware',
+ 'scrapy.downloadermiddlewares.retry.RetryMiddleware',
+ 'scrapy.downloadermiddlewares.redirect.MetaRefreshMiddleware',
+ 'scrapy.downloadermiddlewares.httpcompression.HttpCompressionMiddleware',
+ 'scrapy.downloadermiddlewares.redirect.RedirectMiddleware',
+ 'scrapy.downloadermiddlewares.cookies.CookiesMiddleware',
+ 'scrapy.downloadermiddlewares.httpproxy.HttpProxyMiddleware',
+ 'scrapy.downloadermiddlewares.stats.DownloaderStats']
+2019-03-08 23:29:42 [scrapy.middleware] INFO: Enabled spider middlewares:
+['scrapy.spidermiddlewares.httperror.HttpErrorMiddleware',
+ 'scrapy.spidermiddlewares.offsite.OffsiteMiddleware',
+ 'scrapy.spidermiddlewares.referer.RefererMiddleware',
+ 'scrapy.spidermiddlewares.urllength.UrlLengthMiddleware',
+ 'scrapy.spidermiddlewares.depth.DepthMiddleware']
+2019-03-08 23:29:42 [scrapy.middleware] INFO: Enabled item pipelines:
+['gover.pipelines.GoverPipeline']
+2019-03-08 23:29:42 [scrapy.core.engine] INFO: Spider opened
+2019-03-08 23:29:42 [scrapy.extensions.logstats] INFO: Crawled 0 pages (at 0 pages/min), scraped 0 items (at 0 items/min)
+2019-03-08 23:29:42 [scrapy.extensions.telnet] INFO: Telnet console listening on 127.0.0.1:6023
+2019-03-08 23:30:42 [scrapy.extensions.logstats] INFO: Crawled 109 pages (at 109 pages/min), scraped 30 items (at 30 items/min)
+2019-03-08 23:31:42 [scrapy.extensions.logstats] INFO: Crawled 157 pages (at 48 pages/min), scraped 30 items (at 0 items/min)
+2019-03-08 23:32:42 [scrapy.extensions.logstats] INFO: Crawled 202 pages (at 45 pages/min), scraped 30 items (at 0 items/min)
+2019-03-08 23:33:42 [scrapy.extensions.logstats] INFO: Crawled 248 pages (at 46 pages/min), scraped 30 items (at 0 items/min)
+2019-03-08 23:34:42 [scrapy.extensions.logstats] INFO: Crawled 293 pages (at 45 pages/min), scraped 30 items (at 0 items/min)
+2019-03-08 23:35:42 [scrapy.extensions.logstats] INFO: Crawled 338 pages (at 45 pages/min), scraped 30 items (at 0 items/min)
+2019-03-08 23:36:49 [scrapy.utils.log] INFO: Scrapy 1.6.0 started (bot: gover)
+2019-03-08 23:36:49 [scrapy.utils.log] INFO: Versions: lxml 4.3.2.0, libxml2 2.9.7, cssselect 1.0.3, parsel 1.5.1, w3lib 1.20.0, Twisted 18.9.0, Python 3.7.2 (default, Feb 21 2019, 17:35:59) [MSC v.1915 64 bit (AMD64)], pyOpenSSL 17.2.0 (OpenSSL 1.1.1b  26 Feb 2019), cryptography 2.6.1, Platform Windows-10-10.0.17134-SP0
+2019-03-08 23:36:49 [scrapy.crawler] INFO: Overridden settings: {'BOT_NAME': 'gover', 'LOG_FILE': './log.log', 'LOG_LEVEL': 'INFO', 'NEWSPIDER_MODULE': 'gover.spiders', 'ROBOTSTXT_OBEY': True, 'SPIDER_MODULES': ['gover.spiders'], 'USER_AGENT': 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/72.0.3626.119 Safari/537.36'}
+2019-03-08 23:36:49 [scrapy.extensions.telnet] INFO: Telnet Password: 30602463b27ee288
+2019-03-08 23:36:49 [scrapy.middleware] INFO: Enabled extensions:
+['scrapy.extensions.corestats.CoreStats',
+ 'scrapy.extensions.telnet.TelnetConsole',
+ 'scrapy.extensions.logstats.LogStats']
+2019-03-08 23:36:50 [scrapy.middleware] INFO: Enabled downloader middlewares:
+['scrapy.downloadermiddlewares.robotstxt.RobotsTxtMiddleware',
+ 'scrapy.downloadermiddlewares.httpauth.HttpAuthMiddleware',
+ 'scrapy.downloadermiddlewares.downloadtimeout.DownloadTimeoutMiddleware',
+ 'scrapy.downloadermiddlewares.defaultheaders.DefaultHeadersMiddleware',
+ 'scrapy.downloadermiddlewares.useragent.UserAgentMiddleware',
+ 'scrapy.downloadermiddlewares.retry.RetryMiddleware',
+ 'scrapy.downloadermiddlewares.redirect.MetaRefreshMiddleware',
+ 'scrapy.downloadermiddlewares.httpcompression.HttpCompressionMiddleware',
+ 'scrapy.downloadermiddlewares.redirect.RedirectMiddleware',
+ 'scrapy.downloadermiddlewares.cookies.CookiesMiddleware',
+ 'scrapy.downloadermiddlewares.httpproxy.HttpProxyMiddleware',
+ 'scrapy.downloadermiddlewares.stats.DownloaderStats']
+2019-03-08 23:36:50 [scrapy.middleware] INFO: Enabled spider middlewares:
+['scrapy.spidermiddlewares.httperror.HttpErrorMiddleware',
+ 'scrapy.spidermiddlewares.offsite.OffsiteMiddleware',
+ 'scrapy.spidermiddlewares.referer.RefererMiddleware',
+ 'scrapy.spidermiddlewares.urllength.UrlLengthMiddleware',
+ 'scrapy.spidermiddlewares.depth.DepthMiddleware']
+2019-03-08 23:36:50 [scrapy.middleware] INFO: Enabled item pipelines:
+['gover.pipelines.GoverPipeline']
+2019-03-08 23:36:50 [scrapy.core.engine] INFO: Spider opened
+2019-03-08 23:36:50 [scrapy.extensions.logstats] INFO: Crawled 0 pages (at 0 pages/min), scraped 0 items (at 0 items/min)
+2019-03-08 23:36:50 [scrapy.extensions.telnet] INFO: Telnet console listening on 127.0.0.1:6023
+2019-03-08 23:37:50 [scrapy.extensions.logstats] INFO: Crawled 214 pages (at 214 pages/min), scraped 30 items (at 30 items/min)
+2019-03-08 23:38:50 [scrapy.extensions.logstats] INFO: Crawled 387 pages (at 173 pages/min), scraped 30 items (at 0 items/min)
+2019-03-08 23:39:22 [scrapy.utils.log] INFO: Scrapy 1.6.0 started (bot: gover)
+2019-03-08 23:39:22 [scrapy.utils.log] INFO: Versions: lxml 4.3.2.0, libxml2 2.9.7, cssselect 1.0.3, parsel 1.5.1, w3lib 1.20.0, Twisted 18.9.0, Python 3.7.2 (default, Feb 21 2019, 17:35:59) [MSC v.1915 64 bit (AMD64)], pyOpenSSL 17.2.0 (OpenSSL 1.1.1b  26 Feb 2019), cryptography 2.6.1, Platform Windows-10-10.0.17134-SP0
+2019-03-08 23:39:22 [scrapy.crawler] INFO: Overridden settings: {'BOT_NAME': 'gover', 'LOG_FILE': './log.log', 'LOG_LEVEL': 'INFO', 'NEWSPIDER_MODULE': 'gover.spiders', 'ROBOTSTXT_OBEY': True, 'SPIDER_MODULES': ['gover.spiders'], 'USER_AGENT': 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/72.0.3626.119 Safari/537.36'}
+2019-03-08 23:39:22 [scrapy.extensions.telnet] INFO: Telnet Password: 5871952001f5208d
+2019-03-08 23:39:22 [scrapy.middleware] INFO: Enabled extensions:
+['scrapy.extensions.corestats.CoreStats',
+ 'scrapy.extensions.telnet.TelnetConsole',
+ 'scrapy.extensions.logstats.LogStats']
+2019-03-08 23:39:22 [scrapy.middleware] INFO: Enabled downloader middlewares:
+['scrapy.downloadermiddlewares.robotstxt.RobotsTxtMiddleware',
+ 'scrapy.downloadermiddlewares.httpauth.HttpAuthMiddleware',
+ 'scrapy.downloadermiddlewares.downloadtimeout.DownloadTimeoutMiddleware',
+ 'scrapy.downloadermiddlewares.defaultheaders.DefaultHeadersMiddleware',
+ 'scrapy.downloadermiddlewares.useragent.UserAgentMiddleware',
+ 'scrapy.downloadermiddlewares.retry.RetryMiddleware',
+ 'scrapy.downloadermiddlewares.redirect.MetaRefreshMiddleware',
+ 'scrapy.downloadermiddlewares.httpcompression.HttpCompressionMiddleware',
+ 'scrapy.downloadermiddlewares.redirect.RedirectMiddleware',
+ 'scrapy.downloadermiddlewares.cookies.CookiesMiddleware',
+ 'scrapy.downloadermiddlewares.httpproxy.HttpProxyMiddleware',
+ 'scrapy.downloadermiddlewares.stats.DownloaderStats']
+2019-03-08 23:39:22 [scrapy.middleware] INFO: Enabled spider middlewares:
+['scrapy.spidermiddlewares.httperror.HttpErrorMiddleware',
+ 'scrapy.spidermiddlewares.offsite.OffsiteMiddleware',
+ 'scrapy.spidermiddlewares.referer.RefererMiddleware',
+ 'scrapy.spidermiddlewares.urllength.UrlLengthMiddleware',
+ 'scrapy.spidermiddlewares.depth.DepthMiddleware']
+2019-03-08 23:39:22 [scrapy.middleware] INFO: Enabled item pipelines:
+['gover.pipelines.GoverPipeline']
+2019-03-08 23:39:22 [scrapy.core.engine] INFO: Spider opened
+2019-03-08 23:39:22 [scrapy.extensions.logstats] INFO: Crawled 0 pages (at 0 pages/min), scraped 0 items (at 0 items/min)
+2019-03-08 23:39:22 [scrapy.extensions.telnet] INFO: Telnet console listening on 127.0.0.1:6023
+2019-03-08 23:40:35 [scrapy.utils.log] INFO: Scrapy 1.6.0 started (bot: gover)
+2019-03-08 23:40:35 [scrapy.utils.log] INFO: Versions: lxml 4.3.2.0, libxml2 2.9.7, cssselect 1.0.3, parsel 1.5.1, w3lib 1.20.0, Twisted 18.9.0, Python 3.7.2 (default, Feb 21 2019, 17:35:59) [MSC v.1915 64 bit (AMD64)], pyOpenSSL 17.2.0 (OpenSSL 1.1.1b  26 Feb 2019), cryptography 2.6.1, Platform Windows-10-10.0.17134-SP0
+2019-03-08 23:40:35 [scrapy.crawler] INFO: Overridden settings: {'BOT_NAME': 'gover', 'LOG_FILE': './log.log', 'LOG_LEVEL': 'INFO', 'NEWSPIDER_MODULE': 'gover.spiders', 'ROBOTSTXT_OBEY': True, 'SPIDER_MODULES': ['gover.spiders'], 'USER_AGENT': 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/72.0.3626.119 Safari/537.36'}
+2019-03-08 23:40:35 [scrapy.extensions.telnet] INFO: Telnet Password: e3525e8c749b7a45
+2019-03-08 23:40:35 [scrapy.middleware] INFO: Enabled extensions:
+['scrapy.extensions.corestats.CoreStats',
+ 'scrapy.extensions.telnet.TelnetConsole',
+ 'scrapy.extensions.logstats.LogStats']
+2019-03-08 23:40:35 [scrapy.middleware] INFO: Enabled downloader middlewares:
+['scrapy.downloadermiddlewares.robotstxt.RobotsTxtMiddleware',
+ 'scrapy.downloadermiddlewares.httpauth.HttpAuthMiddleware',
+ 'scrapy.downloadermiddlewares.downloadtimeout.DownloadTimeoutMiddleware',
+ 'scrapy.downloadermiddlewares.defaultheaders.DefaultHeadersMiddleware',
+ 'scrapy.downloadermiddlewares.useragent.UserAgentMiddleware',
+ 'scrapy.downloadermiddlewares.retry.RetryMiddleware',
+ 'scrapy.downloadermiddlewares.redirect.MetaRefreshMiddleware',
+ 'scrapy.downloadermiddlewares.httpcompression.HttpCompressionMiddleware',
+ 'scrapy.downloadermiddlewares.redirect.RedirectMiddleware',
+ 'scrapy.downloadermiddlewares.cookies.CookiesMiddleware',
+ 'scrapy.downloadermiddlewares.httpproxy.HttpProxyMiddleware',
+ 'scrapy.downloadermiddlewares.stats.DownloaderStats']
+2019-03-08 23:40:35 [scrapy.middleware] INFO: Enabled spider middlewares:
+['scrapy.spidermiddlewares.httperror.HttpErrorMiddleware',
+ 'scrapy.spidermiddlewares.offsite.OffsiteMiddleware',
+ 'scrapy.spidermiddlewares.referer.RefererMiddleware',
+ 'scrapy.spidermiddlewares.urllength.UrlLengthMiddleware',
+ 'scrapy.spidermiddlewares.depth.DepthMiddleware']
+2019-03-08 23:40:35 [scrapy.middleware] INFO: Enabled item pipelines:
+['gover.pipelines.GoverPipeline']
+2019-03-08 23:40:35 [scrapy.core.engine] INFO: Spider opened
+2019-03-08 23:40:35 [scrapy.extensions.logstats] INFO: Crawled 0 pages (at 0 pages/min), scraped 0 items (at 0 items/min)
+2019-03-08 23:40:35 [scrapy.extensions.telnet] INFO: Telnet console listening on 127.0.0.1:6023
+2019-03-08 23:41:35 [scrapy.extensions.logstats] INFO: Crawled 255 pages (at 255 pages/min), scraped 30 items (at 30 items/min)
+2019-03-08 23:42:35 [scrapy.extensions.logstats] INFO: Crawled 425 pages (at 170 pages/min), scraped 30 items (at 0 items/min)
+2019-03-08 23:42:56 [scrapy.core.engine] INFO: Closing spider (finished)
+2019-03-08 23:42:56 [scrapy.statscollectors] INFO: Dumping Scrapy stats:
+{'downloader/request_bytes': 234111,
+ 'downloader/request_count': 442,
+ 'downloader/request_method_count/GET': 442,
+ 'downloader/response_bytes': 12344239,
+ 'downloader/response_count': 442,
+ 'downloader/response_status_count/200': 441,
+ 'downloader/response_status_count/302': 1,
+ 'finish_reason': 'finished',
+ 'finish_time': datetime.datetime(2019, 3, 8, 15, 42, 56, 544831),
+ 'item_scraped_count': 30,
+ 'log_count/INFO': 11,
+ 'request_depth_max': 409,
+ 'response_received_count': 441,
+ 'robotstxt/request_count': 1,
+ 'robotstxt/response_count': 1,
+ 'robotstxt/response_status_count/200': 1,
+ 'scheduler/dequeued': 440,
+ 'scheduler/dequeued/memory': 440,
+ 'scheduler/enqueued': 440,
+ 'scheduler/enqueued/memory': 440,
+ 'start_time': datetime.datetime(2019, 3, 8, 15, 40, 35, 349627)}
+2019-03-08 23:42:56 [scrapy.core.engine] INFO: Spider closed (finished)
+2019-03-08 23:50:32 [scrapy.utils.log] INFO: Scrapy 1.6.0 started (bot: gover)
+2019-03-08 23:50:32 [scrapy.utils.log] INFO: Versions: lxml 4.3.2.0, libxml2 2.9.7, cssselect 1.0.3, parsel 1.5.1, w3lib 1.20.0, Twisted 18.9.0, Python 3.7.2 (default, Feb 21 2019, 17:35:59) [MSC v.1915 64 bit (AMD64)], pyOpenSSL 17.2.0 (OpenSSL 1.1.1b  26 Feb 2019), cryptography 2.6.1, Platform Windows-10-10.0.17134-SP0
+2019-03-08 23:50:32 [scrapy.crawler] INFO: Overridden settings: {'BOT_NAME': 'gover', 'LOG_FILE': './log.log', 'LOG_LEVEL': 'INFO', 'NEWSPIDER_MODULE': 'gover.spiders', 'ROBOTSTXT_OBEY': True, 'SPIDER_MODULES': ['gover.spiders'], 'USER_AGENT': 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/72.0.3626.119 Safari/537.36'}
+2019-03-08 23:50:32 [scrapy.extensions.telnet] INFO: Telnet Password: fbf6aa656f538ad7
+2019-03-08 23:50:32 [scrapy.middleware] INFO: Enabled extensions:
+['scrapy.extensions.corestats.CoreStats',
+ 'scrapy.extensions.telnet.TelnetConsole',
+ 'scrapy.extensions.logstats.LogStats']
+2019-03-08 23:50:32 [scrapy.middleware] INFO: Enabled downloader middlewares:
+['scrapy.downloadermiddlewares.robotstxt.RobotsTxtMiddleware',
+ 'scrapy.downloadermiddlewares.httpauth.HttpAuthMiddleware',
+ 'scrapy.downloadermiddlewares.downloadtimeout.DownloadTimeoutMiddleware',
+ 'scrapy.downloadermiddlewares.defaultheaders.DefaultHeadersMiddleware',
+ 'scrapy.downloadermiddlewares.useragent.UserAgentMiddleware',
+ 'scrapy.downloadermiddlewares.retry.RetryMiddleware',
+ 'scrapy.downloadermiddlewares.redirect.MetaRefreshMiddleware',
+ 'scrapy.downloadermiddlewares.httpcompression.HttpCompressionMiddleware',
+ 'scrapy.downloadermiddlewares.redirect.RedirectMiddleware',
+ 'scrapy.downloadermiddlewares.cookies.CookiesMiddleware',
+ 'scrapy.downloadermiddlewares.httpproxy.HttpProxyMiddleware',
+ 'scrapy.downloadermiddlewares.stats.DownloaderStats']
+2019-03-08 23:50:32 [scrapy.middleware] INFO: Enabled spider middlewares:
+['scrapy.spidermiddlewares.httperror.HttpErrorMiddleware',
+ 'scrapy.spidermiddlewares.offsite.OffsiteMiddleware',
+ 'scrapy.spidermiddlewares.referer.RefererMiddleware',
+ 'scrapy.spidermiddlewares.urllength.UrlLengthMiddleware',
+ 'scrapy.spidermiddlewares.depth.DepthMiddleware']
+2019-03-08 23:50:32 [scrapy.middleware] INFO: Enabled item pipelines:
+['gover.pipelines.GoverPipeline']
+2019-03-08 23:50:32 [scrapy.core.engine] INFO: Spider opened
+2019-03-08 23:50:32 [scrapy.extensions.logstats] INFO: Crawled 0 pages (at 0 pages/min), scraped 0 items (at 0 items/min)
+2019-03-08 23:50:32 [scrapy.extensions.telnet] INFO: Telnet console listening on 127.0.0.1:6023
+2019-03-09 00:02:28 [scrapy.utils.log] INFO: Scrapy 1.6.0 started (bot: gover)
+2019-03-09 00:02:28 [scrapy.utils.log] INFO: Versions: lxml 4.3.2.0, libxml2 2.9.7, cssselect 1.0.3, parsel 1.5.1, w3lib 1.20.0, Twisted 18.9.0, Python 3.7.2 (default, Feb 21 2019, 17:35:59) [MSC v.1915 64 bit (AMD64)], pyOpenSSL 17.2.0 (OpenSSL 1.1.1b  26 Feb 2019), cryptography 2.6.1, Platform Windows-10-10.0.17134-SP0
+2019-03-09 00:02:28 [scrapy.crawler] INFO: Overridden settings: {'BOT_NAME': 'gover', 'LOG_FILE': './log.log', 'LOG_LEVEL': 'INFO', 'NEWSPIDER_MODULE': 'gover.spiders', 'ROBOTSTXT_OBEY': True, 'SPIDER_MODULES': ['gover.spiders'], 'USER_AGENT': 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/72.0.3626.119 Safari/537.36'}
+2019-03-09 00:02:28 [scrapy.extensions.telnet] INFO: Telnet Password: b6f1133075413077
+2019-03-09 00:02:28 [scrapy.middleware] INFO: Enabled extensions:
+['scrapy.extensions.corestats.CoreStats',
+ 'scrapy.extensions.telnet.TelnetConsole',
+ 'scrapy.extensions.logstats.LogStats']
+2019-03-09 00:02:28 [scrapy.middleware] INFO: Enabled downloader middlewares:
+['scrapy.downloadermiddlewares.robotstxt.RobotsTxtMiddleware',
+ 'scrapy.downloadermiddlewares.httpauth.HttpAuthMiddleware',
+ 'scrapy.downloadermiddlewares.downloadtimeout.DownloadTimeoutMiddleware',
+ 'scrapy.downloadermiddlewares.defaultheaders.DefaultHeadersMiddleware',
+ 'scrapy.downloadermiddlewares.useragent.UserAgentMiddleware',
+ 'scrapy.downloadermiddlewares.retry.RetryMiddleware',
+ 'scrapy.downloadermiddlewares.redirect.MetaRefreshMiddleware',
+ 'scrapy.downloadermiddlewares.httpcompression.HttpCompressionMiddleware',
+ 'scrapy.downloadermiddlewares.redirect.RedirectMiddleware',
+ 'scrapy.downloadermiddlewares.cookies.CookiesMiddleware',
+ 'scrapy.downloadermiddlewares.httpproxy.HttpProxyMiddleware',
+ 'scrapy.downloadermiddlewares.stats.DownloaderStats']
+2019-03-09 00:02:28 [scrapy.middleware] INFO: Enabled spider middlewares:
+['scrapy.spidermiddlewares.httperror.HttpErrorMiddleware',
+ 'scrapy.spidermiddlewares.offsite.OffsiteMiddleware',
+ 'scrapy.spidermiddlewares.referer.RefererMiddleware',
+ 'scrapy.spidermiddlewares.urllength.UrlLengthMiddleware',
+ 'scrapy.spidermiddlewares.depth.DepthMiddleware']
+2019-03-09 00:02:28 [scrapy.middleware] INFO: Enabled item pipelines:
+['gover.pipelines.GoverPipeline', 'gover.pipelines.MongodbPipeline']
+2019-03-09 00:02:28 [scrapy.core.engine] INFO: Spider opened
+2019-03-09 00:02:28 [scrapy.extensions.logstats] INFO: Crawled 0 pages (at 0 pages/min), scraped 0 items (at 0 items/min)
+2019-03-09 00:02:28 [scrapy.extensions.telnet] INFO: Telnet console listening on 127.0.0.1:6023
+2019-03-09 00:03:02 [scrapy.core.scraper] ERROR: Error processing {'date': '2019-03-08 15:53:11',
+ 'detail_content': ['寮步镇教育路路段在修路之前是有黄格线停车，同样的位置在修路后黄格没有画上，导致经常违章停车，但此位置之前是正规停车有黄格线，只是修路后黄格线没有再画上，建议相关部门在此路段把之前弄没的黄格线加上'],
+ 'detail_img': [],
+ 'detail_url': 'http://wz.sun0769.com/html/question/201903/403856.shtml',
+ 'location': '市交警支队',
+ 'num': '209488',
+ 'state': '待处理',
+ 'theme': '寮步镇寮步社区教育路段停车问题'}
+Traceback (most recent call last):
+  File "d:\anaconda3\lib\site-packages\twisted\internet\defer.py", line 654, in _runCallbacks
+    current.result = callback(current.result, *args, **kw)
+  File "E:\ScrapyProject\gover\gover\pipelines.py", line 39, in process_item
+    self.db[self.collection_name].insert(dict(item))
+  File "d:\anaconda3\lib\site-packages\pymongo\collection.py", line 3161, in insert
+    check_keys, manipulate, write_concern)
+  File "d:\anaconda3\lib\site-packages\pymongo\collection.py", line 607, in _insert
+    bypass_doc_val, session)
+  File "d:\anaconda3\lib\site-packages\pymongo\collection.py", line 595, in _insert_one
+    acknowledged, _insert_command, session)
+  File "d:\anaconda3\lib\site-packages\pymongo\mongo_client.py", line 1247, in _retryable_write
+    with self._tmp_session(session) as s:
+  File "d:\anaconda3\lib\contextlib.py", line 112, in __enter__
+    return next(self.gen)
+  File "d:\anaconda3\lib\site-packages\pymongo\mongo_client.py", line 1576, in _tmp_session
+    s = self._ensure_session(session)
+  File "d:\anaconda3\lib\site-packages\pymongo\mongo_client.py", line 1563, in _ensure_session
+    return self.__start_session(True, causal_consistency=False)
+  File "d:\anaconda3\lib\site-packages\pymongo\mongo_client.py", line 1516, in __start_session
+    server_session = self._get_server_session()
+  File "d:\anaconda3\lib\site-packages\pymongo\mongo_client.py", line 1549, in _get_server_session
+    return self._topology.get_server_session()
+  File "d:\anaconda3\lib\site-packages\pymongo\topology.py", line 427, in get_server_session
+    None)
+  File "d:\anaconda3\lib\site-packages\pymongo\topology.py", line 199, in _select_servers_loop
+    self._error_message(selector))
+pymongo.errors.ServerSelectionTimeoutError: mongo_uri:27017: [Errno 11001] getaddrinfo failed
+2019-03-09 00:03:32 [scrapy.core.scraper] ERROR: Error processing {'date': '2019-03-06 10:25:08',
+ 'detail_content': ['八一路轉環城路(寮步往市區方向),此路段分為橋上和橋下一同匯入輔道轉入環城路:',
+                    '1.橋上2道橋下1道(沒鐵騎隊時可以說是2道)共同匯入輔道,輔道只有3線道,因此經常',
+                    '拥堵',
+                    '!!!',
+                    '建議:橋上和橋下于匯入輔道入口增加紅綠燈交叉放行,並限制大車只能從橋下轉入環城路',
+                    '2.橋上車輛于轉入輔道時常有車輛跨越實線加塞,不按交規排隊,因此車輛更加壅堵!',
+                    '建議:實線部分往後延伸到橋上,並嚴格取締不提前並線車輛,和取締不從橋下轉入環城路的大車'],
+ 'detail_img': [],
+ 'detail_url': 'http://wz.sun0769.com/html/question/201903/403638.shtml',
+ 'location': '市交警支队',
+ 'num': '209317',
+ 'state': '已受理',
+ 'theme': '交通拥堵建議'}
+Traceback (most recent call last):
+  File "d:\anaconda3\lib\site-packages\twisted\internet\defer.py", line 654, in _runCallbacks
+    current.result = callback(current.result, *args, **kw)
+  File "E:\ScrapyProject\gover\gover\pipelines.py", line 39, in process_item
+    self.db[self.collection_name].insert(dict(item))
+  File "d:\anaconda3\lib\site-packages\pymongo\collection.py", line 3161, in insert
+    check_keys, manipulate, write_concern)
+  File "d:\anaconda3\lib\site-packages\pymongo\collection.py", line 607, in _insert
+    bypass_doc_val, session)
+  File "d:\anaconda3\lib\site-packages\pymongo\collection.py", line 595, in _insert_one
+    acknowledged, _insert_command, session)
+  File "d:\anaconda3\lib\site-packages\pymongo\mongo_client.py", line 1247, in _retryable_write
+    with self._tmp_session(session) as s:
+  File "d:\anaconda3\lib\contextlib.py", line 112, in __enter__
+    return next(self.gen)
+  File "d:\anaconda3\lib\site-packages\pymongo\mongo_client.py", line 1576, in _tmp_session
+    s = self._ensure_session(session)
+  File "d:\anaconda3\lib\site-packages\pymongo\mongo_client.py", line 1563, in _ensure_session
+    return self.__start_session(True, causal_consistency=False)
+  File "d:\anaconda3\lib\site-packages\pymongo\mongo_client.py", line 1516, in __start_session
+    server_session = self._get_server_session()
+  File "d:\anaconda3\lib\site-packages\pymongo\mongo_client.py", line 1549, in _get_server_session
+    return self._topology.get_server_session()
+  File "d:\anaconda3\lib\site-packages\pymongo\topology.py", line 427, in get_server_session
+    None)
+  File "d:\anaconda3\lib\site-packages\pymongo\topology.py", line 199, in _select_servers_loop
+    self._error_message(selector))
+pymongo.errors.ServerSelectionTimeoutError: mongo_uri:27017: [Errno 11001] getaddrinfo failed
+2019-03-09 00:04:02 [scrapy.core.scraper] ERROR: Error processing {'date': '2019-03-05 10:52:28',
+ 'detail_content': ['厚街N年前说要建、湖景小学、湖景幼儿园、修建将军路至南城工业园、职校西路至南城工业园段路等联网路线。N年已经过去了。一点进展也没有，真的希望政府加大路网建设力度。',
+                    '阳光热线：',
+                    '关于群众咨询厚街联网路线',
+                    '的问题，经获悉，现将情况回复如下：',
+                    '感谢您宝贵的意见,关于咨询厚街规划项目工程，如有更多的问题可以向镇重点办进行详情咨询，咨询电话0769-81695566',
+                    '镇重点办',
+                    '。',
+                    '谢谢。',
+                    '2019年3月'],
+ 'detail_img': [],
+ 'detail_url': 'http://wz.sun0769.com/html/question/201903/403567.shtml',
+ 'location': '厚街',
+ 'num': '209266',
+ 'state': '已回复',
+ 'theme': '加快将军路至南城工业园、职校西路至南城工业园段路等联网路线'}
+Traceback (most recent call last):
+  File "d:\anaconda3\lib\site-packages\twisted\internet\defer.py", line 654, in _runCallbacks
+    current.result = callback(current.result, *args, **kw)
+  File "E:\ScrapyProject\gover\gover\pipelines.py", line 39, in process_item
+    self.db[self.collection_name].insert(dict(item))
+  File "d:\anaconda3\lib\site-packages\pymongo\collection.py", line 3161, in insert
+    check_keys, manipulate, write_concern)
+  File "d:\anaconda3\lib\site-packages\pymongo\collection.py", line 607, in _insert
+    bypass_doc_val, session)
+  File "d:\anaconda3\lib\site-packages\pymongo\collection.py", line 595, in _insert_one
+    acknowledged, _insert_command, session)
+  File "d:\anaconda3\lib\site-packages\pymongo\mongo_client.py", line 1247, in _retryable_write
+    with self._tmp_session(session) as s:
+  File "d:\anaconda3\lib\contextlib.py", line 112, in __enter__
+    return next(self.gen)
+  File "d:\anaconda3\lib\site-packages\pymongo\mongo_client.py", line 1576, in _tmp_session
+    s = self._ensure_session(session)
+  File "d:\anaconda3\lib\site-packages\pymongo\mongo_client.py", line 1563, in _ensure_session
+    return self.__start_session(True, causal_consistency=False)
+  File "d:\anaconda3\lib\site-packages\pymongo\mongo_client.py", line 1516, in __start_session
+    server_session = self._get_server_session()
+  File "d:\anaconda3\lib\site-packages\pymongo\mongo_client.py", line 1549, in _get_server_session
+    return self._topology.get_server_session()
+  File "d:\anaconda3\lib\site-packages\pymongo\topology.py", line 427, in get_server_session
+    None)
+  File "d:\anaconda3\lib\site-packages\pymongo\topology.py", line 199, in _select_servers_loop
+    self._error_message(selector))
+pymongo.errors.ServerSelectionTimeoutError: mongo_uri:27017: [Errno 11001] getaddrinfo failed
+2019-03-09 00:04:33 [scrapy.core.scraper] ERROR: Error processing {'date': '2019-03-07 16:14:12',
+ 'detail_content': ['尊敬的领导，自从东莞蓝色交通巴士的开通，大大方便了东莞市民出行。但有些站台的设立不太合理。比如848路（桥头--黄江）金朗街站~~社贝卫生站足足有1.5公里，中间竟没有一个站台停靠，并且这里人流量比较大。希望能够在这中间增加一个停靠站点。'],
+ 'detail_img': [],
+ 'detail_url': 'http://wz.sun0769.com/html/question/201903/403784.shtml',
+ 'location': '黄江',
+ 'num': '209433',
+ 'state': '待处理',
+ 'theme': '公交车的问题'}
+Traceback (most recent call last):
+  File "d:\anaconda3\lib\site-packages\twisted\internet\defer.py", line 654, in _runCallbacks
+    current.result = callback(current.result, *args, **kw)
+  File "E:\ScrapyProject\gover\gover\pipelines.py", line 39, in process_item
+    self.db[self.collection_name].insert(dict(item))
+  File "d:\anaconda3\lib\site-packages\pymongo\collection.py", line 3161, in insert
+    check_keys, manipulate, write_concern)
+  File "d:\anaconda3\lib\site-packages\pymongo\collection.py", line 607, in _insert
+    bypass_doc_val, session)
+  File "d:\anaconda3\lib\site-packages\pymongo\collection.py", line 595, in _insert_one
+    acknowledged, _insert_command, session)
+  File "d:\anaconda3\lib\site-packages\pymongo\mongo_client.py", line 1247, in _retryable_write
+    with self._tmp_session(session) as s:
+  File "d:\anaconda3\lib\contextlib.py", line 112, in __enter__
+    return next(self.gen)
+  File "d:\anaconda3\lib\site-packages\pymongo\mongo_client.py", line 1576, in _tmp_session
+    s = self._ensure_session(session)
+  File "d:\anaconda3\lib\site-packages\pymongo\mongo_client.py", line 1563, in _ensure_session
+    return self.__start_session(True, causal_consistency=False)
+  File "d:\anaconda3\lib\site-packages\pymongo\mongo_client.py", line 1516, in __start_session
+    server_session = self._get_server_session()
+  File "d:\anaconda3\lib\site-packages\pymongo\mongo_client.py", line 1549, in _get_server_session
+    return self._topology.get_server_session()
+  File "d:\anaconda3\lib\site-packages\pymongo\topology.py", line 427, in get_server_session
+    None)
+  File "d:\anaconda3\lib\site-packages\pymongo\topology.py", line 199, in _select_servers_loop
+    self._error_message(selector))
+pymongo.errors.ServerSelectionTimeoutError: mongo_uri:27017: [Errno 11001] getaddrinfo failed
+2019-03-09 00:05:03 [scrapy.core.scraper] ERROR: Error processing {'date': '2019-03-07 14:24:08',
+ 'detail_content': ['万方是目前主流数据知识服务平台之一。但目前东莞图书馆网络版并未与其合作，一些万方独有资源无法获取。为建设文化东莞，科学东莞，建议增加对万方的支持，民众可以方便在网络上阅览下载万方论文等。'],
+ 'detail_img': [],
+ 'detail_url': 'http://wz.sun0769.com/html/question/201903/403729.shtml',
+ 'location': '市文广新局',
+ 'num': '209389',
+ 'state': '待处理',
+ 'theme': '建议东莞图书馆网络版增加对万方的支持'}
+Traceback (most recent call last):
+  File "d:\anaconda3\lib\site-packages\twisted\internet\defer.py", line 654, in _runCallbacks
+    current.result = callback(current.result, *args, **kw)
+  File "E:\ScrapyProject\gover\gover\pipelines.py", line 39, in process_item
+    self.db[self.collection_name].insert(dict(item))
+  File "d:\anaconda3\lib\site-packages\pymongo\collection.py", line 3161, in insert
+    check_keys, manipulate, write_concern)
+  File "d:\anaconda3\lib\site-packages\pymongo\collection.py", line 607, in _insert
+    bypass_doc_val, session)
+  File "d:\anaconda3\lib\site-packages\pymongo\collection.py", line 595, in _insert_one
+    acknowledged, _insert_command, session)
+  File "d:\anaconda3\lib\site-packages\pymongo\mongo_client.py", line 1247, in _retryable_write
+    with self._tmp_session(session) as s:
+  File "d:\anaconda3\lib\contextlib.py", line 112, in __enter__
+    return next(self.gen)
+  File "d:\anaconda3\lib\site-packages\pymongo\mongo_client.py", line 1576, in _tmp_session
+    s = self._ensure_session(session)
+  File "d:\anaconda3\lib\site-packages\pymongo\mongo_client.py", line 1563, in _ensure_session
+    return self.__start_session(True, causal_consistency=False)
+  File "d:\anaconda3\lib\site-packages\pymongo\mongo_client.py", line 1516, in __start_session
+    server_session = self._get_server_session()
+  File "d:\anaconda3\lib\site-packages\pymongo\mongo_client.py", line 1549, in _get_server_session
+    return self._topology.get_server_session()
+  File "d:\anaconda3\lib\site-packages\pymongo\topology.py", line 427, in get_server_session
+    None)
+  File "d:\anaconda3\lib\site-packages\pymongo\topology.py", line 199, in _select_servers_loop
+    self._error_message(selector))
+pymongo.errors.ServerSelectionTimeoutError: mongo_uri:27017: [Errno 11001] getaddrinfo failed
+2019-03-09 00:07:51 [scrapy.utils.log] INFO: Scrapy 1.6.0 started (bot: gover)
+2019-03-09 00:07:51 [scrapy.utils.log] INFO: Versions: lxml 4.3.2.0, libxml2 2.9.7, cssselect 1.0.3, parsel 1.5.1, w3lib 1.20.0, Twisted 18.9.0, Python 3.7.2 (default, Feb 21 2019, 17:35:59) [MSC v.1915 64 bit (AMD64)], pyOpenSSL 17.2.0 (OpenSSL 1.1.1b  26 Feb 2019), cryptography 2.6.1, Platform Windows-10-10.0.17134-SP0
+2019-03-09 00:07:51 [scrapy.crawler] INFO: Overridden settings: {'BOT_NAME': 'gover', 'LOG_FILE': './log.log', 'LOG_LEVEL': 'INFO', 'NEWSPIDER_MODULE': 'gover.spiders', 'ROBOTSTXT_OBEY': True, 'SPIDER_MODULES': ['gover.spiders'], 'USER_AGENT': 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/72.0.3626.119 Safari/537.36'}
+2019-03-09 00:07:51 [scrapy.extensions.telnet] INFO: Telnet Password: 5bef46dab48513f9
+2019-03-09 00:07:51 [scrapy.middleware] INFO: Enabled extensions:
+['scrapy.extensions.corestats.CoreStats',
+ 'scrapy.extensions.telnet.TelnetConsole',
+ 'scrapy.extensions.logstats.LogStats']
+2019-03-09 00:07:51 [scrapy.middleware] INFO: Enabled downloader middlewares:
+['scrapy.downloadermiddlewares.robotstxt.RobotsTxtMiddleware',
+ 'scrapy.downloadermiddlewares.httpauth.HttpAuthMiddleware',
+ 'scrapy.downloadermiddlewares.downloadtimeout.DownloadTimeoutMiddleware',
+ 'scrapy.downloadermiddlewares.defaultheaders.DefaultHeadersMiddleware',
+ 'scrapy.downloadermiddlewares.useragent.UserAgentMiddleware',
+ 'scrapy.downloadermiddlewares.retry.RetryMiddleware',
+ 'scrapy.downloadermiddlewares.redirect.MetaRefreshMiddleware',
+ 'scrapy.downloadermiddlewares.httpcompression.HttpCompressionMiddleware',
+ 'scrapy.downloadermiddlewares.redirect.RedirectMiddleware',
+ 'scrapy.downloadermiddlewares.cookies.CookiesMiddleware',
+ 'scrapy.downloadermiddlewares.httpproxy.HttpProxyMiddleware',
+ 'scrapy.downloadermiddlewares.stats.DownloaderStats']
+2019-03-09 00:07:51 [scrapy.middleware] INFO: Enabled spider middlewares:
+['scrapy.spidermiddlewares.httperror.HttpErrorMiddleware',
+ 'scrapy.spidermiddlewares.offsite.OffsiteMiddleware',
+ 'scrapy.spidermiddlewares.referer.RefererMiddleware',
+ 'scrapy.spidermiddlewares.urllength.UrlLengthMiddleware',
+ 'scrapy.spidermiddlewares.depth.DepthMiddleware']
+2019-03-09 00:07:51 [scrapy.middleware] INFO: Enabled item pipelines:
+['gover.pipelines.GoverPipeline', 'gover.pipelines.MongodbPipeline']
+2019-03-09 00:07:51 [scrapy.core.engine] INFO: Spider opened
+2019-03-09 00:07:51 [scrapy.extensions.logstats] INFO: Crawled 0 pages (at 0 pages/min), scraped 0 items (at 0 items/min)
+2019-03-09 00:07:51 [scrapy.extensions.telnet] INFO: Telnet console listening on 127.0.0.1:6023
+2019-03-09 00:07:55 [scrapy.core.scraper] ERROR: Spider error processing <GET http://wz.sun0769.com/html/question/201903/403525.shtml> (referer: http://wz.sun0769.com/html/top/ruse.shtml)
+Traceback (most recent call last):
+  File "d:\anaconda3\lib\site-packages\scrapy\utils\defer.py", line 102, in iter_errback
+    yield next(it)
+  File "d:\anaconda3\lib\site-packages\scrapy\spidermiddlewares\offsite.py", line 29, in process_spider_output
+    for x in result:
+  File "d:\anaconda3\lib\site-packages\scrapy\spidermiddlewares\referer.py", line 339, in <genexpr>
+    return (_set_referer(r) for r in result or ())
+  File "d:\anaconda3\lib\site-packages\scrapy\spidermiddlewares\urllength.py", line 37, in <genexpr>
+    return (r for r in result or () if _filter(r))
+  File "d:\anaconda3\lib\site-packages\scrapy\spidermiddlewares\depth.py", line 58, in <genexpr>
+    return (r for r in result or () if _filter(r))
+  File "E:\ScrapyProject\gover\gover\spiders\ygzw.py", line 38, in parse_detail
+    item = response.meta["item"]
+KeyError: 'item'
+2019-03-09 00:07:55 [scrapy.core.scraper] ERROR: Spider error processing <GET http://wz.sun0769.com/html/question/201903/403531.shtml> (referer: http://wz.sun0769.com/html/top/ruse.shtml)
+Traceback (most recent call last):
+  File "d:\anaconda3\lib\site-packages\scrapy\utils\defer.py", line 102, in iter_errback
+    yield next(it)
+  File "d:\anaconda3\lib\site-packages\scrapy\spidermiddlewares\offsite.py", line 29, in process_spider_output
+    for x in result:
+  File "d:\anaconda3\lib\site-packages\scrapy\spidermiddlewares\referer.py", line 339, in <genexpr>
+    return (_set_referer(r) for r in result or ())
+  File "d:\anaconda3\lib\site-packages\scrapy\spidermiddlewares\urllength.py", line 37, in <genexpr>
+    return (r for r in result or () if _filter(r))
+  File "d:\anaconda3\lib\site-packages\scrapy\spidermiddlewares\depth.py", line 58, in <genexpr>
+    return (r for r in result or () if _filter(r))
+  File "E:\ScrapyProject\gover\gover\spiders\ygzw.py", line 38, in parse_detail
+    item = response.meta["item"]
+KeyError: 'item'
+2019-03-09 00:07:55 [scrapy.core.scraper] ERROR: Spider error processing <GET http://wz.sun0769.com/html/question/201903/403550.shtml> (referer: http://wz.sun0769.com/html/top/ruse.shtml)
+Traceback (most recent call last):
+  File "d:\anaconda3\lib\site-packages\scrapy\utils\defer.py", line 102, in iter_errback
+    yield next(it)
+  File "d:\anaconda3\lib\site-packages\scrapy\spidermiddlewares\offsite.py", line 29, in process_spider_output
+    for x in result:
+  File "d:\anaconda3\lib\site-packages\scrapy\spidermiddlewares\referer.py", line 339, in <genexpr>
+    return (_set_referer(r) for r in result or ())
+  File "d:\anaconda3\lib\site-packages\scrapy\spidermiddlewares\urllength.py", line 37, in <genexpr>
+    return (r for r in result or () if _filter(r))
+  File "d:\anaconda3\lib\site-packages\scrapy\spidermiddlewares\depth.py", line 58, in <genexpr>
+    return (r for r in result or () if _filter(r))
+  File "E:\ScrapyProject\gover\gover\spiders\ygzw.py", line 38, in parse_detail
+    item = response.meta["item"]
+KeyError: 'item'
+2019-03-09 00:07:55 [scrapy.core.scraper] ERROR: Spider error processing <GET http://wz.sun0769.com/html/question/201903/403567.shtml> (referer: http://wz.sun0769.com/html/top/ruse.shtml)
+Traceback (most recent call last):
+  File "d:\anaconda3\lib\site-packages\scrapy\utils\defer.py", line 102, in iter_errback
+    yield next(it)
+  File "d:\anaconda3\lib\site-packages\scrapy\spidermiddlewares\offsite.py", line 29, in process_spider_output
+    for x in result:
+  File "d:\anaconda3\lib\site-packages\scrapy\spidermiddlewares\referer.py", line 339, in <genexpr>
+    return (_set_referer(r) for r in result or ())
+  File "d:\anaconda3\lib\site-packages\scrapy\spidermiddlewares\urllength.py", line 37, in <genexpr>
+    return (r for r in result or () if _filter(r))
+  File "d:\anaconda3\lib\site-packages\scrapy\spidermiddlewares\depth.py", line 58, in <genexpr>
+    return (r for r in result or () if _filter(r))
+  File "E:\ScrapyProject\gover\gover\spiders\ygzw.py", line 38, in parse_detail
+    item = response.meta["item"]
+KeyError: 'item'
+2019-03-09 00:07:55 [scrapy.core.scraper] ERROR: Spider error processing <GET http://wz.sun0769.com/html/question/201903/403628.shtml> (referer: http://wz.sun0769.com/html/top/ruse.shtml)
+Traceback (most recent call last):
+  File "d:\anaconda3\lib\site-packages\scrapy\utils\defer.py", line 102, in iter_errback
+    yield next(it)
+  File "d:\anaconda3\lib\site-packages\scrapy\spidermiddlewares\offsite.py", line 29, in process_spider_output
+    for x in result:
+  File "d:\anaconda3\lib\site-packages\scrapy\spidermiddlewares\referer.py", line 339, in <genexpr>
+    return (_set_referer(r) for r in result or ())
+  File "d:\anaconda3\lib\site-packages\scrapy\spidermiddlewares\urllength.py", line 37, in <genexpr>
+    return (r for r in result or () if _filter(r))
+  File "d:\anaconda3\lib\site-packages\scrapy\spidermiddlewares\depth.py", line 58, in <genexpr>
+    return (r for r in result or () if _filter(r))
+  File "E:\ScrapyProject\gover\gover\spiders\ygzw.py", line 38, in parse_detail
+    item = response.meta["item"]
+KeyError: 'item'
+2019-03-09 00:07:55 [scrapy.core.scraper] ERROR: Spider error processing <GET http://wz.sun0769.com/html/question/201903/403537.shtml> (referer: http://wz.sun0769.com/html/top/ruse.shtml)
+Traceback (most recent call last):
+  File "d:\anaconda3\lib\site-packages\scrapy\utils\defer.py", line 102, in iter_errback
+    yield next(it)
+  File "d:\anaconda3\lib\site-packages\scrapy\spidermiddlewares\offsite.py", line 29, in process_spider_output
+    for x in result:
+  File "d:\anaconda3\lib\site-packages\scrapy\spidermiddlewares\referer.py", line 339, in <genexpr>
+    return (_set_referer(r) for r in result or ())
+  File "d:\anaconda3\lib\site-packages\scrapy\spidermiddlewares\urllength.py", line 37, in <genexpr>
+    return (r for r in result or () if _filter(r))
+  File "d:\anaconda3\lib\site-packages\scrapy\spidermiddlewares\depth.py", line 58, in <genexpr>
+    return (r for r in result or () if _filter(r))
+  File "E:\ScrapyProject\gover\gover\spiders\ygzw.py", line 38, in parse_detail
+    item = response.meta["item"]
+KeyError: 'item'
+2019-03-09 00:07:55 [scrapy.core.scraper] ERROR: Spider error processing <GET http://wz.sun0769.com/html/question/201903/403624.shtml> (referer: http://wz.sun0769.com/html/top/ruse.shtml)
+Traceback (most recent call last):
+  File "d:\anaconda3\lib\site-packages\scrapy\utils\defer.py", line 102, in iter_errback
+    yield next(it)
+  File "d:\anaconda3\lib\site-packages\scrapy\spidermiddlewares\offsite.py", line 29, in process_spider_output
+    for x in result:
+  File "d:\anaconda3\lib\site-packages\scrapy\spidermiddlewares\referer.py", line 339, in <genexpr>
+    return (_set_referer(r) for r in result or ())
+  File "d:\anaconda3\lib\site-packages\scrapy\spidermiddlewares\urllength.py", line 37, in <genexpr>
+    return (r for r in result or () if _filter(r))
+  File "d:\anaconda3\lib\site-packages\scrapy\spidermiddlewares\depth.py", line 58, in <genexpr>
+    return (r for r in result or () if _filter(r))
+  File "E:\ScrapyProject\gover\gover\spiders\ygzw.py", line 38, in parse_detail
+    item = response.meta["item"]
+KeyError: 'item'
+2019-03-09 00:07:55 [scrapy.core.scraper] ERROR: Spider error processing <GET http://wz.sun0769.com/html/question/201903/403559.shtml> (referer: http://wz.sun0769.com/html/top/ruse.shtml)
+Traceback (most recent call last):
+  File "d:\anaconda3\lib\site-packages\scrapy\utils\defer.py", line 102, in iter_errback
+    yield next(it)
+  File "d:\anaconda3\lib\site-packages\scrapy\spidermiddlewares\offsite.py", line 29, in process_spider_output
+    for x in result:
+  File "d:\anaconda3\lib\site-packages\scrapy\spidermiddlewares\referer.py", line 339, in <genexpr>
+    return (_set_referer(r) for r in result or ())
+  File "d:\anaconda3\lib\site-packages\scrapy\spidermiddlewares\urllength.py", line 37, in <genexpr>
+    return (r for r in result or () if _filter(r))
+  File "d:\anaconda3\lib\site-packages\scrapy\spidermiddlewares\depth.py", line 58, in <genexpr>
+    return (r for r in result or () if _filter(r))
+  File "E:\ScrapyProject\gover\gover\spiders\ygzw.py", line 38, in parse_detail
+    item = response.meta["item"]
+KeyError: 'item'
+2019-03-09 00:07:55 [scrapy.core.scraper] ERROR: Spider error processing <GET http://wz.sun0769.com/html/question/201903/403638.shtml> (referer: http://wz.sun0769.com/html/top/ruse.shtml)
+Traceback (most recent call last):
+  File "d:\anaconda3\lib\site-packages\scrapy\utils\defer.py", line 102, in iter_errback
+    yield next(it)
+  File "d:\anaconda3\lib\site-packages\scrapy\spidermiddlewares\offsite.py", line 29, in process_spider_output
+    for x in result:
+  File "d:\anaconda3\lib\site-packages\scrapy\spidermiddlewares\referer.py", line 339, in <genexpr>
+    return (_set_referer(r) for r in result or ())
+  File "d:\anaconda3\lib\site-packages\scrapy\spidermiddlewares\urllength.py", line 37, in <genexpr>
+    return (r for r in result or () if _filter(r))
+  File "d:\anaconda3\lib\site-packages\scrapy\spidermiddlewares\depth.py", line 58, in <genexpr>
+    return (r for r in result or () if _filter(r))
+  File "E:\ScrapyProject\gover\gover\spiders\ygzw.py", line 38, in parse_detail
+    item = response.meta["item"]
+KeyError: 'item'
+2019-03-09 00:07:55 [scrapy.core.scraper] ERROR: Spider error processing <GET http://wz.sun0769.com/html/question/201903/403729.shtml> (referer: http://wz.sun0769.com/html/top/ruse.shtml)
+Traceback (most recent call last):
+  File "d:\anaconda3\lib\site-packages\scrapy\utils\defer.py", line 102, in iter_errback
+    yield next(it)
+  File "d:\anaconda3\lib\site-packages\scrapy\spidermiddlewares\offsite.py", line 29, in process_spider_output
+    for x in result:
+  File "d:\anaconda3\lib\site-packages\scrapy\spidermiddlewares\referer.py", line 339, in <genexpr>
+    return (_set_referer(r) for r in result or ())
+  File "d:\anaconda3\lib\site-packages\scrapy\spidermiddlewares\urllength.py", line 37, in <genexpr>
+    return (r for r in result or () if _filter(r))
+  File "d:\anaconda3\lib\site-packages\scrapy\spidermiddlewares\depth.py", line 58, in <genexpr>
+    return (r for r in result or () if _filter(r))
+  File "E:\ScrapyProject\gover\gover\spiders\ygzw.py", line 38, in parse_detail
+    item = response.meta["item"]
+KeyError: 'item'
+2019-03-09 00:07:55 [scrapy.core.scraper] ERROR: Spider error processing <GET http://wz.sun0769.com/html/question/201903/403784.shtml> (referer: http://wz.sun0769.com/html/top/ruse.shtml)
+Traceback (most recent call last):
+  File "d:\anaconda3\lib\site-packages\scrapy\utils\defer.py", line 102, in iter_errback
+    yield next(it)
+  File "d:\anaconda3\lib\site-packages\scrapy\spidermiddlewares\offsite.py", line 29, in process_spider_output
+    for x in result:
+  File "d:\anaconda3\lib\site-packages\scrapy\spidermiddlewares\referer.py", line 339, in <genexpr>
+    return (_set_referer(r) for r in result or ())
+  File "d:\anaconda3\lib\site-packages\scrapy\spidermiddlewares\urllength.py", line 37, in <genexpr>
+    return (r for r in result or () if _filter(r))
+  File "d:\anaconda3\lib\site-packages\scrapy\spidermiddlewares\depth.py", line 58, in <genexpr>
+    return (r for r in result or () if _filter(r))
+  File "E:\ScrapyProject\gover\gover\spiders\ygzw.py", line 38, in parse_detail
+    item = response.meta["item"]
+KeyError: 'item'
+2019-03-09 00:07:55 [scrapy.core.scraper] ERROR: Spider error processing <GET http://wz.sun0769.com/html/question/201903/403732.shtml> (referer: http://wz.sun0769.com/html/top/ruse.shtml)
+Traceback (most recent call last):
+  File "d:\anaconda3\lib\site-packages\scrapy\utils\defer.py", line 102, in iter_errback
+    yield next(it)
+  File "d:\anaconda3\lib\site-packages\scrapy\spidermiddlewares\offsite.py", line 29, in process_spider_output
+    for x in result:
+  File "d:\anaconda3\lib\site-packages\scrapy\spidermiddlewares\referer.py", line 339, in <genexpr>
+    return (_set_referer(r) for r in result or ())
+  File "d:\anaconda3\lib\site-packages\scrapy\spidermiddlewares\urllength.py", line 37, in <genexpr>
+    return (r for r in result or () if _filter(r))
+  File "d:\anaconda3\lib\site-packages\scrapy\spidermiddlewares\depth.py", line 58, in <genexpr>
+    return (r for r in result or () if _filter(r))
+  File "E:\ScrapyProject\gover\gover\spiders\ygzw.py", line 38, in parse_detail
+    item = response.meta["item"]
+KeyError: 'item'
+2019-03-09 00:07:55 [scrapy.core.scraper] ERROR: Spider error processing <GET http://wz.sun0769.com/html/question/201903/403848.shtml> (referer: http://wz.sun0769.com/html/top/ruse.shtml)
+Traceback (most recent call last):
+  File "d:\anaconda3\lib\site-packages\scrapy\utils\defer.py", line 102, in iter_errback
+    yield next(it)
+  File "d:\anaconda3\lib\site-packages\scrapy\spidermiddlewares\offsite.py", line 29, in process_spider_output
+    for x in result:
+  File "d:\anaconda3\lib\site-packages\scrapy\spidermiddlewares\referer.py", line 339, in <genexpr>
+    return (_set_referer(r) for r in result or ())
+  File "d:\anaconda3\lib\site-packages\scrapy\spidermiddlewares\urllength.py", line 37, in <genexpr>
+    return (r for r in result or () if _filter(r))
+  File "d:\anaconda3\lib\site-packages\scrapy\spidermiddlewares\depth.py", line 58, in <genexpr>
+    return (r for r in result or () if _filter(r))
+  File "E:\ScrapyProject\gover\gover\spiders\ygzw.py", line 38, in parse_detail
+    item = response.meta["item"]
+KeyError: 'item'
+2019-03-09 00:07:55 [scrapy.core.scraper] ERROR: Spider error processing <GET http://wz.sun0769.com/html/question/201903/403856.shtml> (referer: http://wz.sun0769.com/html/top/ruse.shtml)
+Traceback (most recent call last):
+  File "d:\anaconda3\lib\site-packages\scrapy\utils\defer.py", line 102, in iter_errback
+    yield next(it)
+  File "d:\anaconda3\lib\site-packages\scrapy\spidermiddlewares\offsite.py", line 29, in process_spider_output
+    for x in result:
+  File "d:\anaconda3\lib\site-packages\scrapy\spidermiddlewares\referer.py", line 339, in <genexpr>
+    return (_set_referer(r) for r in result or ())
+  File "d:\anaconda3\lib\site-packages\scrapy\spidermiddlewares\urllength.py", line 37, in <genexpr>
+    return (r for r in result or () if _filter(r))
+  File "d:\anaconda3\lib\site-packages\scrapy\spidermiddlewares\depth.py", line 58, in <genexpr>
+    return (r for r in result or () if _filter(r))
+  File "E:\ScrapyProject\gover\gover\spiders\ygzw.py", line 38, in parse_detail
+    item = response.meta["item"]
+KeyError: 'item'
+2019-03-09 00:07:55 [scrapy.core.scraper] ERROR: Spider error processing <GET http://wz.sun0769.com/html/question/201903/403202.shtml> (referer: http://wz.sun0769.com/html/top/ruse.shtml)
+Traceback (most recent call last):
+  File "d:\anaconda3\lib\site-packages\scrapy\utils\defer.py", line 102, in iter_errback
+    yield next(it)
+  File "d:\anaconda3\lib\site-packages\scrapy\spidermiddlewares\offsite.py", line 29, in process_spider_output
+    for x in result:
+  File "d:\anaconda3\lib\site-packages\scrapy\spidermiddlewares\referer.py", line 339, in <genexpr>
+    return (_set_referer(r) for r in result or ())
+  File "d:\anaconda3\lib\site-packages\scrapy\spidermiddlewares\urllength.py", line 37, in <genexpr>
+    return (r for r in result or () if _filter(r))
+  File "d:\anaconda3\lib\site-packages\scrapy\spidermiddlewares\depth.py", line 58, in <genexpr>
+    return (r for r in result or () if _filter(r))
+  File "E:\ScrapyProject\gover\gover\spiders\ygzw.py", line 38, in parse_detail
+    item = response.meta["item"]
+KeyError: 'item'
+2019-03-09 00:07:55 [scrapy.core.scraper] ERROR: Spider error processing <GET http://wz.sun0769.com/html/question/201903/403233.shtml> (referer: http://wz.sun0769.com/html/top/ruse.shtml)
+Traceback (most recent call last):
+  File "d:\anaconda3\lib\site-packages\scrapy\utils\defer.py", line 102, in iter_errback
+    yield next(it)
+  File "d:\anaconda3\lib\site-packages\scrapy\spidermiddlewares\offsite.py", line 29, in process_spider_output
+    for x in result:
+  File "d:\anaconda3\lib\site-packages\scrapy\spidermiddlewares\referer.py", line 339, in <genexpr>
+    return (_set_referer(r) for r in result or ())
+  File "d:\anaconda3\lib\site-packages\scrapy\spidermiddlewares\urllength.py", line 37, in <genexpr>
+    return (r for r in result or () if _filter(r))
+  File "d:\anaconda3\lib\site-packages\scrapy\spidermiddlewares\depth.py", line 58, in <genexpr>
+    return (r for r in result or () if _filter(r))
+  File "E:\ScrapyProject\gover\gover\spiders\ygzw.py", line 38, in parse_detail
+    item = response.meta["item"]
+KeyError: 'item'
+2019-03-09 00:07:55 [scrapy.core.scraper] ERROR: Spider error processing <GET http://wz.sun0769.com/html/question/201903/403798.shtml> (referer: http://wz.sun0769.com/html/top/ruse.shtml)
+Traceback (most recent call last):
+  File "d:\anaconda3\lib\site-packages\scrapy\utils\defer.py", line 102, in iter_errback
+    yield next(it)
+  File "d:\anaconda3\lib\site-packages\scrapy\spidermiddlewares\offsite.py", line 29, in process_spider_output
+    for x in result:
+  File "d:\anaconda3\lib\site-packages\scrapy\spidermiddlewares\referer.py", line 339, in <genexpr>
+    return (_set_referer(r) for r in result or ())
+  File "d:\anaconda3\lib\site-packages\scrapy\spidermiddlewares\urllength.py", line 37, in <genexpr>
+    return (r for r in result or () if _filter(r))
+  File "d:\anaconda3\lib\site-packages\scrapy\spidermiddlewares\depth.py", line 58, in <genexpr>
+    return (r for r in result or () if _filter(r))
+  File "E:\ScrapyProject\gover\gover\spiders\ygzw.py", line 38, in parse_detail
+    item = response.meta["item"]
+KeyError: 'item'
+2019-03-09 00:07:55 [scrapy.core.scraper] ERROR: Spider error processing <GET http://wz.sun0769.com/html/question/201903/403248.shtml> (referer: http://wz.sun0769.com/html/top/ruse.shtml)
+Traceback (most recent call last):
+  File "d:\anaconda3\lib\site-packages\scrapy\utils\defer.py", line 102, in iter_errback
+    yield next(it)
+  File "d:\anaconda3\lib\site-packages\scrapy\spidermiddlewares\offsite.py", line 29, in process_spider_output
+    for x in result:
+  File "d:\anaconda3\lib\site-packages\scrapy\spidermiddlewares\referer.py", line 339, in <genexpr>
+    return (_set_referer(r) for r in result or ())
+  File "d:\anaconda3\lib\site-packages\scrapy\spidermiddlewares\urllength.py", line 37, in <genexpr>
+    return (r for r in result or () if _filter(r))
+  File "d:\anaconda3\lib\site-packages\scrapy\spidermiddlewares\depth.py", line 58, in <genexpr>
+    return (r for r in result or () if _filter(r))
+  File "E:\ScrapyProject\gover\gover\spiders\ygzw.py", line 38, in parse_detail
+    item = response.meta["item"]
+KeyError: 'item'
+2019-03-09 00:07:55 [scrapy.core.scraper] ERROR: Spider error processing <GET http://wz.sun0769.com/html/question/201903/403236.shtml> (referer: http://wz.sun0769.com/html/top/ruse.shtml)
+Traceback (most recent call last):
+  File "d:\anaconda3\lib\site-packages\scrapy\utils\defer.py", line 102, in iter_errback
+    yield next(it)
+  File "d:\anaconda3\lib\site-packages\scrapy\spidermiddlewares\offsite.py", line 29, in process_spider_output
+    for x in result:
+  File "d:\anaconda3\lib\site-packages\scrapy\spidermiddlewares\referer.py", line 339, in <genexpr>
+    return (_set_referer(r) for r in result or ())
+  File "d:\anaconda3\lib\site-packages\scrapy\spidermiddlewares\urllength.py", line 37, in <genexpr>
+    return (r for r in result or () if _filter(r))
+  File "d:\anaconda3\lib\site-packages\scrapy\spidermiddlewares\depth.py", line 58, in <genexpr>
+    return (r for r in result or () if _filter(r))
+  File "E:\ScrapyProject\gover\gover\spiders\ygzw.py", line 38, in parse_detail
+    item = response.meta["item"]
+KeyError: 'item'
+2019-03-09 00:07:55 [scrapy.core.scraper] ERROR: Spider error processing <GET http://wz.sun0769.com/html/question/201903/403372.shtml> (referer: http://wz.sun0769.com/html/top/ruse.shtml)
+Traceback (most recent call last):
+  File "d:\anaconda3\lib\site-packages\scrapy\utils\defer.py", line 102, in iter_errback
+    yield next(it)
+  File "d:\anaconda3\lib\site-packages\scrapy\spidermiddlewares\offsite.py", line 29, in process_spider_output
+    for x in result:
+  File "d:\anaconda3\lib\site-packages\scrapy\spidermiddlewares\referer.py", line 339, in <genexpr>
+    return (_set_referer(r) for r in result or ())
+  File "d:\anaconda3\lib\site-packages\scrapy\spidermiddlewares\urllength.py", line 37, in <genexpr>
+    return (r for r in result or () if _filter(r))
+  File "d:\anaconda3\lib\site-packages\scrapy\spidermiddlewares\depth.py", line 58, in <genexpr>
+    return (r for r in result or () if _filter(r))
+  File "E:\ScrapyProject\gover\gover\spiders\ygzw.py", line 38, in parse_detail
+    item = response.meta["item"]
+KeyError: 'item'
+2019-03-09 00:07:55 [scrapy.core.scraper] ERROR: Spider error processing <GET http://wz.sun0769.com/html/question/201903/403292.shtml> (referer: http://wz.sun0769.com/html/top/ruse.shtml)
+Traceback (most recent call last):
+  File "d:\anaconda3\lib\site-packages\scrapy\utils\defer.py", line 102, in iter_errback
+    yield next(it)
+  File "d:\anaconda3\lib\site-packages\scrapy\spidermiddlewares\offsite.py", line 29, in process_spider_output
+    for x in result:
+  File "d:\anaconda3\lib\site-packages\scrapy\spidermiddlewares\referer.py", line 339, in <genexpr>
+    return (_set_referer(r) for r in result or ())
+  File "d:\anaconda3\lib\site-packages\scrapy\spidermiddlewares\urllength.py", line 37, in <genexpr>
+    return (r for r in result or () if _filter(r))
+  File "d:\anaconda3\lib\site-packages\scrapy\spidermiddlewares\depth.py", line 58, in <genexpr>
+    return (r for r in result or () if _filter(r))
+  File "E:\ScrapyProject\gover\gover\spiders\ygzw.py", line 38, in parse_detail
+    item = response.meta["item"]
+KeyError: 'item'
+2019-03-09 00:07:55 [scrapy.core.scraper] ERROR: Spider error processing <GET http://wz.sun0769.com/html/question/201903/403373.shtml> (referer: http://wz.sun0769.com/html/top/ruse.shtml)
+Traceback (most recent call last):
+  File "d:\anaconda3\lib\site-packages\scrapy\utils\defer.py", line 102, in iter_errback
+    yield next(it)
+  File "d:\anaconda3\lib\site-packages\scrapy\spidermiddlewares\offsite.py", line 29, in process_spider_output
+    for x in result:
+  File "d:\anaconda3\lib\site-packages\scrapy\spidermiddlewares\referer.py", line 339, in <genexpr>
+    return (_set_referer(r) for r in result or ())
+  File "d:\anaconda3\lib\site-packages\scrapy\spidermiddlewares\urllength.py", line 37, in <genexpr>
+    return (r for r in result or () if _filter(r))
+  File "d:\anaconda3\lib\site-packages\scrapy\spidermiddlewares\depth.py", line 58, in <genexpr>
+    return (r for r in result or () if _filter(r))
+  File "E:\ScrapyProject\gover\gover\spiders\ygzw.py", line 38, in parse_detail
+    item = response.meta["item"]
+KeyError: 'item'
+2019-03-09 00:07:55 [scrapy.core.scraper] ERROR: Spider error processing <GET http://wz.sun0769.com/html/question/201903/403326.shtml> (referer: http://wz.sun0769.com/html/top/ruse.shtml)
+Traceback (most recent call last):
+  File "d:\anaconda3\lib\site-packages\scrapy\utils\defer.py", line 102, in iter_errback
+    yield next(it)
+  File "d:\anaconda3\lib\site-packages\scrapy\spidermiddlewares\offsite.py", line 29, in process_spider_output
+    for x in result:
+  File "d:\anaconda3\lib\site-packages\scrapy\spidermiddlewares\referer.py", line 339, in <genexpr>
+    return (_set_referer(r) for r in result or ())
+  File "d:\anaconda3\lib\site-packages\scrapy\spidermiddlewares\urllength.py", line 37, in <genexpr>
+    return (r for r in result or () if _filter(r))
+  File "d:\anaconda3\lib\site-packages\scrapy\spidermiddlewares\depth.py", line 58, in <genexpr>
+    return (r for r in result or () if _filter(r))
+  File "E:\ScrapyProject\gover\gover\spiders\ygzw.py", line 38, in parse_detail
+    item = response.meta["item"]
+KeyError: 'item'
+2019-03-09 00:07:55 [scrapy.core.scraper] ERROR: Spider error processing <GET http://wz.sun0769.com/html/question/201903/403332.shtml> (referer: http://wz.sun0769.com/html/top/ruse.shtml)
+Traceback (most recent call last):
+  File "d:\anaconda3\lib\site-packages\scrapy\utils\defer.py", line 102, in iter_errback
+    yield next(it)
+  File "d:\anaconda3\lib\site-packages\scrapy\spidermiddlewares\offsite.py", line 29, in process_spider_output
+    for x in result:
+  File "d:\anaconda3\lib\site-packages\scrapy\spidermiddlewares\referer.py", line 339, in <genexpr>
+    return (_set_referer(r) for r in result or ())
+  File "d:\anaconda3\lib\site-packages\scrapy\spidermiddlewares\urllength.py", line 37, in <genexpr>
+    return (r for r in result or () if _filter(r))
+  File "d:\anaconda3\lib\site-packages\scrapy\spidermiddlewares\depth.py", line 58, in <genexpr>
+    return (r for r in result or () if _filter(r))
+  File "E:\ScrapyProject\gover\gover\spiders\ygzw.py", line 38, in parse_detail
+    item = response.meta["item"]
+KeyError: 'item'
+2019-03-09 00:07:55 [scrapy.core.scraper] ERROR: Spider error processing <GET http://wz.sun0769.com/html/question/201903/403376.shtml> (referer: http://wz.sun0769.com/html/top/ruse.shtml)
+Traceback (most recent call last):
+  File "d:\anaconda3\lib\site-packages\scrapy\utils\defer.py", line 102, in iter_errback
+    yield next(it)
+  File "d:\anaconda3\lib\site-packages\scrapy\spidermiddlewares\offsite.py", line 29, in process_spider_output
+    for x in result:
+  File "d:\anaconda3\lib\site-packages\scrapy\spidermiddlewares\referer.py", line 339, in <genexpr>
+    return (_set_referer(r) for r in result or ())
+  File "d:\anaconda3\lib\site-packages\scrapy\spidermiddlewares\urllength.py", line 37, in <genexpr>
+    return (r for r in result or () if _filter(r))
+  File "d:\anaconda3\lib\site-packages\scrapy\spidermiddlewares\depth.py", line 58, in <genexpr>
+    return (r for r in result or () if _filter(r))
+  File "E:\ScrapyProject\gover\gover\spiders\ygzw.py", line 38, in parse_detail
+    item = response.meta["item"]
+KeyError: 'item'
+2019-03-09 00:07:55 [scrapy.core.scraper] ERROR: Spider error processing <GET http://wz.sun0769.com/html/question/201903/403401.shtml> (referer: http://wz.sun0769.com/html/top/ruse.shtml)
+Traceback (most recent call last):
+  File "d:\anaconda3\lib\site-packages\scrapy\utils\defer.py", line 102, in iter_errback
+    yield next(it)
+  File "d:\anaconda3\lib\site-packages\scrapy\spidermiddlewares\offsite.py", line 29, in process_spider_output
+    for x in result:
+  File "d:\anaconda3\lib\site-packages\scrapy\spidermiddlewares\referer.py", line 339, in <genexpr>
+    return (_set_referer(r) for r in result or ())
+  File "d:\anaconda3\lib\site-packages\scrapy\spidermiddlewares\urllength.py", line 37, in <genexpr>
+    return (r for r in result or () if _filter(r))
+  File "d:\anaconda3\lib\site-packages\scrapy\spidermiddlewares\depth.py", line 58, in <genexpr>
+    return (r for r in result or () if _filter(r))
+  File "E:\ScrapyProject\gover\gover\spiders\ygzw.py", line 38, in parse_detail
+    item = response.meta["item"]
+KeyError: 'item'
+2019-03-09 00:07:55 [scrapy.core.scraper] ERROR: Spider error processing <GET http://wz.sun0769.com/html/question/201903/403452.shtml> (referer: http://wz.sun0769.com/html/top/ruse.shtml)
+Traceback (most recent call last):
+  File "d:\anaconda3\lib\site-packages\scrapy\utils\defer.py", line 102, in iter_errback
+    yield next(it)
+  File "d:\anaconda3\lib\site-packages\scrapy\spidermiddlewares\offsite.py", line 29, in process_spider_output
+    for x in result:
+  File "d:\anaconda3\lib\site-packages\scrapy\spidermiddlewares\referer.py", line 339, in <genexpr>
+    return (_set_referer(r) for r in result or ())
+  File "d:\anaconda3\lib\site-packages\scrapy\spidermiddlewares\urllength.py", line 37, in <genexpr>
+    return (r for r in result or () if _filter(r))
+  File "d:\anaconda3\lib\site-packages\scrapy\spidermiddlewares\depth.py", line 58, in <genexpr>
+    return (r for r in result or () if _filter(r))
+  File "E:\ScrapyProject\gover\gover\spiders\ygzw.py", line 38, in parse_detail
+    item = response.meta["item"]
+KeyError: 'item'
+2019-03-09 00:07:55 [scrapy.core.scraper] ERROR: Spider error processing <GET http://wz.sun0769.com/html/question/201903/403461.shtml> (referer: http://wz.sun0769.com/html/top/ruse.shtml)
+Traceback (most recent call last):
+  File "d:\anaconda3\lib\site-packages\scrapy\utils\defer.py", line 102, in iter_errback
+    yield next(it)
+  File "d:\anaconda3\lib\site-packages\scrapy\spidermiddlewares\offsite.py", line 29, in process_spider_output
+    for x in result:
+  File "d:\anaconda3\lib\site-packages\scrapy\spidermiddlewares\referer.py", line 339, in <genexpr>
+    return (_set_referer(r) for r in result or ())
+  File "d:\anaconda3\lib\site-packages\scrapy\spidermiddlewares\urllength.py", line 37, in <genexpr>
+    return (r for r in result or () if _filter(r))
+  File "d:\anaconda3\lib\site-packages\scrapy\spidermiddlewares\depth.py", line 58, in <genexpr>
+    return (r for r in result or () if _filter(r))
+  File "E:\ScrapyProject\gover\gover\spiders\ygzw.py", line 38, in parse_detail
+    item = response.meta["item"]
+KeyError: 'item'
+2019-03-09 00:07:55 [scrapy.core.scraper] ERROR: Spider error processing <GET http://wz.sun0769.com/html/question/201903/403471.shtml> (referer: http://wz.sun0769.com/html/top/ruse.shtml)
+Traceback (most recent call last):
+  File "d:\anaconda3\lib\site-packages\scrapy\utils\defer.py", line 102, in iter_errback
+    yield next(it)
+  File "d:\anaconda3\lib\site-packages\scrapy\spidermiddlewares\offsite.py", line 29, in process_spider_output
+    for x in result:
+  File "d:\anaconda3\lib\site-packages\scrapy\spidermiddlewares\referer.py", line 339, in <genexpr>
+    return (_set_referer(r) for r in result or ())
+  File "d:\anaconda3\lib\site-packages\scrapy\spidermiddlewares\urllength.py", line 37, in <genexpr>
+    return (r for r in result or () if _filter(r))
+  File "d:\anaconda3\lib\site-packages\scrapy\spidermiddlewares\depth.py", line 58, in <genexpr>
+    return (r for r in result or () if _filter(r))
+  File "E:\ScrapyProject\gover\gover\spiders\ygzw.py", line 38, in parse_detail
+    item = response.meta["item"]
+KeyError: 'item'
+2019-03-09 00:07:55 [scrapy.core.scraper] ERROR: Spider error processing <GET http://wz.sun0769.com/html/question/201903/403523.shtml> (referer: http://wz.sun0769.com/html/top/ruse.shtml)
+Traceback (most recent call last):
+  File "d:\anaconda3\lib\site-packages\scrapy\utils\defer.py", line 102, in iter_errback
+    yield next(it)
+  File "d:\anaconda3\lib\site-packages\scrapy\spidermiddlewares\offsite.py", line 29, in process_spider_output
+    for x in result:
+  File "d:\anaconda3\lib\site-packages\scrapy\spidermiddlewares\referer.py", line 339, in <genexpr>
+    return (_set_referer(r) for r in result or ())
+  File "d:\anaconda3\lib\site-packages\scrapy\spidermiddlewares\urllength.py", line 37, in <genexpr>
+    return (r for r in result or () if _filter(r))
+  File "d:\anaconda3\lib\site-packages\scrapy\spidermiddlewares\depth.py", line 58, in <genexpr>
+    return (r for r in result or () if _filter(r))
+  File "E:\ScrapyProject\gover\gover\spiders\ygzw.py", line 38, in parse_detail
+    item = response.meta["item"]
+KeyError: 'item'
+2019-03-09 00:09:33 [scrapy.utils.log] INFO: Scrapy 1.6.0 started (bot: gover)
+2019-03-09 00:09:33 [scrapy.utils.log] INFO: Versions: lxml 4.3.2.0, libxml2 2.9.7, cssselect 1.0.3, parsel 1.5.1, w3lib 1.20.0, Twisted 18.9.0, Python 3.7.2 (default, Feb 21 2019, 17:35:59) [MSC v.1915 64 bit (AMD64)], pyOpenSSL 17.2.0 (OpenSSL 1.1.1b  26 Feb 2019), cryptography 2.6.1, Platform Windows-10-10.0.17134-SP0
+2019-03-09 00:09:33 [scrapy.crawler] INFO: Overridden settings: {'BOT_NAME': 'gover', 'LOG_FILE': './log.log', 'LOG_LEVEL': 'INFO', 'NEWSPIDER_MODULE': 'gover.spiders', 'ROBOTSTXT_OBEY': True, 'SPIDER_MODULES': ['gover.spiders'], 'USER_AGENT': 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/72.0.3626.119 Safari/537.36'}
+2019-03-09 00:09:33 [scrapy.extensions.telnet] INFO: Telnet Password: 14673596bc62edc8
+2019-03-09 00:09:33 [scrapy.middleware] INFO: Enabled extensions:
+['scrapy.extensions.corestats.CoreStats',
+ 'scrapy.extensions.telnet.TelnetConsole',
+ 'scrapy.extensions.logstats.LogStats']
+2019-03-09 00:09:33 [scrapy.middleware] INFO: Enabled downloader middlewares:
+['scrapy.downloadermiddlewares.robotstxt.RobotsTxtMiddleware',
+ 'scrapy.downloadermiddlewares.httpauth.HttpAuthMiddleware',
+ 'scrapy.downloadermiddlewares.downloadtimeout.DownloadTimeoutMiddleware',
+ 'scrapy.downloadermiddlewares.defaultheaders.DefaultHeadersMiddleware',
+ 'scrapy.downloadermiddlewares.useragent.UserAgentMiddleware',
+ 'scrapy.downloadermiddlewares.retry.RetryMiddleware',
+ 'scrapy.downloadermiddlewares.redirect.MetaRefreshMiddleware',
+ 'scrapy.downloadermiddlewares.httpcompression.HttpCompressionMiddleware',
+ 'scrapy.downloadermiddlewares.redirect.RedirectMiddleware',
+ 'scrapy.downloadermiddlewares.cookies.CookiesMiddleware',
+ 'scrapy.downloadermiddlewares.httpproxy.HttpProxyMiddleware',
+ 'scrapy.downloadermiddlewares.stats.DownloaderStats']
+2019-03-09 00:09:33 [scrapy.middleware] INFO: Enabled spider middlewares:
+['scrapy.spidermiddlewares.httperror.HttpErrorMiddleware',
+ 'scrapy.spidermiddlewares.offsite.OffsiteMiddleware',
+ 'scrapy.spidermiddlewares.referer.RefererMiddleware',
+ 'scrapy.spidermiddlewares.urllength.UrlLengthMiddleware',
+ 'scrapy.spidermiddlewares.depth.DepthMiddleware']
+2019-03-09 00:09:33 [scrapy.middleware] INFO: Enabled item pipelines:
+['gover.pipelines.GoverPipeline', 'gover.pipelines.MongodbPipeline']
+2019-03-09 00:09:33 [scrapy.core.engine] INFO: Spider opened
+2019-03-09 00:09:33 [scrapy.extensions.logstats] INFO: Crawled 0 pages (at 0 pages/min), scraped 0 items (at 0 items/min)
+2019-03-09 00:09:33 [scrapy.extensions.telnet] INFO: Telnet console listening on 127.0.0.1:6023
+2019-03-09 00:09:36 [scrapy.core.scraper] ERROR: Spider error processing <GET http://wz.sun0769.com/html/question/201903/403523.shtml> (referer: http://wz.sun0769.com/html/top/ruse.shtml)
+Traceback (most recent call last):
+  File "d:\anaconda3\lib\site-packages\scrapy\utils\defer.py", line 102, in iter_errback
+    yield next(it)
+  File "d:\anaconda3\lib\site-packages\scrapy\spidermiddlewares\offsite.py", line 29, in process_spider_output
+    for x in result:
+  File "d:\anaconda3\lib\site-packages\scrapy\spidermiddlewares\referer.py", line 339, in <genexpr>
+    return (_set_referer(r) for r in result or ())
+  File "d:\anaconda3\lib\site-packages\scrapy\spidermiddlewares\urllength.py", line 37, in <genexpr>
+    return (r for r in result or () if _filter(r))
+  File "d:\anaconda3\lib\site-packages\scrapy\spidermiddlewares\depth.py", line 58, in <genexpr>
+    return (r for r in result or () if _filter(r))
+  File "E:\ScrapyProject\gover\gover\spiders\ygzw.py", line 38, in parse_detail
+    item = response.meta["item"]
+KeyError: 'item'
+2019-03-09 00:09:36 [scrapy.core.scraper] ERROR: Spider error processing <GET http://wz.sun0769.com/html/question/201903/403567.shtml> (referer: http://wz.sun0769.com/html/top/ruse.shtml)
+Traceback (most recent call last):
+  File "d:\anaconda3\lib\site-packages\scrapy\utils\defer.py", line 102, in iter_errback
+    yield next(it)
+  File "d:\anaconda3\lib\site-packages\scrapy\spidermiddlewares\offsite.py", line 29, in process_spider_output
+    for x in result:
+  File "d:\anaconda3\lib\site-packages\scrapy\spidermiddlewares\referer.py", line 339, in <genexpr>
+    return (_set_referer(r) for r in result or ())
+  File "d:\anaconda3\lib\site-packages\scrapy\spidermiddlewares\urllength.py", line 37, in <genexpr>
+    return (r for r in result or () if _filter(r))
+  File "d:\anaconda3\lib\site-packages\scrapy\spidermiddlewares\depth.py", line 58, in <genexpr>
+    return (r for r in result or () if _filter(r))
+  File "E:\ScrapyProject\gover\gover\spiders\ygzw.py", line 38, in parse_detail
+    item = response.meta["item"]
+KeyError: 'item'
+2019-03-09 00:09:36 [scrapy.core.scraper] ERROR: Spider error processing <GET http://wz.sun0769.com/html/question/201903/403525.shtml> (referer: http://wz.sun0769.com/html/top/ruse.shtml)
+Traceback (most recent call last):
+  File "d:\anaconda3\lib\site-packages\scrapy\utils\defer.py", line 102, in iter_errback
+    yield next(it)
+  File "d:\anaconda3\lib\site-packages\scrapy\spidermiddlewares\offsite.py", line 29, in process_spider_output
+    for x in result:
+  File "d:\anaconda3\lib\site-packages\scrapy\spidermiddlewares\referer.py", line 339, in <genexpr>
+    return (_set_referer(r) for r in result or ())
+  File "d:\anaconda3\lib\site-packages\scrapy\spidermiddlewares\urllength.py", line 37, in <genexpr>
+    return (r for r in result or () if _filter(r))
+  File "d:\anaconda3\lib\site-packages\scrapy\spidermiddlewares\depth.py", line 58, in <genexpr>
+    return (r for r in result or () if _filter(r))
+  File "E:\ScrapyProject\gover\gover\spiders\ygzw.py", line 38, in parse_detail
+    item = response.meta["item"]
+KeyError: 'item'
+2019-03-09 00:09:36 [scrapy.core.scraper] ERROR: Spider error processing <GET http://wz.sun0769.com/html/question/201903/403550.shtml> (referer: http://wz.sun0769.com/html/top/ruse.shtml)
+Traceback (most recent call last):
+  File "d:\anaconda3\lib\site-packages\scrapy\utils\defer.py", line 102, in iter_errback
+    yield next(it)
+  File "d:\anaconda3\lib\site-packages\scrapy\spidermiddlewares\offsite.py", line 29, in process_spider_output
+    for x in result:
+  File "d:\anaconda3\lib\site-packages\scrapy\spidermiddlewares\referer.py", line 339, in <genexpr>
+    return (_set_referer(r) for r in result or ())
+  File "d:\anaconda3\lib\site-packages\scrapy\spidermiddlewares\urllength.py", line 37, in <genexpr>
+    return (r for r in result or () if _filter(r))
+  File "d:\anaconda3\lib\site-packages\scrapy\spidermiddlewares\depth.py", line 58, in <genexpr>
+    return (r for r in result or () if _filter(r))
+  File "E:\ScrapyProject\gover\gover\spiders\ygzw.py", line 38, in parse_detail
+    item = response.meta["item"]
+KeyError: 'item'
+2019-03-09 00:09:36 [scrapy.core.scraper] ERROR: Spider error processing <GET http://wz.sun0769.com/html/question/201903/403531.shtml> (referer: http://wz.sun0769.com/html/top/ruse.shtml)
+Traceback (most recent call last):
+  File "d:\anaconda3\lib\site-packages\scrapy\utils\defer.py", line 102, in iter_errback
+    yield next(it)
+  File "d:\anaconda3\lib\site-packages\scrapy\spidermiddlewares\offsite.py", line 29, in process_spider_output
+    for x in result:
+  File "d:\anaconda3\lib\site-packages\scrapy\spidermiddlewares\referer.py", line 339, in <genexpr>
+    return (_set_referer(r) for r in result or ())
+  File "d:\anaconda3\lib\site-packages\scrapy\spidermiddlewares\urllength.py", line 37, in <genexpr>
+    return (r for r in result or () if _filter(r))
+  File "d:\anaconda3\lib\site-packages\scrapy\spidermiddlewares\depth.py", line 58, in <genexpr>
+    return (r for r in result or () if _filter(r))
+  File "E:\ScrapyProject\gover\gover\spiders\ygzw.py", line 38, in parse_detail
+    item = response.meta["item"]
+KeyError: 'item'
+2019-03-09 00:09:36 [scrapy.core.scraper] ERROR: Spider error processing <GET http://wz.sun0769.com/html/question/201903/403624.shtml> (referer: http://wz.sun0769.com/html/top/ruse.shtml)
+Traceback (most recent call last):
+  File "d:\anaconda3\lib\site-packages\scrapy\utils\defer.py", line 102, in iter_errback
+    yield next(it)
+  File "d:\anaconda3\lib\site-packages\scrapy\spidermiddlewares\offsite.py", line 29, in process_spider_output
+    for x in result:
+  File "d:\anaconda3\lib\site-packages\scrapy\spidermiddlewares\referer.py", line 339, in <genexpr>
+    return (_set_referer(r) for r in result or ())
+  File "d:\anaconda3\lib\site-packages\scrapy\spidermiddlewares\urllength.py", line 37, in <genexpr>
+    return (r for r in result or () if _filter(r))
+  File "d:\anaconda3\lib\site-packages\scrapy\spidermiddlewares\depth.py", line 58, in <genexpr>
+    return (r for r in result or () if _filter(r))
+  File "E:\ScrapyProject\gover\gover\spiders\ygzw.py", line 38, in parse_detail
+    item = response.meta["item"]
+KeyError: 'item'
+2019-03-09 00:09:36 [scrapy.core.scraper] ERROR: Spider error processing <GET http://wz.sun0769.com/html/question/201903/403559.shtml> (referer: http://wz.sun0769.com/html/top/ruse.shtml)
+Traceback (most recent call last):
+  File "d:\anaconda3\lib\site-packages\scrapy\utils\defer.py", line 102, in iter_errback
+    yield next(it)
+  File "d:\anaconda3\lib\site-packages\scrapy\spidermiddlewares\offsite.py", line 29, in process_spider_output
+    for x in result:
+  File "d:\anaconda3\lib\site-packages\scrapy\spidermiddlewares\referer.py", line 339, in <genexpr>
+    return (_set_referer(r) for r in result or ())
+  File "d:\anaconda3\lib\site-packages\scrapy\spidermiddlewares\urllength.py", line 37, in <genexpr>
+    return (r for r in result or () if _filter(r))
+  File "d:\anaconda3\lib\site-packages\scrapy\spidermiddlewares\depth.py", line 58, in <genexpr>
+    return (r for r in result or () if _filter(r))
+  File "E:\ScrapyProject\gover\gover\spiders\ygzw.py", line 38, in parse_detail
+    item = response.meta["item"]
+KeyError: 'item'
+2019-03-09 00:09:36 [scrapy.core.scraper] ERROR: Spider error processing <GET http://wz.sun0769.com/html/question/201903/403537.shtml> (referer: http://wz.sun0769.com/html/top/ruse.shtml)
+Traceback (most recent call last):
+  File "d:\anaconda3\lib\site-packages\scrapy\utils\defer.py", line 102, in iter_errback
+    yield next(it)
+  File "d:\anaconda3\lib\site-packages\scrapy\spidermiddlewares\offsite.py", line 29, in process_spider_output
+    for x in result:
+  File "d:\anaconda3\lib\site-packages\scrapy\spidermiddlewares\referer.py", line 339, in <genexpr>
+    return (_set_referer(r) for r in result or ())
+  File "d:\anaconda3\lib\site-packages\scrapy\spidermiddlewares\urllength.py", line 37, in <genexpr>
+    return (r for r in result or () if _filter(r))
+  File "d:\anaconda3\lib\site-packages\scrapy\spidermiddlewares\depth.py", line 58, in <genexpr>
+    return (r for r in result or () if _filter(r))
+  File "E:\ScrapyProject\gover\gover\spiders\ygzw.py", line 38, in parse_detail
+    item = response.meta["item"]
+KeyError: 'item'
+2019-03-09 00:09:36 [scrapy.core.scraper] ERROR: Spider error processing <GET http://wz.sun0769.com/html/question/201903/403628.shtml> (referer: http://wz.sun0769.com/html/top/ruse.shtml)
+Traceback (most recent call last):
+  File "d:\anaconda3\lib\site-packages\scrapy\utils\defer.py", line 102, in iter_errback
+    yield next(it)
+  File "d:\anaconda3\lib\site-packages\scrapy\spidermiddlewares\offsite.py", line 29, in process_spider_output
+    for x in result:
+  File "d:\anaconda3\lib\site-packages\scrapy\spidermiddlewares\referer.py", line 339, in <genexpr>
+    return (_set_referer(r) for r in result or ())
+  File "d:\anaconda3\lib\site-packages\scrapy\spidermiddlewares\urllength.py", line 37, in <genexpr>
+    return (r for r in result or () if _filter(r))
+  File "d:\anaconda3\lib\site-packages\scrapy\spidermiddlewares\depth.py", line 58, in <genexpr>
+    return (r for r in result or () if _filter(r))
+  File "E:\ScrapyProject\gover\gover\spiders\ygzw.py", line 38, in parse_detail
+    item = response.meta["item"]
+KeyError: 'item'
+2019-03-09 00:09:36 [scrapy.core.scraper] ERROR: Spider error processing <GET http://wz.sun0769.com/html/question/201903/403638.shtml> (referer: http://wz.sun0769.com/html/top/ruse.shtml)
+Traceback (most recent call last):
+  File "d:\anaconda3\lib\site-packages\scrapy\utils\defer.py", line 102, in iter_errback
+    yield next(it)
+  File "d:\anaconda3\lib\site-packages\scrapy\spidermiddlewares\offsite.py", line 29, in process_spider_output
+    for x in result:
+  File "d:\anaconda3\lib\site-packages\scrapy\spidermiddlewares\referer.py", line 339, in <genexpr>
+    return (_set_referer(r) for r in result or ())
+  File "d:\anaconda3\lib\site-packages\scrapy\spidermiddlewares\urllength.py", line 37, in <genexpr>
+    return (r for r in result or () if _filter(r))
+  File "d:\anaconda3\lib\site-packages\scrapy\spidermiddlewares\depth.py", line 58, in <genexpr>
+    return (r for r in result or () if _filter(r))
+  File "E:\ScrapyProject\gover\gover\spiders\ygzw.py", line 38, in parse_detail
+    item = response.meta["item"]
+KeyError: 'item'
+2019-03-09 00:09:36 [scrapy.core.scraper] ERROR: Spider error processing <GET http://wz.sun0769.com/html/question/201903/403732.shtml> (referer: http://wz.sun0769.com/html/top/ruse.shtml)
+Traceback (most recent call last):
+  File "d:\anaconda3\lib\site-packages\scrapy\utils\defer.py", line 102, in iter_errback
+    yield next(it)
+  File "d:\anaconda3\lib\site-packages\scrapy\spidermiddlewares\offsite.py", line 29, in process_spider_output
+    for x in result:
+  File "d:\anaconda3\lib\site-packages\scrapy\spidermiddlewares\referer.py", line 339, in <genexpr>
+    return (_set_referer(r) for r in result or ())
+  File "d:\anaconda3\lib\site-packages\scrapy\spidermiddlewares\urllength.py", line 37, in <genexpr>
+    return (r for r in result or () if _filter(r))
+  File "d:\anaconda3\lib\site-packages\scrapy\spidermiddlewares\depth.py", line 58, in <genexpr>
+    return (r for r in result or () if _filter(r))
+  File "E:\ScrapyProject\gover\gover\spiders\ygzw.py", line 38, in parse_detail
+    item = response.meta["item"]
+KeyError: 'item'
+2019-03-09 00:09:36 [scrapy.core.scraper] ERROR: Spider error processing <GET http://wz.sun0769.com/html/question/201903/403784.shtml> (referer: http://wz.sun0769.com/html/top/ruse.shtml)
+Traceback (most recent call last):
+  File "d:\anaconda3\lib\site-packages\scrapy\utils\defer.py", line 102, in iter_errback
+    yield next(it)
+  File "d:\anaconda3\lib\site-packages\scrapy\spidermiddlewares\offsite.py", line 29, in process_spider_output
+    for x in result:
+  File "d:\anaconda3\lib\site-packages\scrapy\spidermiddlewares\referer.py", line 339, in <genexpr>
+    return (_set_referer(r) for r in result or ())
+  File "d:\anaconda3\lib\site-packages\scrapy\spidermiddlewares\urllength.py", line 37, in <genexpr>
+    return (r for r in result or () if _filter(r))
+  File "d:\anaconda3\lib\site-packages\scrapy\spidermiddlewares\depth.py", line 58, in <genexpr>
+    return (r for r in result or () if _filter(r))
+  File "E:\ScrapyProject\gover\gover\spiders\ygzw.py", line 38, in parse_detail
+    item = response.meta["item"]
+KeyError: 'item'
+2019-03-09 00:09:36 [scrapy.core.scraper] ERROR: Spider error processing <GET http://wz.sun0769.com/html/question/201903/403729.shtml> (referer: http://wz.sun0769.com/html/top/ruse.shtml)
+Traceback (most recent call last):
+  File "d:\anaconda3\lib\site-packages\scrapy\utils\defer.py", line 102, in iter_errback
+    yield next(it)
+  File "d:\anaconda3\lib\site-packages\scrapy\spidermiddlewares\offsite.py", line 29, in process_spider_output
+    for x in result:
+  File "d:\anaconda3\lib\site-packages\scrapy\spidermiddlewares\referer.py", line 339, in <genexpr>
+    return (_set_referer(r) for r in result or ())
+  File "d:\anaconda3\lib\site-packages\scrapy\spidermiddlewares\urllength.py", line 37, in <genexpr>
+    return (r for r in result or () if _filter(r))
+  File "d:\anaconda3\lib\site-packages\scrapy\spidermiddlewares\depth.py", line 58, in <genexpr>
+    return (r for r in result or () if _filter(r))
+  File "E:\ScrapyProject\gover\gover\spiders\ygzw.py", line 38, in parse_detail
+    item = response.meta["item"]
+KeyError: 'item'
+2019-03-09 00:09:36 [scrapy.core.scraper] ERROR: Spider error processing <GET http://wz.sun0769.com/html/question/201903/403798.shtml> (referer: http://wz.sun0769.com/html/top/ruse.shtml)
+Traceback (most recent call last):
+  File "d:\anaconda3\lib\site-packages\scrapy\utils\defer.py", line 102, in iter_errback
+    yield next(it)
+  File "d:\anaconda3\lib\site-packages\scrapy\spidermiddlewares\offsite.py", line 29, in process_spider_output
+    for x in result:
+  File "d:\anaconda3\lib\site-packages\scrapy\spidermiddlewares\referer.py", line 339, in <genexpr>
+    return (_set_referer(r) for r in result or ())
+  File "d:\anaconda3\lib\site-packages\scrapy\spidermiddlewares\urllength.py", line 37, in <genexpr>
+    return (r for r in result or () if _filter(r))
+  File "d:\anaconda3\lib\site-packages\scrapy\spidermiddlewares\depth.py", line 58, in <genexpr>
+    return (r for r in result or () if _filter(r))
+  File "E:\ScrapyProject\gover\gover\spiders\ygzw.py", line 38, in parse_detail
+    item = response.meta["item"]
+KeyError: 'item'
+2019-03-09 00:09:36 [scrapy.core.scraper] ERROR: Spider error processing <GET http://wz.sun0769.com/html/question/201903/403848.shtml> (referer: http://wz.sun0769.com/html/top/ruse.shtml)
+Traceback (most recent call last):
+  File "d:\anaconda3\lib\site-packages\scrapy\utils\defer.py", line 102, in iter_errback
+    yield next(it)
+  File "d:\anaconda3\lib\site-packages\scrapy\spidermiddlewares\offsite.py", line 29, in process_spider_output
+    for x in result:
+  File "d:\anaconda3\lib\site-packages\scrapy\spidermiddlewares\referer.py", line 339, in <genexpr>
+    return (_set_referer(r) for r in result or ())
+  File "d:\anaconda3\lib\site-packages\scrapy\spidermiddlewares\urllength.py", line 37, in <genexpr>
+    return (r for r in result or () if _filter(r))
+  File "d:\anaconda3\lib\site-packages\scrapy\spidermiddlewares\depth.py", line 58, in <genexpr>
+    return (r for r in result or () if _filter(r))
+  File "E:\ScrapyProject\gover\gover\spiders\ygzw.py", line 38, in parse_detail
+    item = response.meta["item"]
+KeyError: 'item'
+2019-03-09 00:09:36 [scrapy.core.scraper] ERROR: Spider error processing <GET http://wz.sun0769.com/html/question/201903/403856.shtml> (referer: http://wz.sun0769.com/html/top/ruse.shtml)
+Traceback (most recent call last):
+  File "d:\anaconda3\lib\site-packages\scrapy\utils\defer.py", line 102, in iter_errback
+    yield next(it)
+  File "d:\anaconda3\lib\site-packages\scrapy\spidermiddlewares\offsite.py", line 29, in process_spider_output
+    for x in result:
+  File "d:\anaconda3\lib\site-packages\scrapy\spidermiddlewares\referer.py", line 339, in <genexpr>
+    return (_set_referer(r) for r in result or ())
+  File "d:\anaconda3\lib\site-packages\scrapy\spidermiddlewares\urllength.py", line 37, in <genexpr>
+    return (r for r in result or () if _filter(r))
+  File "d:\anaconda3\lib\site-packages\scrapy\spidermiddlewares\depth.py", line 58, in <genexpr>
+    return (r for r in result or () if _filter(r))
+  File "E:\ScrapyProject\gover\gover\spiders\ygzw.py", line 38, in parse_detail
+    item = response.meta["item"]
+KeyError: 'item'
+2019-03-09 00:09:36 [scrapy.core.scraper] ERROR: Spider error processing <GET http://wz.sun0769.com/html/question/201903/403202.shtml> (referer: http://wz.sun0769.com/html/top/ruse.shtml)
+Traceback (most recent call last):
+  File "d:\anaconda3\lib\site-packages\scrapy\utils\defer.py", line 102, in iter_errback
+    yield next(it)
+  File "d:\anaconda3\lib\site-packages\scrapy\spidermiddlewares\offsite.py", line 29, in process_spider_output
+    for x in result:
+  File "d:\anaconda3\lib\site-packages\scrapy\spidermiddlewares\referer.py", line 339, in <genexpr>
+    return (_set_referer(r) for r in result or ())
+  File "d:\anaconda3\lib\site-packages\scrapy\spidermiddlewares\urllength.py", line 37, in <genexpr>
+    return (r for r in result or () if _filter(r))
+  File "d:\anaconda3\lib\site-packages\scrapy\spidermiddlewares\depth.py", line 58, in <genexpr>
+    return (r for r in result or () if _filter(r))
+  File "E:\ScrapyProject\gover\gover\spiders\ygzw.py", line 38, in parse_detail
+    item = response.meta["item"]
+KeyError: 'item'
+2019-03-09 00:09:36 [scrapy.core.scraper] ERROR: Spider error processing <GET http://wz.sun0769.com/html/question/201903/403233.shtml> (referer: http://wz.sun0769.com/html/top/ruse.shtml)
+Traceback (most recent call last):
+  File "d:\anaconda3\lib\site-packages\scrapy\utils\defer.py", line 102, in iter_errback
+    yield next(it)
+  File "d:\anaconda3\lib\site-packages\scrapy\spidermiddlewares\offsite.py", line 29, in process_spider_output
+    for x in result:
+  File "d:\anaconda3\lib\site-packages\scrapy\spidermiddlewares\referer.py", line 339, in <genexpr>
+    return (_set_referer(r) for r in result or ())
+  File "d:\anaconda3\lib\site-packages\scrapy\spidermiddlewares\urllength.py", line 37, in <genexpr>
+    return (r for r in result or () if _filter(r))
+  File "d:\anaconda3\lib\site-packages\scrapy\spidermiddlewares\depth.py", line 58, in <genexpr>
+    return (r for r in result or () if _filter(r))
+  File "E:\ScrapyProject\gover\gover\spiders\ygzw.py", line 38, in parse_detail
+    item = response.meta["item"]
+KeyError: 'item'
+2019-03-09 00:09:36 [scrapy.core.scraper] ERROR: Spider error processing <GET http://wz.sun0769.com/html/question/201903/403248.shtml> (referer: http://wz.sun0769.com/html/top/ruse.shtml)
+Traceback (most recent call last):
+  File "d:\anaconda3\lib\site-packages\scrapy\utils\defer.py", line 102, in iter_errback
+    yield next(it)
+  File "d:\anaconda3\lib\site-packages\scrapy\spidermiddlewares\offsite.py", line 29, in process_spider_output
+    for x in result:
+  File "d:\anaconda3\lib\site-packages\scrapy\spidermiddlewares\referer.py", line 339, in <genexpr>
+    return (_set_referer(r) for r in result or ())
+  File "d:\anaconda3\lib\site-packages\scrapy\spidermiddlewares\urllength.py", line 37, in <genexpr>
+    return (r for r in result or () if _filter(r))
+  File "d:\anaconda3\lib\site-packages\scrapy\spidermiddlewares\depth.py", line 58, in <genexpr>
+    return (r for r in result or () if _filter(r))
+  File "E:\ScrapyProject\gover\gover\spiders\ygzw.py", line 38, in parse_detail
+    item = response.meta["item"]
+KeyError: 'item'
+2019-03-09 00:09:36 [scrapy.core.scraper] ERROR: Spider error processing <GET http://wz.sun0769.com/html/question/201903/403236.shtml> (referer: http://wz.sun0769.com/html/top/ruse.shtml)
+Traceback (most recent call last):
+  File "d:\anaconda3\lib\site-packages\scrapy\utils\defer.py", line 102, in iter_errback
+    yield next(it)
+  File "d:\anaconda3\lib\site-packages\scrapy\spidermiddlewares\offsite.py", line 29, in process_spider_output
+    for x in result:
+  File "d:\anaconda3\lib\site-packages\scrapy\spidermiddlewares\referer.py", line 339, in <genexpr>
+    return (_set_referer(r) for r in result or ())
+  File "d:\anaconda3\lib\site-packages\scrapy\spidermiddlewares\urllength.py", line 37, in <genexpr>
+    return (r for r in result or () if _filter(r))
+  File "d:\anaconda3\lib\site-packages\scrapy\spidermiddlewares\depth.py", line 58, in <genexpr>
+    return (r for r in result or () if _filter(r))
+  File "E:\ScrapyProject\gover\gover\spiders\ygzw.py", line 38, in parse_detail
+    item = response.meta["item"]
+KeyError: 'item'
+2019-03-09 00:09:36 [scrapy.core.scraper] ERROR: Spider error processing <GET http://wz.sun0769.com/html/question/201903/403292.shtml> (referer: http://wz.sun0769.com/html/top/ruse.shtml)
+Traceback (most recent call last):
+  File "d:\anaconda3\lib\site-packages\scrapy\utils\defer.py", line 102, in iter_errback
+    yield next(it)
+  File "d:\anaconda3\lib\site-packages\scrapy\spidermiddlewares\offsite.py", line 29, in process_spider_output
+    for x in result:
+  File "d:\anaconda3\lib\site-packages\scrapy\spidermiddlewares\referer.py", line 339, in <genexpr>
+    return (_set_referer(r) for r in result or ())
+  File "d:\anaconda3\lib\site-packages\scrapy\spidermiddlewares\urllength.py", line 37, in <genexpr>
+    return (r for r in result or () if _filter(r))
+  File "d:\anaconda3\lib\site-packages\scrapy\spidermiddlewares\depth.py", line 58, in <genexpr>
+    return (r for r in result or () if _filter(r))
+  File "E:\ScrapyProject\gover\gover\spiders\ygzw.py", line 38, in parse_detail
+    item = response.meta["item"]
+KeyError: 'item'
+2019-03-09 00:09:36 [scrapy.core.scraper] ERROR: Spider error processing <GET http://wz.sun0769.com/html/question/201903/403332.shtml> (referer: http://wz.sun0769.com/html/top/ruse.shtml)
+Traceback (most recent call last):
+  File "d:\anaconda3\lib\site-packages\scrapy\utils\defer.py", line 102, in iter_errback
+    yield next(it)
+  File "d:\anaconda3\lib\site-packages\scrapy\spidermiddlewares\offsite.py", line 29, in process_spider_output
+    for x in result:
+  File "d:\anaconda3\lib\site-packages\scrapy\spidermiddlewares\referer.py", line 339, in <genexpr>
+    return (_set_referer(r) for r in result or ())
+  File "d:\anaconda3\lib\site-packages\scrapy\spidermiddlewares\urllength.py", line 37, in <genexpr>
+    return (r for r in result or () if _filter(r))
+  File "d:\anaconda3\lib\site-packages\scrapy\spidermiddlewares\depth.py", line 58, in <genexpr>
+    return (r for r in result or () if _filter(r))
+  File "E:\ScrapyProject\gover\gover\spiders\ygzw.py", line 38, in parse_detail
+    item = response.meta["item"]
+KeyError: 'item'
+2019-03-09 00:09:36 [scrapy.core.scraper] ERROR: Spider error processing <GET http://wz.sun0769.com/html/question/201903/403326.shtml> (referer: http://wz.sun0769.com/html/top/ruse.shtml)
+Traceback (most recent call last):
+  File "d:\anaconda3\lib\site-packages\scrapy\utils\defer.py", line 102, in iter_errback
+    yield next(it)
+  File "d:\anaconda3\lib\site-packages\scrapy\spidermiddlewares\offsite.py", line 29, in process_spider_output
+    for x in result:
+  File "d:\anaconda3\lib\site-packages\scrapy\spidermiddlewares\referer.py", line 339, in <genexpr>
+    return (_set_referer(r) for r in result or ())
+  File "d:\anaconda3\lib\site-packages\scrapy\spidermiddlewares\urllength.py", line 37, in <genexpr>
+    return (r for r in result or () if _filter(r))
+  File "d:\anaconda3\lib\site-packages\scrapy\spidermiddlewares\depth.py", line 58, in <genexpr>
+    return (r for r in result or () if _filter(r))
+  File "E:\ScrapyProject\gover\gover\spiders\ygzw.py", line 38, in parse_detail
+    item = response.meta["item"]
+KeyError: 'item'
+2019-03-09 00:09:36 [scrapy.core.scraper] ERROR: Spider error processing <GET http://wz.sun0769.com/html/question/201903/403372.shtml> (referer: http://wz.sun0769.com/html/top/ruse.shtml)
+Traceback (most recent call last):
+  File "d:\anaconda3\lib\site-packages\scrapy\utils\defer.py", line 102, in iter_errback
+    yield next(it)
+  File "d:\anaconda3\lib\site-packages\scrapy\spidermiddlewares\offsite.py", line 29, in process_spider_output
+    for x in result:
+  File "d:\anaconda3\lib\site-packages\scrapy\spidermiddlewares\referer.py", line 339, in <genexpr>
+    return (_set_referer(r) for r in result or ())
+  File "d:\anaconda3\lib\site-packages\scrapy\spidermiddlewares\urllength.py", line 37, in <genexpr>
+    return (r for r in result or () if _filter(r))
+  File "d:\anaconda3\lib\site-packages\scrapy\spidermiddlewares\depth.py", line 58, in <genexpr>
+    return (r for r in result or () if _filter(r))
+  File "E:\ScrapyProject\gover\gover\spiders\ygzw.py", line 38, in parse_detail
+    item = response.meta["item"]
+KeyError: 'item'
+2019-03-09 00:09:36 [scrapy.core.scraper] ERROR: Spider error processing <GET http://wz.sun0769.com/html/question/201903/403373.shtml> (referer: http://wz.sun0769.com/html/top/ruse.shtml)
+Traceback (most recent call last):
+  File "d:\anaconda3\lib\site-packages\scrapy\utils\defer.py", line 102, in iter_errback
+    yield next(it)
+  File "d:\anaconda3\lib\site-packages\scrapy\spidermiddlewares\offsite.py", line 29, in process_spider_output
+    for x in result:
+  File "d:\anaconda3\lib\site-packages\scrapy\spidermiddlewares\referer.py", line 339, in <genexpr>
+    return (_set_referer(r) for r in result or ())
+  File "d:\anaconda3\lib\site-packages\scrapy\spidermiddlewares\urllength.py", line 37, in <genexpr>
+    return (r for r in result or () if _filter(r))
+  File "d:\anaconda3\lib\site-packages\scrapy\spidermiddlewares\depth.py", line 58, in <genexpr>
+    return (r for r in result or () if _filter(r))
+  File "E:\ScrapyProject\gover\gover\spiders\ygzw.py", line 38, in parse_detail
+    item = response.meta["item"]
+KeyError: 'item'
+2019-03-09 00:09:36 [scrapy.core.scraper] ERROR: Spider error processing <GET http://wz.sun0769.com/html/question/201903/403376.shtml> (referer: http://wz.sun0769.com/html/top/ruse.shtml)
+Traceback (most recent call last):
+  File "d:\anaconda3\lib\site-packages\scrapy\utils\defer.py", line 102, in iter_errback
+    yield next(it)
+  File "d:\anaconda3\lib\site-packages\scrapy\spidermiddlewares\offsite.py", line 29, in process_spider_output
+    for x in result:
+  File "d:\anaconda3\lib\site-packages\scrapy\spidermiddlewares\referer.py", line 339, in <genexpr>
+    return (_set_referer(r) for r in result or ())
+  File "d:\anaconda3\lib\site-packages\scrapy\spidermiddlewares\urllength.py", line 37, in <genexpr>
+    return (r for r in result or () if _filter(r))
+  File "d:\anaconda3\lib\site-packages\scrapy\spidermiddlewares\depth.py", line 58, in <genexpr>
+    return (r for r in result or () if _filter(r))
+  File "E:\ScrapyProject\gover\gover\spiders\ygzw.py", line 38, in parse_detail
+    item = response.meta["item"]
+KeyError: 'item'
+2019-03-09 00:09:36 [scrapy.core.scraper] ERROR: Spider error processing <GET http://wz.sun0769.com/html/question/201903/403401.shtml> (referer: http://wz.sun0769.com/html/top/ruse.shtml)
+Traceback (most recent call last):
+  File "d:\anaconda3\lib\site-packages\scrapy\utils\defer.py", line 102, in iter_errback
+    yield next(it)
+  File "d:\anaconda3\lib\site-packages\scrapy\spidermiddlewares\offsite.py", line 29, in process_spider_output
+    for x in result:
+  File "d:\anaconda3\lib\site-packages\scrapy\spidermiddlewares\referer.py", line 339, in <genexpr>
+    return (_set_referer(r) for r in result or ())
+  File "d:\anaconda3\lib\site-packages\scrapy\spidermiddlewares\urllength.py", line 37, in <genexpr>
+    return (r for r in result or () if _filter(r))
+  File "d:\anaconda3\lib\site-packages\scrapy\spidermiddlewares\depth.py", line 58, in <genexpr>
+    return (r for r in result or () if _filter(r))
+  File "E:\ScrapyProject\gover\gover\spiders\ygzw.py", line 38, in parse_detail
+    item = response.meta["item"]
+KeyError: 'item'
+2019-03-09 00:09:36 [scrapy.core.scraper] ERROR: Spider error processing <GET http://wz.sun0769.com/html/question/201903/403452.shtml> (referer: http://wz.sun0769.com/html/top/ruse.shtml)
+Traceback (most recent call last):
+  File "d:\anaconda3\lib\site-packages\scrapy\utils\defer.py", line 102, in iter_errback
+    yield next(it)
+  File "d:\anaconda3\lib\site-packages\scrapy\spidermiddlewares\offsite.py", line 29, in process_spider_output
+    for x in result:
+  File "d:\anaconda3\lib\site-packages\scrapy\spidermiddlewares\referer.py", line 339, in <genexpr>
+    return (_set_referer(r) for r in result or ())
+  File "d:\anaconda3\lib\site-packages\scrapy\spidermiddlewares\urllength.py", line 37, in <genexpr>
+    return (r for r in result or () if _filter(r))
+  File "d:\anaconda3\lib\site-packages\scrapy\spidermiddlewares\depth.py", line 58, in <genexpr>
+    return (r for r in result or () if _filter(r))
+  File "E:\ScrapyProject\gover\gover\spiders\ygzw.py", line 38, in parse_detail
+    item = response.meta["item"]
+KeyError: 'item'
+2019-03-09 00:09:36 [scrapy.core.scraper] ERROR: Spider error processing <GET http://wz.sun0769.com/html/question/201903/403461.shtml> (referer: http://wz.sun0769.com/html/top/ruse.shtml)
+Traceback (most recent call last):
+  File "d:\anaconda3\lib\site-packages\scrapy\utils\defer.py", line 102, in iter_errback
+    yield next(it)
+  File "d:\anaconda3\lib\site-packages\scrapy\spidermiddlewares\offsite.py", line 29, in process_spider_output
+    for x in result:
+  File "d:\anaconda3\lib\site-packages\scrapy\spidermiddlewares\referer.py", line 339, in <genexpr>
+    return (_set_referer(r) for r in result or ())
+  File "d:\anaconda3\lib\site-packages\scrapy\spidermiddlewares\urllength.py", line 37, in <genexpr>
+    return (r for r in result or () if _filter(r))
+  File "d:\anaconda3\lib\site-packages\scrapy\spidermiddlewares\depth.py", line 58, in <genexpr>
+    return (r for r in result or () if _filter(r))
+  File "E:\ScrapyProject\gover\gover\spiders\ygzw.py", line 38, in parse_detail
+    item = response.meta["item"]
+KeyError: 'item'
+2019-03-09 00:09:36 [scrapy.core.scraper] ERROR: Spider error processing <GET http://wz.sun0769.com/html/question/201903/403471.shtml> (referer: http://wz.sun0769.com/html/top/ruse.shtml)
+Traceback (most recent call last):
+  File "d:\anaconda3\lib\site-packages\scrapy\utils\defer.py", line 102, in iter_errback
+    yield next(it)
+  File "d:\anaconda3\lib\site-packages\scrapy\spidermiddlewares\offsite.py", line 29, in process_spider_output
+    for x in result:
+  File "d:\anaconda3\lib\site-packages\scrapy\spidermiddlewares\referer.py", line 339, in <genexpr>
+    return (_set_referer(r) for r in result or ())
+  File "d:\anaconda3\lib\site-packages\scrapy\spidermiddlewares\urllength.py", line 37, in <genexpr>
+    return (r for r in result or () if _filter(r))
+  File "d:\anaconda3\lib\site-packages\scrapy\spidermiddlewares\depth.py", line 58, in <genexpr>
+    return (r for r in result or () if _filter(r))
+  File "E:\ScrapyProject\gover\gover\spiders\ygzw.py", line 38, in parse_detail
+    item = response.meta["item"]
+KeyError: 'item'
+2019-03-09 00:10:33 [scrapy.extensions.logstats] INFO: Crawled 90 pages (at 90 pages/min), scraped 0 items (at 0 items/min)
+2019-03-09 00:11:33 [scrapy.extensions.logstats] INFO: Crawled 135 pages (at 45 pages/min), scraped 0 items (at 0 items/min)
+2019-03-09 00:12:19 [scrapy.utils.log] INFO: Scrapy 1.6.0 started (bot: gover)
+2019-03-09 00:12:19 [scrapy.utils.log] INFO: Versions: lxml 4.3.2.0, libxml2 2.9.7, cssselect 1.0.3, parsel 1.5.1, w3lib 1.20.0, Twisted 18.9.0, Python 3.7.2 (default, Feb 21 2019, 17:35:59) [MSC v.1915 64 bit (AMD64)], pyOpenSSL 17.2.0 (OpenSSL 1.1.1b  26 Feb 2019), cryptography 2.6.1, Platform Windows-10-10.0.17134-SP0
+2019-03-09 00:12:19 [scrapy.crawler] INFO: Overridden settings: {'BOT_NAME': 'gover', 'LOG_FILE': './log.log', 'LOG_LEVEL': 'INFO', 'NEWSPIDER_MODULE': 'gover.spiders', 'ROBOTSTXT_OBEY': True, 'SPIDER_MODULES': ['gover.spiders'], 'USER_AGENT': 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/72.0.3626.119 Safari/537.36'}
+2019-03-09 00:12:19 [scrapy.extensions.telnet] INFO: Telnet Password: a3ed9ca6566ca6d5
+2019-03-09 00:12:19 [scrapy.middleware] INFO: Enabled extensions:
+['scrapy.extensions.corestats.CoreStats',
+ 'scrapy.extensions.telnet.TelnetConsole',
+ 'scrapy.extensions.logstats.LogStats']
+2019-03-09 00:12:20 [scrapy.middleware] INFO: Enabled downloader middlewares:
+['scrapy.downloadermiddlewares.robotstxt.RobotsTxtMiddleware',
+ 'scrapy.downloadermiddlewares.httpauth.HttpAuthMiddleware',
+ 'scrapy.downloadermiddlewares.downloadtimeout.DownloadTimeoutMiddleware',
+ 'scrapy.downloadermiddlewares.defaultheaders.DefaultHeadersMiddleware',
+ 'scrapy.downloadermiddlewares.useragent.UserAgentMiddleware',
+ 'scrapy.downloadermiddlewares.retry.RetryMiddleware',
+ 'scrapy.downloadermiddlewares.redirect.MetaRefreshMiddleware',
+ 'scrapy.downloadermiddlewares.httpcompression.HttpCompressionMiddleware',
+ 'scrapy.downloadermiddlewares.redirect.RedirectMiddleware',
+ 'scrapy.downloadermiddlewares.cookies.CookiesMiddleware',
+ 'scrapy.downloadermiddlewares.httpproxy.HttpProxyMiddleware',
+ 'scrapy.downloadermiddlewares.stats.DownloaderStats']
+2019-03-09 00:12:20 [scrapy.middleware] INFO: Enabled spider middlewares:
+['scrapy.spidermiddlewares.httperror.HttpErrorMiddleware',
+ 'scrapy.spidermiddlewares.offsite.OffsiteMiddleware',
+ 'scrapy.spidermiddlewares.referer.RefererMiddleware',
+ 'scrapy.spidermiddlewares.urllength.UrlLengthMiddleware',
+ 'scrapy.spidermiddlewares.depth.DepthMiddleware']
+2019-03-09 00:12:20 [scrapy.middleware] INFO: Enabled item pipelines:
+['gover.pipelines.GoverPipeline', 'gover.pipelines.MongodbPipeline']
+2019-03-09 00:12:20 [scrapy.core.engine] INFO: Spider opened
+2019-03-09 00:12:20 [scrapy.extensions.logstats] INFO: Crawled 0 pages (at 0 pages/min), scraped 0 items (at 0 items/min)
+2019-03-09 00:12:20 [scrapy.extensions.telnet] INFO: Telnet console listening on 127.0.0.1:6023
+2019-03-09 00:12:53 [scrapy.core.scraper] ERROR: Error processing {'date': '2019-03-08 15:39:36',
+ 'detail_content': ['中国工商银行东莞长安万达金街支行，柜员机大厅卫生状况太差，太脏。盼相关领导人员跟进一下，谢谢。'],
+ 'detail_img': [],
+ 'detail_url': 'http://wz.sun0769.com/html/question/201903/403848.shtml',
+ 'location': '中国工商银行东莞分行',
+ 'num': '209482',
+ 'state': '已受理',
+ 'theme': '卫生状况真心堪忧'}
+Traceback (most recent call last):
+  File "d:\anaconda3\lib\site-packages\twisted\internet\defer.py", line 654, in _runCallbacks
+    current.result = callback(current.result, *args, **kw)
+  File "E:\ScrapyProject\gover\gover\pipelines.py", line 39, in process_item
+    self.db[self.collection_name].insert(dict(item))
+  File "d:\anaconda3\lib\site-packages\pymongo\collection.py", line 3161, in insert
+    check_keys, manipulate, write_concern)
+  File "d:\anaconda3\lib\site-packages\pymongo\collection.py", line 607, in _insert
+    bypass_doc_val, session)
+  File "d:\anaconda3\lib\site-packages\pymongo\collection.py", line 595, in _insert_one
+    acknowledged, _insert_command, session)
+  File "d:\anaconda3\lib\site-packages\pymongo\mongo_client.py", line 1247, in _retryable_write
+    with self._tmp_session(session) as s:
+  File "d:\anaconda3\lib\contextlib.py", line 112, in __enter__
+    return next(self.gen)
+  File "d:\anaconda3\lib\site-packages\pymongo\mongo_client.py", line 1576, in _tmp_session
+    s = self._ensure_session(session)
+  File "d:\anaconda3\lib\site-packages\pymongo\mongo_client.py", line 1563, in _ensure_session
+    return self.__start_session(True, causal_consistency=False)
+  File "d:\anaconda3\lib\site-packages\pymongo\mongo_client.py", line 1516, in __start_session
+    server_session = self._get_server_session()
+  File "d:\anaconda3\lib\site-packages\pymongo\mongo_client.py", line 1549, in _get_server_session
+    return self._topology.get_server_session()
+  File "d:\anaconda3\lib\site-packages\pymongo\topology.py", line 427, in get_server_session
+    None)
+  File "d:\anaconda3\lib\site-packages\pymongo\topology.py", line 199, in _select_servers_loop
+    self._error_message(selector))
+pymongo.errors.ServerSelectionTimeoutError: lcoalhost:27017: [Errno 11001] getaddrinfo failed
+2019-03-09 00:13:23 [scrapy.core.scraper] ERROR: Error processing {'date': '2019-03-08 15:53:11',
+ 'detail_content': ['寮步镇教育路路段在修路之前是有黄格线停车，同样的位置在修路后黄格没有画上，导致经常违章停车，但此位置之前是正规停车有黄格线，只是修路后黄格线没有再画上，建议相关部门在此路段把之前弄没的黄格线加上'],
+ 'detail_img': [],
+ 'detail_url': 'http://wz.sun0769.com/html/question/201903/403856.shtml',
+ 'location': '市交警支队',
+ 'num': '209488',
+ 'state': '待处理',
+ 'theme': '寮步镇寮步社区教育路段停车问题'}
+Traceback (most recent call last):
+  File "d:\anaconda3\lib\site-packages\twisted\internet\defer.py", line 654, in _runCallbacks
+    current.result = callback(current.result, *args, **kw)
+  File "E:\ScrapyProject\gover\gover\pipelines.py", line 39, in process_item
+    self.db[self.collection_name].insert(dict(item))
+  File "d:\anaconda3\lib\site-packages\pymongo\collection.py", line 3161, in insert
+    check_keys, manipulate, write_concern)
+  File "d:\anaconda3\lib\site-packages\pymongo\collection.py", line 607, in _insert
+    bypass_doc_val, session)
+  File "d:\anaconda3\lib\site-packages\pymongo\collection.py", line 595, in _insert_one
+    acknowledged, _insert_command, session)
+  File "d:\anaconda3\lib\site-packages\pymongo\mongo_client.py", line 1247, in _retryable_write
+    with self._tmp_session(session) as s:
+  File "d:\anaconda3\lib\contextlib.py", line 112, in __enter__
+    return next(self.gen)
+  File "d:\anaconda3\lib\site-packages\pymongo\mongo_client.py", line 1576, in _tmp_session
+    s = self._ensure_session(session)
+  File "d:\anaconda3\lib\site-packages\pymongo\mongo_client.py", line 1563, in _ensure_session
+    return self.__start_session(True, causal_consistency=False)
+  File "d:\anaconda3\lib\site-packages\pymongo\mongo_client.py", line 1516, in __start_session
+    server_session = self._get_server_session()
+  File "d:\anaconda3\lib\site-packages\pymongo\mongo_client.py", line 1549, in _get_server_session
+    return self._topology.get_server_session()
+  File "d:\anaconda3\lib\site-packages\pymongo\topology.py", line 427, in get_server_session
+    None)
+  File "d:\anaconda3\lib\site-packages\pymongo\topology.py", line 199, in _select_servers_loop
+    self._error_message(selector))
+pymongo.errors.ServerSelectionTimeoutError: lcoalhost:27017: [Errno 11001] getaddrinfo failed
+2019-03-09 00:13:53 [scrapy.core.scraper] ERROR: Error processing {'date': '2019-03-07 14:29:21',
+ 'detail_content': ['每天晚上5点半放工由金牛路往银岗加油站红绿灯方向都会塞车，能否在卫生站门口和三叉路口那里各安装一个红绿灯，截住三叉路口每个方向车流涌入路口堵住金牛路左转出骏马路牛行方向的车。图中打叉位置安装红绿灯，在红灯安全的情况下可以由金牛路左转出骏马路牛行方向，可以分流加油站路口左转进银岗路车流。'],
+ 'detail_img': [],
+ 'detail_url': 'http://wz.sun0769.com/html/question/201903/403732.shtml',
+ 'location': '横沥',
+ 'num': '209392',
+ 'state': '已受理',
+ 'theme': '横沥银岗加油站红绿灯设置二次红绿灯'}
+Traceback (most recent call last):
+  File "d:\anaconda3\lib\site-packages\twisted\internet\defer.py", line 654, in _runCallbacks
+    current.result = callback(current.result, *args, **kw)
+  File "E:\ScrapyProject\gover\gover\pipelines.py", line 39, in process_item
+    self.db[self.collection_name].insert(dict(item))
+  File "d:\anaconda3\lib\site-packages\pymongo\collection.py", line 3161, in insert
+    check_keys, manipulate, write_concern)
+  File "d:\anaconda3\lib\site-packages\pymongo\collection.py", line 607, in _insert
+    bypass_doc_val, session)
+  File "d:\anaconda3\lib\site-packages\pymongo\collection.py", line 595, in _insert_one
+    acknowledged, _insert_command, session)
+  File "d:\anaconda3\lib\site-packages\pymongo\mongo_client.py", line 1247, in _retryable_write
+    with self._tmp_session(session) as s:
+  File "d:\anaconda3\lib\contextlib.py", line 112, in __enter__
+    return next(self.gen)
+  File "d:\anaconda3\lib\site-packages\pymongo\mongo_client.py", line 1576, in _tmp_session
+    s = self._ensure_session(session)
+  File "d:\anaconda3\lib\site-packages\pymongo\mongo_client.py", line 1563, in _ensure_session
+    return self.__start_session(True, causal_consistency=False)
+  File "d:\anaconda3\lib\site-packages\pymongo\mongo_client.py", line 1516, in __start_session
+    server_session = self._get_server_session()
+  File "d:\anaconda3\lib\site-packages\pymongo\mongo_client.py", line 1549, in _get_server_session
+    return self._topology.get_server_session()
+  File "d:\anaconda3\lib\site-packages\pymongo\topology.py", line 427, in get_server_session
+    None)
+  File "d:\anaconda3\lib\site-packages\pymongo\topology.py", line 199, in _select_servers_loop
+    self._error_message(selector))
+pymongo.errors.ServerSelectionTimeoutError: lcoalhost:27017: [Errno 11001] getaddrinfo failed
+2019-03-09 00:14:23 [scrapy.core.scraper] ERROR: Error processing {'date': '2019-03-05 10:52:28',
+ 'detail_content': ['厚街N年前说要建、湖景小学、湖景幼儿园、修建将军路至南城工业园、职校西路至南城工业园段路等联网路线。N年已经过去了。一点进展也没有，真的希望政府加大路网建设力度。',
+                    '阳光热线：',
+                    '关于群众咨询厚街联网路线',
+                    '的问题，经获悉，现将情况回复如下：',
+                    '感谢您宝贵的意见,关于咨询厚街规划项目工程，如有更多的问题可以向镇重点办进行详情咨询，咨询电话0769-81695566',
+                    '镇重点办',
+                    '。',
+                    '谢谢。',
+                    '2019年3月'],
+ 'detail_img': [],
+ 'detail_url': 'http://wz.sun0769.com/html/question/201903/403567.shtml',
+ 'location': '厚街',
+ 'num': '209266',
+ 'state': '已回复',
+ 'theme': '加快将军路至南城工业园、职校西路至南城工业园段路等联网路线'}
+Traceback (most recent call last):
+  File "d:\anaconda3\lib\site-packages\twisted\internet\defer.py", line 654, in _runCallbacks
+    current.result = callback(current.result, *args, **kw)
+  File "E:\ScrapyProject\gover\gover\pipelines.py", line 39, in process_item
+    self.db[self.collection_name].insert(dict(item))
+  File "d:\anaconda3\lib\site-packages\pymongo\collection.py", line 3161, in insert
+    check_keys, manipulate, write_concern)
+  File "d:\anaconda3\lib\site-packages\pymongo\collection.py", line 607, in _insert
+    bypass_doc_val, session)
+  File "d:\anaconda3\lib\site-packages\pymongo\collection.py", line 595, in _insert_one
+    acknowledged, _insert_command, session)
+  File "d:\anaconda3\lib\site-packages\pymongo\mongo_client.py", line 1247, in _retryable_write
+    with self._tmp_session(session) as s:
+  File "d:\anaconda3\lib\contextlib.py", line 112, in __enter__
+    return next(self.gen)
+  File "d:\anaconda3\lib\site-packages\pymongo\mongo_client.py", line 1576, in _tmp_session
+    s = self._ensure_session(session)
+  File "d:\anaconda3\lib\site-packages\pymongo\mongo_client.py", line 1563, in _ensure_session
+    return self.__start_session(True, causal_consistency=False)
+  File "d:\anaconda3\lib\site-packages\pymongo\mongo_client.py", line 1516, in __start_session
+    server_session = self._get_server_session()
+  File "d:\anaconda3\lib\site-packages\pymongo\mongo_client.py", line 1549, in _get_server_session
+    return self._topology.get_server_session()
+  File "d:\anaconda3\lib\site-packages\pymongo\topology.py", line 427, in get_server_session
+    None)
+  File "d:\anaconda3\lib\site-packages\pymongo\topology.py", line 199, in _select_servers_loop
+    self._error_message(selector))
+pymongo.errors.ServerSelectionTimeoutError: lcoalhost:27017: [Errno 11001] getaddrinfo failed
+2019-03-09 00:20:07 [scrapy.utils.log] INFO: Scrapy 1.6.0 started (bot: gover)
+2019-03-09 00:20:07 [scrapy.utils.log] INFO: Versions: lxml 4.3.2.0, libxml2 2.9.7, cssselect 1.0.3, parsel 1.5.1, w3lib 1.20.0, Twisted 18.9.0, Python 3.7.2 (default, Feb 21 2019, 17:35:59) [MSC v.1915 64 bit (AMD64)], pyOpenSSL 17.2.0 (OpenSSL 1.1.1b  26 Feb 2019), cryptography 2.6.1, Platform Windows-10-10.0.17134-SP0
+2019-03-09 00:20:07 [scrapy.crawler] INFO: Overridden settings: {'BOT_NAME': 'gover', 'LOG_FILE': './log.log', 'LOG_LEVEL': 'INFO', 'NEWSPIDER_MODULE': 'gover.spiders', 'ROBOTSTXT_OBEY': True, 'SPIDER_MODULES': ['gover.spiders'], 'USER_AGENT': 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/72.0.3626.119 Safari/537.36'}
+2019-03-09 00:20:07 [scrapy.extensions.telnet] INFO: Telnet Password: 30c42fa3229fca56
+2019-03-09 00:20:07 [scrapy.middleware] INFO: Enabled extensions:
+['scrapy.extensions.corestats.CoreStats',
+ 'scrapy.extensions.telnet.TelnetConsole',
+ 'scrapy.extensions.logstats.LogStats']
+2019-03-09 00:20:07 [scrapy.middleware] INFO: Enabled downloader middlewares:
+['scrapy.downloadermiddlewares.robotstxt.RobotsTxtMiddleware',
+ 'scrapy.downloadermiddlewares.httpauth.HttpAuthMiddleware',
+ 'scrapy.downloadermiddlewares.downloadtimeout.DownloadTimeoutMiddleware',
+ 'scrapy.downloadermiddlewares.defaultheaders.DefaultHeadersMiddleware',
+ 'scrapy.downloadermiddlewares.useragent.UserAgentMiddleware',
+ 'scrapy.downloadermiddlewares.retry.RetryMiddleware',
+ 'scrapy.downloadermiddlewares.redirect.MetaRefreshMiddleware',
+ 'scrapy.downloadermiddlewares.httpcompression.HttpCompressionMiddleware',
+ 'scrapy.downloadermiddlewares.redirect.RedirectMiddleware',
+ 'scrapy.downloadermiddlewares.cookies.CookiesMiddleware',
+ 'scrapy.downloadermiddlewares.httpproxy.HttpProxyMiddleware',
+ 'scrapy.downloadermiddlewares.stats.DownloaderStats']
+2019-03-09 00:20:07 [scrapy.middleware] INFO: Enabled spider middlewares:
+['scrapy.spidermiddlewares.httperror.HttpErrorMiddleware',
+ 'scrapy.spidermiddlewares.offsite.OffsiteMiddleware',
+ 'scrapy.spidermiddlewares.referer.RefererMiddleware',
+ 'scrapy.spidermiddlewares.urllength.UrlLengthMiddleware',
+ 'scrapy.spidermiddlewares.depth.DepthMiddleware']
+2019-03-09 00:20:07 [scrapy.middleware] INFO: Enabled item pipelines:
+['gover.pipelines.GoverPipeline', 'gover.pipelines.MongodbPipeline']
+2019-03-09 00:20:07 [scrapy.core.engine] INFO: Spider opened
+2019-03-09 00:20:07 [scrapy.extensions.logstats] INFO: Crawled 0 pages (at 0 pages/min), scraped 0 items (at 0 items/min)
+2019-03-09 00:20:07 [scrapy.extensions.telnet] INFO: Telnet console listening on 127.0.0.1:6023
+2019-03-09 00:20:40 [scrapy.core.scraper] ERROR: Error processing {'date': '2019-03-04 16:50:54',
+ 'detail_content': ['由于早期受70/90政策和税收政策影响，许多开发商为规避政策，将原本一套房做成两个证，如果宏远江南第一城，实际一套房，居住面积仅为120多平方米，做成两个房产证。现行政策规定在东莞拥有两套房后，不得再购买新房，无形中就将一房双证人群排除在外。是否可结合特写的政策环境和条件，本着解决历史问题的态度，提出处理建议。建议一：对原本为一处房产办理为两个证的设计，自愿补缴一定税费后，进行合并处理。建议二：细化限购政策，为提高居住品质，对家庭人均面积不超过50平方米（数字为举例，需要结合发达国家居住水平来定），允许增购第三套新房。。望回复。'],
+ 'detail_img': [],
+ 'detail_url': 'http://wz.sun0769.com/html/question/201903/403523.shtml',
+ 'location': '市住建局',
+ 'num': '209230',
+ 'state': '待处理',
+ 'theme': '关于处理“一房双证”历史问题，优化东莞限购政策的建议'}
+Traceback (most recent call last):
+  File "d:\anaconda3\lib\site-packages\twisted\internet\defer.py", line 654, in _runCallbacks
+    current.result = callback(current.result, *args, **kw)
+  File "E:\ScrapyProject\gover\gover\pipelines.py", line 39, in process_item
+    self.db[self.collection_name].insert(dict(item))
+  File "d:\anaconda3\lib\site-packages\pymongo\collection.py", line 3161, in insert
+    check_keys, manipulate, write_concern)
+  File "d:\anaconda3\lib\site-packages\pymongo\collection.py", line 607, in _insert
+    bypass_doc_val, session)
+  File "d:\anaconda3\lib\site-packages\pymongo\collection.py", line 595, in _insert_one
+    acknowledged, _insert_command, session)
+  File "d:\anaconda3\lib\site-packages\pymongo\mongo_client.py", line 1247, in _retryable_write
+    with self._tmp_session(session) as s:
+  File "d:\anaconda3\lib\contextlib.py", line 112, in __enter__
+    return next(self.gen)
+  File "d:\anaconda3\lib\site-packages\pymongo\mongo_client.py", line 1576, in _tmp_session
+    s = self._ensure_session(session)
+  File "d:\anaconda3\lib\site-packages\pymongo\mongo_client.py", line 1563, in _ensure_session
+    return self.__start_session(True, causal_consistency=False)
+  File "d:\anaconda3\lib\site-packages\pymongo\mongo_client.py", line 1516, in __start_session
+    server_session = self._get_server_session()
+  File "d:\anaconda3\lib\site-packages\pymongo\mongo_client.py", line 1549, in _get_server_session
+    return self._topology.get_server_session()
+  File "d:\anaconda3\lib\site-packages\pymongo\topology.py", line 427, in get_server_session
+    None)
+  File "d:\anaconda3\lib\site-packages\pymongo\topology.py", line 199, in _select_servers_loop
+    self._error_message(selector))
+pymongo.errors.ServerSelectionTimeoutError: lcoalhost:27017: [Errno 11001] getaddrinfo failed
+2019-03-09 00:21:11 [scrapy.core.scraper] ERROR: Error processing {'date': '2019-03-05 16:47:55',
+ 'detail_content': ['人民医院一直为市民提供良好的医疗服务，也得到全社会的认可。前些日子家人住院就医，频繁出入医院，也就见到',
+                    '了医院的很多日常。医护人员相当忙碌，可以说上班到下班没得停下来的时间。尽管如此，但他们的态度很好，说话',
+                    '语气轻轻，又比较耐心，而且又细心，例如深夜给病人打针小推车推到病房外就不推进病房，以免推车响声打扰到病',
+                    '房内其他病人休息，比较贴心。再次非常感谢医护人员对我家人的悉心照料！',
+                    '为了医院的服务不断得到改进，向人民医院提一些建议：',
+                    '1、有些病号服看起来明显已经好久了，甚至有些破烂，且不说穿起来形象不大好，更担心卫生状况，希望可以及时更新；',
+                    '2、不知道病房的呼叫铃声是否全院统一，但那些天我听到的呼叫铃声是新年歌《恭喜你》的铃声，医院播放《恭喜你》，',
+                    '感觉好像意头不大好，或者可以考虑需不需要换过一首铃声；',
+                    '3、病房的天花板有些可能潮湿导致发霉发黑；',
+                    '4、病房内的空气好像不大清新，比较不通风，但也没有工作人员去管理通风的问题；',
+                    '5、医院的后花园欠缺管理，如果能将其打理一番，也是可以给病人提供一个比较优美的散步场所；',
+                    '6、医院的很多地方电灯炮坏了，但没有更换；',
+                    '7、一些在地板上的指引标志因常年的磨损已变得模糊，应适时更新；',
+                    '8、一楼门诊部通往住院部通道边上厕所（便利店斜对面）异味比较大，即使在放射科候诊的座椅都能闻到，应该是使用的人',
+                    '比较多导致的，希望可以加强保洁管理；',
+                    '9、那天办理出院手续，去大厅的客服中心打印检查检验报告资料，到我的时候被告知下班了，让我们下午上班时间再打印，',
+                    '但我们已经办了出院手续就要出院了，下午根本不需要再来。但就是差这些检验报告还没有打印。周日打算去打印的，被告知',
+                    '是不上班的。对于客服中心的上班时间是否可以调整，中午下班时间、周末时间安排值班人员，要不然在这些时间段需要打印',
+                    '检查报告的就没办法拿得到了；',
+                    '10、关于打印检查报告、化验报告等资料，客服中心那里需要收费，比较疑惑的是本来这些报告就应该给客户的，为什么还要',
+                    '收取费用呢？而且收费还不便宜；',
+                    '11、人民医院的公众号每天都会发住院清单提醒，这个服务比较贴心，让病人知晓消费情况。个人觉得能否可以做到更细致，',
+                    '让每一类的费用都有明细可查可看，譬如西药XX元，那包含有哪些西药，每一种西药多少钱，这就更清晰。',
+                    '可能有些实际情况与本人所见有出入或者观察比较片面，以上建议意见不知妥当与否，如有说得不当的地方请包含、谅解。',
+                    '感谢所有医护人员的辛勤付出！'],
+ 'detail_img': [],
+ 'detail_url': 'http://wz.sun0769.com/html/question/201903/403624.shtml',
+ 'location': '市卫生健康局',
+ 'num': '209302',
+ 'state': '已受理',
+ 'theme': '向市人民医院所提的一些建议 '}
+Traceback (most recent call last):
+  File "d:\anaconda3\lib\site-packages\twisted\internet\defer.py", line 654, in _runCallbacks
+    current.result = callback(current.result, *args, **kw)
+  File "E:\ScrapyProject\gover\gover\pipelines.py", line 39, in process_item
+    self.db[self.collection_name].insert(dict(item))
+  File "d:\anaconda3\lib\site-packages\pymongo\collection.py", line 3161, in insert
+    check_keys, manipulate, write_concern)
+  File "d:\anaconda3\lib\site-packages\pymongo\collection.py", line 607, in _insert
+    bypass_doc_val, session)
+  File "d:\anaconda3\lib\site-packages\pymongo\collection.py", line 595, in _insert_one
+    acknowledged, _insert_command, session)
+  File "d:\anaconda3\lib\site-packages\pymongo\mongo_client.py", line 1247, in _retryable_write
+    with self._tmp_session(session) as s:
+  File "d:\anaconda3\lib\contextlib.py", line 112, in __enter__
+    return next(self.gen)
+  File "d:\anaconda3\lib\site-packages\pymongo\mongo_client.py", line 1576, in _tmp_session
+    s = self._ensure_session(session)
+  File "d:\anaconda3\lib\site-packages\pymongo\mongo_client.py", line 1563, in _ensure_session
+    return self.__start_session(True, causal_consistency=False)
+  File "d:\anaconda3\lib\site-packages\pymongo\mongo_client.py", line 1516, in __start_session
+    server_session = self._get_server_session()
+  File "d:\anaconda3\lib\site-packages\pymongo\mongo_client.py", line 1549, in _get_server_session
+    return self._topology.get_server_session()
+  File "d:\anaconda3\lib\site-packages\pymongo\topology.py", line 427, in get_server_session
+    None)
+  File "d:\anaconda3\lib\site-packages\pymongo\topology.py", line 199, in _select_servers_loop
+    self._error_message(selector))
+pymongo.errors.ServerSelectionTimeoutError: lcoalhost:27017: [Errno 11001] getaddrinfo failed
+2019-03-09 00:21:41 [scrapy.core.scraper] ERROR: Error processing {'date': '2019-03-05 10:52:28',
+ 'detail_content': ['厚街N年前说要建、湖景小学、湖景幼儿园、修建将军路至南城工业园、职校西路至南城工业园段路等联网路线。N年已经过去了。一点进展也没有，真的希望政府加大路网建设力度。',
+                    '阳光热线：',
+                    '关于群众咨询厚街联网路线',
+                    '的问题，经获悉，现将情况回复如下：',
+                    '感谢您宝贵的意见,关于咨询厚街规划项目工程，如有更多的问题可以向镇重点办进行详情咨询，咨询电话0769-81695566',
+                    '镇重点办',
+                    '。',
+                    '谢谢。',
+                    '2019年3月'],
+ 'detail_img': [],
+ 'detail_url': 'http://wz.sun0769.com/html/question/201903/403567.shtml',
+ 'location': '厚街',
+ 'num': '209266',
+ 'state': '已回复',
+ 'theme': '加快将军路至南城工业园、职校西路至南城工业园段路等联网路线'}
+Traceback (most recent call last):
+  File "d:\anaconda3\lib\site-packages\twisted\internet\defer.py", line 654, in _runCallbacks
+    current.result = callback(current.result, *args, **kw)
+  File "E:\ScrapyProject\gover\gover\pipelines.py", line 39, in process_item
+    self.db[self.collection_name].insert(dict(item))
+  File "d:\anaconda3\lib\site-packages\pymongo\collection.py", line 3161, in insert
+    check_keys, manipulate, write_concern)
+  File "d:\anaconda3\lib\site-packages\pymongo\collection.py", line 607, in _insert
+    bypass_doc_val, session)
+  File "d:\anaconda3\lib\site-packages\pymongo\collection.py", line 595, in _insert_one
+    acknowledged, _insert_command, session)
+  File "d:\anaconda3\lib\site-packages\pymongo\mongo_client.py", line 1247, in _retryable_write
+    with self._tmp_session(session) as s:
+  File "d:\anaconda3\lib\contextlib.py", line 112, in __enter__
+    return next(self.gen)
+  File "d:\anaconda3\lib\site-packages\pymongo\mongo_client.py", line 1576, in _tmp_session
+    s = self._ensure_session(session)
+  File "d:\anaconda3\lib\site-packages\pymongo\mongo_client.py", line 1563, in _ensure_session
+    return self.__start_session(True, causal_consistency=False)
+  File "d:\anaconda3\lib\site-packages\pymongo\mongo_client.py", line 1516, in __start_session
+    server_session = self._get_server_session()
+  File "d:\anaconda3\lib\site-packages\pymongo\mongo_client.py", line 1549, in _get_server_session
+    return self._topology.get_server_session()
+  File "d:\anaconda3\lib\site-packages\pymongo\topology.py", line 427, in get_server_session
+    None)
+  File "d:\anaconda3\lib\site-packages\pymongo\topology.py", line 199, in _select_servers_loop
+    self._error_message(selector))
+pymongo.errors.ServerSelectionTimeoutError: lcoalhost:27017: [Errno 11001] getaddrinfo failed
+2019-03-09 00:29:41 [scrapy.utils.log] INFO: Scrapy 1.6.0 started (bot: gover)
+2019-03-09 00:29:41 [scrapy.utils.log] INFO: Versions: lxml 4.3.2.0, libxml2 2.9.7, cssselect 1.0.3, parsel 1.5.1, w3lib 1.20.0, Twisted 18.9.0, Python 3.7.2 (default, Feb 21 2019, 17:35:59) [MSC v.1915 64 bit (AMD64)], pyOpenSSL 17.2.0 (OpenSSL 1.1.1b  26 Feb 2019), cryptography 2.6.1, Platform Windows-10-10.0.17134-SP0
+2019-03-09 00:29:41 [scrapy.crawler] INFO: Overridden settings: {'BOT_NAME': 'gover', 'LOG_FILE': './log.log', 'LOG_LEVEL': 'INFO', 'NEWSPIDER_MODULE': 'gover.spiders', 'ROBOTSTXT_OBEY': True, 'SPIDER_MODULES': ['gover.spiders'], 'USER_AGENT': 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/72.0.3626.119 Safari/537.36'}
+2019-03-09 00:29:41 [scrapy.extensions.telnet] INFO: Telnet Password: 4ba22d06d530b9ad
+2019-03-09 00:29:41 [scrapy.middleware] INFO: Enabled extensions:
+['scrapy.extensions.corestats.CoreStats',
+ 'scrapy.extensions.telnet.TelnetConsole',
+ 'scrapy.extensions.logstats.LogStats']
+2019-03-09 00:29:42 [scrapy.middleware] INFO: Enabled downloader middlewares:
+['scrapy.downloadermiddlewares.robotstxt.RobotsTxtMiddleware',
+ 'scrapy.downloadermiddlewares.httpauth.HttpAuthMiddleware',
+ 'scrapy.downloadermiddlewares.downloadtimeout.DownloadTimeoutMiddleware',
+ 'scrapy.downloadermiddlewares.defaultheaders.DefaultHeadersMiddleware',
+ 'scrapy.downloadermiddlewares.useragent.UserAgentMiddleware',
+ 'scrapy.downloadermiddlewares.retry.RetryMiddleware',
+ 'scrapy.downloadermiddlewares.redirect.MetaRefreshMiddleware',
+ 'scrapy.downloadermiddlewares.httpcompression.HttpCompressionMiddleware',
+ 'scrapy.downloadermiddlewares.redirect.RedirectMiddleware',
+ 'scrapy.downloadermiddlewares.cookies.CookiesMiddleware',
+ 'scrapy.downloadermiddlewares.httpproxy.HttpProxyMiddleware',
+ 'scrapy.downloadermiddlewares.stats.DownloaderStats']
+2019-03-09 00:29:42 [scrapy.middleware] INFO: Enabled spider middlewares:
+['scrapy.spidermiddlewares.httperror.HttpErrorMiddleware',
+ 'scrapy.spidermiddlewares.offsite.OffsiteMiddleware',
+ 'scrapy.spidermiddlewares.referer.RefererMiddleware',
+ 'scrapy.spidermiddlewares.urllength.UrlLengthMiddleware',
+ 'scrapy.spidermiddlewares.depth.DepthMiddleware']
+2019-03-09 00:29:42 [scrapy.middleware] INFO: Enabled item pipelines:
+['gover.pipelines.GoverPipeline', 'gover.pipelines.MongodbPipeline']
+2019-03-09 00:29:42 [scrapy.core.engine] INFO: Spider opened
+2019-03-09 00:29:42 [scrapy.extensions.logstats] INFO: Crawled 0 pages (at 0 pages/min), scraped 0 items (at 0 items/min)
+2019-03-09 00:29:42 [scrapy.extensions.telnet] INFO: Telnet console listening on 127.0.0.1:6023
+2019-03-09 00:30:15 [scrapy.core.scraper] ERROR: Error processing {'date': '2019-03-08 15:53:11',
+ 'detail_content': ['寮步镇教育路路段在修路之前是有黄格线停车，同样的位置在修路后黄格没有画上，导致经常违章停车，但此位置之前是正规停车有黄格线，只是修路后黄格线没有再画上，建议相关部门在此路段把之前弄没的黄格线加上'],
+ 'detail_img': [],
+ 'detail_url': 'http://wz.sun0769.com/html/question/201903/403856.shtml',
+ 'location': '市交警支队',
+ 'num': '209488',
+ 'state': '待处理',
+ 'theme': '寮步镇寮步社区教育路段停车问题'}
+Traceback (most recent call last):
+  File "d:\anaconda3\lib\site-packages\twisted\internet\defer.py", line 654, in _runCallbacks
+    current.result = callback(current.result, *args, **kw)
+  File "E:\ScrapyProject\gover\gover\pipelines.py", line 39, in process_item
+    self.db[self.collection_name].insert(dict(item))
+  File "d:\anaconda3\lib\site-packages\pymongo\collection.py", line 3161, in insert
+    check_keys, manipulate, write_concern)
+  File "d:\anaconda3\lib\site-packages\pymongo\collection.py", line 607, in _insert
+    bypass_doc_val, session)
+  File "d:\anaconda3\lib\site-packages\pymongo\collection.py", line 595, in _insert_one
+    acknowledged, _insert_command, session)
+  File "d:\anaconda3\lib\site-packages\pymongo\mongo_client.py", line 1247, in _retryable_write
+    with self._tmp_session(session) as s:
+  File "d:\anaconda3\lib\contextlib.py", line 112, in __enter__
+    return next(self.gen)
+  File "d:\anaconda3\lib\site-packages\pymongo\mongo_client.py", line 1576, in _tmp_session
+    s = self._ensure_session(session)
+  File "d:\anaconda3\lib\site-packages\pymongo\mongo_client.py", line 1563, in _ensure_session
+    return self.__start_session(True, causal_consistency=False)
+  File "d:\anaconda3\lib\site-packages\pymongo\mongo_client.py", line 1516, in __start_session
+    server_session = self._get_server_session()
+  File "d:\anaconda3\lib\site-packages\pymongo\mongo_client.py", line 1549, in _get_server_session
+    return self._topology.get_server_session()
+  File "d:\anaconda3\lib\site-packages\pymongo\topology.py", line 427, in get_server_session
+    None)
+  File "d:\anaconda3\lib\site-packages\pymongo\topology.py", line 199, in _select_servers_loop
+    self._error_message(selector))
+pymongo.errors.ServerSelectionTimeoutError: lcoalhost:27017: [Errno 11001] getaddrinfo failed
+2019-03-09 00:30:45 [scrapy.core.scraper] ERROR: Error processing {'date': '2019-03-04 15:32:03',
+ 'detail_content': ['溪头聚星公寓附近的地面禁停线，总被部分不文明车主无视～～地面划了大大的禁停线在他们的眼里形同虚设，乱停乱放的情况依旧存在！扫一扫挪车不管用，这样的违停给群众出行带来非常大的影响！虽然看到目前有执法人员给违停车辆的车身粘贴违停警示贴纸，但是隔几天才去贴一次...这样的效果并不理想啊。请问有办法可以解决这个难题吗？请重视并加大执法力度解决群众出入两难的情况出现吧（包括小桥的左右拐弯处）感激不尽！！！'],
+ 'detail_img': [],
+ 'detail_url': 'http://wz.sun0769.com/html/question/201903/403471.shtml',
+ 'location': '厚街',
+ 'num': '209195',
+ 'state': '已受理',
+ 'theme': '今天又又又被违停塞住了'}
+Traceback (most recent call last):
+  File "d:\anaconda3\lib\site-packages\twisted\internet\defer.py", line 654, in _runCallbacks
+    current.result = callback(current.result, *args, **kw)
+  File "E:\ScrapyProject\gover\gover\pipelines.py", line 39, in process_item
+    self.db[self.collection_name].insert(dict(item))
+  File "d:\anaconda3\lib\site-packages\pymongo\collection.py", line 3161, in insert
+    check_keys, manipulate, write_concern)
+  File "d:\anaconda3\lib\site-packages\pymongo\collection.py", line 607, in _insert
+    bypass_doc_val, session)
+  File "d:\anaconda3\lib\site-packages\pymongo\collection.py", line 595, in _insert_one
+    acknowledged, _insert_command, session)
+  File "d:\anaconda3\lib\site-packages\pymongo\mongo_client.py", line 1247, in _retryable_write
+    with self._tmp_session(session) as s:
+  File "d:\anaconda3\lib\contextlib.py", line 112, in __enter__
+    return next(self.gen)
+  File "d:\anaconda3\lib\site-packages\pymongo\mongo_client.py", line 1576, in _tmp_session
+    s = self._ensure_session(session)
+  File "d:\anaconda3\lib\site-packages\pymongo\mongo_client.py", line 1563, in _ensure_session
+    return self.__start_session(True, causal_consistency=False)
+  File "d:\anaconda3\lib\site-packages\pymongo\mongo_client.py", line 1516, in __start_session
+    server_session = self._get_server_session()
+  File "d:\anaconda3\lib\site-packages\pymongo\mongo_client.py", line 1549, in _get_server_session
+    return self._topology.get_server_session()
+  File "d:\anaconda3\lib\site-packages\pymongo\topology.py", line 427, in get_server_session
+    None)
+  File "d:\anaconda3\lib\site-packages\pymongo\topology.py", line 199, in _select_servers_loop
+    self._error_message(selector))
+pymongo.errors.ServerSelectionTimeoutError: lcoalhost:27017: [Errno 11001] getaddrinfo failed
+2019-03-09 00:31:23 [scrapy.utils.log] INFO: Scrapy 1.6.0 started (bot: gover)
+2019-03-09 00:31:23 [scrapy.utils.log] INFO: Versions: lxml 4.3.2.0, libxml2 2.9.7, cssselect 1.0.3, parsel 1.5.1, w3lib 1.20.0, Twisted 18.9.0, Python 3.7.2 (default, Feb 21 2019, 17:35:59) [MSC v.1915 64 bit (AMD64)], pyOpenSSL 17.2.0 (OpenSSL 1.1.1b  26 Feb 2019), cryptography 2.6.1, Platform Windows-10-10.0.17134-SP0
+2019-03-09 00:31:23 [scrapy.crawler] INFO: Overridden settings: {'BOT_NAME': 'gover', 'LOG_FILE': './log.log', 'LOG_LEVEL': 'INFO', 'NEWSPIDER_MODULE': 'gover.spiders', 'ROBOTSTXT_OBEY': True, 'SPIDER_MODULES': ['gover.spiders'], 'USER_AGENT': 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/72.0.3626.119 Safari/537.36'}
+2019-03-09 00:31:23 [scrapy.extensions.telnet] INFO: Telnet Password: 6c4616e6f412a499
+2019-03-09 00:31:23 [scrapy.middleware] INFO: Enabled extensions:
+['scrapy.extensions.corestats.CoreStats',
+ 'scrapy.extensions.telnet.TelnetConsole',
+ 'scrapy.extensions.logstats.LogStats']
+2019-03-09 00:31:23 [scrapy.middleware] INFO: Enabled downloader middlewares:
+['scrapy.downloadermiddlewares.robotstxt.RobotsTxtMiddleware',
+ 'scrapy.downloadermiddlewares.httpauth.HttpAuthMiddleware',
+ 'scrapy.downloadermiddlewares.downloadtimeout.DownloadTimeoutMiddleware',
+ 'scrapy.downloadermiddlewares.defaultheaders.DefaultHeadersMiddleware',
+ 'scrapy.downloadermiddlewares.useragent.UserAgentMiddleware',
+ 'scrapy.downloadermiddlewares.retry.RetryMiddleware',
+ 'scrapy.downloadermiddlewares.redirect.MetaRefreshMiddleware',
+ 'scrapy.downloadermiddlewares.httpcompression.HttpCompressionMiddleware',
+ 'scrapy.downloadermiddlewares.redirect.RedirectMiddleware',
+ 'scrapy.downloadermiddlewares.cookies.CookiesMiddleware',
+ 'scrapy.downloadermiddlewares.httpproxy.HttpProxyMiddleware',
+ 'scrapy.downloadermiddlewares.stats.DownloaderStats']
+2019-03-09 00:31:23 [scrapy.middleware] INFO: Enabled spider middlewares:
+['scrapy.spidermiddlewares.httperror.HttpErrorMiddleware',
+ 'scrapy.spidermiddlewares.offsite.OffsiteMiddleware',
+ 'scrapy.spidermiddlewares.referer.RefererMiddleware',
+ 'scrapy.spidermiddlewares.urllength.UrlLengthMiddleware',
+ 'scrapy.spidermiddlewares.depth.DepthMiddleware']
+2019-03-09 00:31:23 [scrapy.middleware] INFO: Enabled item pipelines:
+['gover.pipelines.GoverPipeline', 'gover.pipelines.MongodbPipeline']
+2019-03-09 00:31:23 [scrapy.core.engine] INFO: Spider opened
+2019-03-09 00:31:23 [scrapy.extensions.logstats] INFO: Crawled 0 pages (at 0 pages/min), scraped 0 items (at 0 items/min)
+2019-03-09 00:31:23 [scrapy.extensions.telnet] INFO: Telnet console listening on 127.0.0.1:6023
+2019-03-09 00:32:23 [scrapy.extensions.logstats] INFO: Crawled 162 pages (at 162 pages/min), scraped 30 items (at 30 items/min)
+2019-03-09 00:33:23 [scrapy.extensions.logstats] INFO: Crawled 203 pages (at 41 pages/min), scraped 30 items (at 0 items/min)
+2019-03-09 00:34:23 [scrapy.extensions.logstats] INFO: Crawled 246 pages (at 43 pages/min), scraped 30 items (at 0 items/min)
+2019-03-09 00:35:23 [scrapy.extensions.logstats] INFO: Crawled 287 pages (at 41 pages/min), scraped 30 items (at 0 items/min)
+2019-03-09 00:36:23 [scrapy.extensions.logstats] INFO: Crawled 326 pages (at 39 pages/min), scraped 30 items (at 0 items/min)
+2019-03-09 00:37:23 [scrapy.extensions.logstats] INFO: Crawled 366 pages (at 40 pages/min), scraped 30 items (at 0 items/min)
+2019-03-09 00:38:23 [scrapy.extensions.logstats] INFO: Crawled 406 pages (at 40 pages/min), scraped 30 items (at 0 items/min)
+2019-03-09 00:39:14 [scrapy.core.engine] INFO: Closing spider (finished)
+2019-03-09 00:39:14 [scrapy.statscollectors] INFO: Dumping Scrapy stats:
+{'downloader/request_bytes': 234184,
+ 'downloader/request_count': 442,
+ 'downloader/request_method_count/GET': 442,
+ 'downloader/response_bytes': 12337460,
+ 'downloader/response_count': 442,
+ 'downloader/response_status_count/200': 441,
+ 'downloader/response_status_count/302': 1,
+ 'finish_reason': 'finished',
+ 'finish_time': datetime.datetime(2019, 3, 8, 16, 39, 14, 866993),
+ 'item_scraped_count': 30,
+ 'log_count/INFO': 16,
+ 'request_depth_max': 409,
+ 'response_received_count': 441,
+ 'robotstxt/request_count': 1,
+ 'robotstxt/response_count': 1,
+ 'robotstxt/response_status_count/200': 1,
+ 'scheduler/dequeued': 440,
+ 'scheduler/dequeued/memory': 440,
+ 'scheduler/enqueued': 440,
+ 'scheduler/enqueued/memory': 440,
+ 'start_time': datetime.datetime(2019, 3, 8, 16, 31, 23, 816674)}
+2019-03-09 00:39:14 [scrapy.core.engine] INFO: Spider closed (finished)
