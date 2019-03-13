@@ -14,32 +14,34 @@ def get_page_list(url):
     headers = {
         'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/72.0.3626.121 Safari/537.36'
     }
+    sess = requests.Session()
     response = requests.get(url,headers=headers)
+    cookie = sess.cookies
     try:
         if response.status_code == 200:
             html = etree.HTML(response.text)
             # print(response.text)
             page_lists = html.xpath('//a[@class="position_link"]/@href')
             #print(page_lists)
-            return page_lists
+            return page_lists,cookie
 
     except RequestException:
         print('RequestionError')
         return None
 
-def get_infos(url):
+def get_infos(url,cookie):
     headers = {
         'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/72.0.3626.121 Safari/537.36'
     }
     try:
-        response = requests.get(url, headers=headers)
+        response = requests.get(url, cookies=cookie,headers=headers)
         items = {}
         if response.status_code == 200:
             html = etree.HTML(response.text)
-            job_name = html.xpath('//div[@class="position-content-l"]')[0]
-            items['name'] = job_name.xpath('./div[@class="job-name"]/span[@class="name"]/text()')
-            items['company'] = job_name.xpath('./div[@class="job-name"]/div[@class="company"]/text()')
-
+            # job_name = html.xpath('//div[@class="position-content-l"]')
+            # print(len(job_name))
+            items['name'] = html.xpath('//div[@class="job-name"]/span[@class="name"]/text()')
+            items['company'] = html.xpath('//div[@class="job-name"]/div[@class="company"]/text()')
             job_request = html.xpath('//div[@class="position-content-l"]/dd[@class="job_request"]')[0]
 
             items['salary'] = job_request.xpath('./p/span[1]/text()')
@@ -59,26 +61,29 @@ def get_infos(url):
     except ConnectionError:
         print('ConnectionError')
 
-def regular_data(dic):
-    for k in dic.items() :
-        dic[k] = re.sub("\xa0|\s|/","",dic[k])
-    return dic
-
-def save_to_mongo(dic):
-    conn = MongoClient('localhost')
-    db = conn.LG
-    my_set = db.file1
-    my_set.insert(dict)
-    print('succ to mongo ')
+# def regular_data(dic):
+#     print(type(items))
+#     for k in dic.items() :
+#         dic[k] = "".join(dic[k].spilt())
+#     return dic
+#
+# def save_to_mongo(dic):
+#     conn = MongoClient('localhost')
+#     db = conn.LG
+#     my_set = db.file1
+#     my_set.insert(dict)
+#     print('succ to mongo ')
 
 def main():
     for i in range(1,30):
         ori_url = 'https://www.lagou.com/zhaopin/Python/'+ str(i)
-        page_lists =  get_page_list(ori_url)
+        page_lists,cookie =  get_page_list(ori_url)
         for page_list in page_lists:
-            infos = get_infos(page_list)
-            infos = regular_data(infos)
-            save_to_mongo(infos)
+            print(page_list)
+            infos = get_infos(page_list,cookie)
+            print(type(infos))
+            # infos = regular_data(infos)
+            # save_to_mongo(infos)
 
 
 
